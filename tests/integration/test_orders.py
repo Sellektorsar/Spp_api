@@ -23,26 +23,25 @@ class TestOrderRetrieval:
     def test_get_order_form_data(self, client):
         """Получение данных для формы заказа (доступные товарные группы и GTIN)."""
         resp = form_data(client)
-        assert resp.status_code in [200, 400, 404, 422]
-        if resp.status_code == 200:
-            data = resp.json()
-            # Ответ содержит список доступных GTIN или товарных групп
-            assert isinstance(data, dict) or isinstance(data, list)
+        assert resp.status_code == 200, f"Failed to get form data: {resp.text}"
+        data = resp.json()
+        # Ответ содержит список доступных GTIN или товарных групп
+        assert isinstance(data, (dict, list))
 
     def test_get_order_statistics(self, client):
         """Получение статистики заказов."""
         resp = order_statistics(client)
-        assert resp.status_code in [200, 400, 404, 422]
+        assert resp.status_code == 200, f"Failed to get statistics: {resp.text}"
 
     def test_get_contract_areas(self, client):
         """Получение контрактных зон (поставщиков кодов)."""
         resp = contract_areas(client)
-        assert resp.status_code in [200, 400, 404, 422]
+        assert resp.status_code == 200, f"Failed to get contract areas: {resp.text}"
 
     def test_get_approvable_orders(self, client):
         """Получение списка заказов, ожидающих подтверждения."""
         resp = get_approvable(client, json={"limit": 10, "offset": 0})
-        assert resp.status_code in [200, 400, 404, 422]
+        assert resp.status_code == 200, f"Failed to get approvable orders: {resp.text}"
         # Ответ может быть dict или list в зависимости от версии API
 
     def test_get_order_by_nonexistent_id(self, client):
@@ -86,7 +85,7 @@ class TestOrderCreation:
             },
         )
         # Реальный сервер может принять или отклонить в зависимости от serviceProviderId
-        assert resp.status_code in [200, 400, 404, 422, 500]
+        assert resp.status_code in [200, 400, 404, 422], f"Unexpected status code: {resp.status_code}"
 
 
 @pytest.mark.integration
