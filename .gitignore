@@ -1,9 +1,4 @@
-# Секреты и конфигурация окружения
-.env
-.env.*
-!.env.example
-
-# Python
+# Python cache
 __pycache__/
 *.py[cod]
 *$py.class
@@ -14,7 +9,6 @@ dist/
 *.egg-info/
 .eggs/
 *.egg
-MANIFEST
 
 # Virtual environments
 .venv/
@@ -25,23 +19,14 @@ ENV/
 # IDE
 .idea/
 .vscode/
-*.swp
-*.swo
 
-# Pytest / coverage
+# Pytest cache
 .pytest_cache/
 .coverage
 htmlcov/
 .tox/
 coverage.xml
 *.cover
-
-# Логи (runtime)
-logs/
-*.log
-
-# Большие бинарники и PDF
-*.pdf
 
 # OS
 .DS_Store

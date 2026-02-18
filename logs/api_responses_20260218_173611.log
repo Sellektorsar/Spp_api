@@ -1,0 +1,445 @@
+========================================================================
+TEST: tests/integration/test_aggregation_session.py::TestAggregationSessionFilter::test_filter_all_sessions
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/aggregation_session/pallets/filter
+    REQUEST BODY:
+      {
+        "limit": 20,
+        "offset": 0
+      }
+    RESPONSE STATUS: 200
+    RESPONSE BODY:
+      {
+        "data": [
+          {
+            "id_agg_session": "698c736dc0a08305e347b9cd",
+            "line_number": 995077,
+            "name": "Сессия 394",
+            "number": 394,
+            "is_active": false,
+            "start_date": "2026-02-11T12:17:49.213000+00:00",
+            "end_date": "2026-02-11T12:18:23.057000+00:00",
+            "count_packages": 2,
+            "count_pallets": 1,
+            "is_send_aggregation": true,
+            "product_group": "milk"
+          },
+          {
+            "id_agg_session": "6977504cf62bdbb988b4c95b",
+            "line_number": 995077,
+            "name": "Сессия 393",
+            "number": 393,
+            "is_active": false,
+            "start_date": "2026-01-26T11:30:20.566000+00:00",
+            "end_date": "2026-01-26T11:31:49.648000+00:00",
+            "count_packages": 3,
+            "count_pallets": 1,
+            "is_send_aggregation": true,
+            "product_group": "milk"
+          },
+          {
+            "id_agg_session": "69723f5dba73024e9431b3f0",
+            "line_number": 994952,
+            "name": "Сессия 392",
+            "number": 392,
+            "is_active": false,
+            "start_date": "2026-01-22T15:16:45.240000+00:00",
+            "end_date": "2026-01-22T15:17:29.362000+00:00",
+            "count_packages": 1,
+            "count_pallets": 1,
+            "is_send_aggregation": true,
+            "product_group": "water"
+          },
+          {
+            "id_agg_session": "696a37434c785a0acf4ace36",
+            "line_number": 9015,
+            "name": "Сессия 391",
+            "number": 391,
+            "is_active": false,
+            "start_date": "2026-01-16T13:04:03.185000+00:00",
+            "end_date": "2026-01-16T13:04:45.261000+00:00",
+            "count_packages": 2,
+            "count_pallets": 1,
+            "is_send_aggregation": true,
+            "product_group": "milk"
+          },
+          {
+            "id_agg_session": "6968e2945c582e4fe85e4fcb",
+            "line_number": 9015,
+            "name": "Сессия 390",
+            "number": 390,
+            "is_active": false,
+            "start_date": "2026-01-15T12:50:28.573000+00:00",
+            "end_date": "2026-01-15T12:51:26.789000+00:00",
+            "count_packages": 2,
+            "count_pallets": 1,
+            "is_send_aggregation": true,
+            "product_group": "milk"
+          },
+          {
+            "id_agg_session": "692854e0b1feb00b12ec7e17",
+            "line_number": 995064,
+            "name": "Сессия 389",
+            "number": 389,
+            "is_active": true,
+            "start_date": "2025-11-27T13:40:48.566000+00:00",
+            "end_date": null,
+            "count_packages": 0,
+            "count_pallets": 0,
+            "is_send_aggregation": false,
+            "product_group": "water"
+          },
+          {
+            "id_agg_session": "692851f7b1feb00b12ec7e09",
+            "line_number": 995064,
+            "name": "Сессия 388",
+            "number": 388,
+            "is_active": false,
+            "start_date": "2025-11-27T13:28:23.742000+00:00",
+            "end_date": "2025-11-27T13:40:41.907000+00:00",
+            "count_packages": 2,
+            "count_pallets": 1,
+            "is_send_aggregation": false,
+            "product_group": "water"
+          },
+          {
+            "id_agg_session": "6926cfe911e5196b7018c961",
+            "line_number": 995064,
+            "name": "Сессия 387",
+            "number": 387,
+            "is_active": false,
+            "start_date": "2025-11-26T10:01:13.032000+00:00",
+            "end_date": "2025-11-27T13:28:16.056000+00:00",
+            "count_packages": 1,
+            "count_pallets": 1,
+            "is_send_aggregation": false,
+            "product_group": "water"
+          },
+          {
+            "id_agg_session": "6926cf9e11e5196b7018c95d",
+            "line_number": 995064,
+            "name": "Сессия 386",
+            "number": 386,
+            "is_active": false,
+            "start_date": "2025-11-26T09:59:58.488000+00:00",
+            "end_date": "2025-11-26T10:01:09.258000+00:00",
+            "count_packages": 0,
+            "count_pallets": 1,
+            "is_send_aggregation": false,
+            "product_group": "water"
+          },
+          {
+            "id_agg_session": "692443bf0d8abcd03729e2d6",
+            "line_number": 994926,
+            "name": "Сессия 385",
+            "number": 385,
+            "is_active": true,
+            "start_date": "2025-11-24T11:38:39.598000+00:00",
+            "end_date": null,
+            "count_packages": 1,
+            "count_pallets": 1,
+            "is_send_aggregation": false,
+            "product_group": "water"
+          },
+          {
+            "id_agg_session": "6923fc660d8abcd03729e2c4",
+            "line_number": 994930,
+            "name": "Сессия 384",
+            "number": 384,
+            "is_active": true,
+            "start_date": "2025-11-24T06:34:14.474000+00:00",
+            "end_date": null,
+            "count_packages": 2,
+            "count_pallets": 1,
+            "is_send_aggregation": false,
+            "product_group": "water"
+          },
+          {
+            "id_agg_session": "690c5cd663e6106eb70cbefd",
+            "line_number": 995040,
+            "name": "Сессия 383",
+            "number": 383,
+            "is_active": true,
+            "start_date": "2025-11-06T08:31:18.661000+00:00",
+            "end_date": null,
+            "count_packages": 1,
+            "count_pallets": 1,
+            "is_send_aggregation": false,
+            "product_group": "water"
+          },
+          {
+            "id_agg_session": "69060bef1a98e19426afafe5",
+            "line_number": 995066,
+            "name": "Сессия 382",
+            "number": 382,
+            "is_active": false,
+            "start_date": "2025-11-01T13:32:31.589000+00:00",
+            "end_date": "2025-11-01T13:34:11.721000+00:00",
+            "count_packages": 2,
+            "count_pallets": 2,
+            "is_send_aggregation": false,
+            "product_group": "bio"
+          },
+          {
+            "id_agg_session": "68f76e5addaab324e0239f45",
+            "line_number": 995064,
+            "name": "Сессия 381",
+            "number": 381,
+            "is_active": false,
+            "start_date": "2025-10-21T11:28:26.242000+00:00",
+            "end_date": "2025-11-26T09:59:53.960000+00:00",
+            "count_packages": 1,
+            "count_pallets": 1,
+            "is_send_aggregation": false,
+            "product_group": "water"
+          },
+          {
+            "id_agg_session": "68936d665b9646b4ab4fd299",
+            "line_number": 994877,
+            "name": "Сессия 380",
+            "number": 380,
+            "is_active": false,
+            "start_date": "2025-08-06T14:57:42.098000+00:00",
+            "end_date": "2025-08-06T14:58:10.640000+00:00",
+            "count_packages": 1,
+            "count_pallets": 1,
+            "is_send_aggregation": true,
+            "product_group": "milk"
+          },
+          {
+            "id_agg_session": "685d252d7475b65169d15c82",
+            "line_number": 994838,
+            "name": "Сессия 379",
+            "number": 379,
+            "is_active": true,
+            "start_date": "2025-06-26T10:47:09.344000+00:00",
+            "end_date": null,
+            "count_packages": 0,
+            "count_pallets": 0,
+            "is_send_aggregation": false,
+            "product_group": "milk"
+          },
+          {
+            "id_agg_session": "685d1f277475b65169d15c7e",
+            "line_number": 994728,
+            "name": "Сессия 378",
+            "number": 378,
+            "is_active": true,
+            "start_date": "2025-06-26T10:21:27.463000+00:00",
+            "end_date": null,
+            "count_packages": 1,
+            "count_pallets": 0,
+            "is_send_aggregation": false,
+            "product_group": "water"
+          },
+          {
+            "id_agg_session": "6853fb9d020cfa407271a627",
+            "line_number": 994728,
+            "name": "Сессия 377",
+            "number": 377,
+            "is_active": false,
+            "start_date": "2025-06-19T11:59:25.790000+00:00",
+            "end_date": "2025-06-19T11:59:49.737000+00:00",
+            "count_packages": 1,
+            "count_pallets": 1,
+            "is_send_aggregation": true,
+            "product_group": "water"
+          },
+          {
+            "id_agg_session": "6853f518020cfa407271a61b",
+            "line_number": 995040,
+            "name": "Сессия 376",
+            "number": 376,
+            "is_active": false,
+            "start_date": "2025-06-19T11:31:36.518000+00:00",
+            "end_date": "2025-06-19T11:32:06.930000+00:00",
+            "count_packages": 1,
+            "count_pallets": 1,
+            "is_send_aggregation": true,
+            "product_group": "water"
+          },
+          {
+            "id_agg_session": "6853dbd7020cfa407271a60f",
+            "line_number": 995040,
+            "name": "Сессия 375",
+            "number": 375,
+            "is_active": false,
+            "start_date": "2025-06-19T09:43:51.690000+00:00",
+            "end_date": "2025-06-19T09:44:43.839000+00:00",
+            "count_packages": 1,
+            "count_pallets": 1,
+            "is_send_aggregation": true,
+            "product_group": "water"
+          }
+        ],
+        "meta": {
+          "total_count": 366
+        }
+      }
+
+========================================================================
+TEST: tests/integration/test_aggregation_session.py::TestAggregationSessionFilter::test_filter_sessions_pagination
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/aggregation_session/pallets/filter
+    REQUEST BODY:
+      {
+        "limit": 5,
+        "offset": 0
+      }
+    RESPONSE STATUS: 200
+    RESPONSE BODY:
+      {
+        "data": [
+          {
+            "id_agg_session": "698c736dc0a08305e347b9cd",
+            "line_number": 995077,
+            "name": "Сессия 394",
+            "number": 394,
+            "is_active": false,
+            "start_date": "2026-02-11T12:17:49.213000+00:00",
+            "end_date": "2026-02-11T12:18:23.057000+00:00",
+            "count_packages": 2,
+            "count_pallets": 1,
+            "is_send_aggregation": true,
+            "product_group": "milk"
+          },
+          {
+            "id_agg_session": "6977504cf62bdbb988b4c95b",
+            "line_number": 995077,
+            "name": "Сессия 393",
+            "number": 393,
+            "is_active": false,
+            "start_date": "2026-01-26T11:30:20.566000+00:00",
+            "end_date": "2026-01-26T11:31:49.648000+00:00",
+            "count_packages": 3,
+            "count_pallets": 1,
+            "is_send_aggregation": true,
+            "product_group": "milk"
+          },
+          {
+            "id_agg_session": "69723f5dba73024e9431b3f0",
+            "line_number": 994952,
+            "name": "Сессия 392",
+            "number": 392,
+            "is_active": false,
+            "start_date": "2026-01-22T15:16:45.240000+00:00",
+            "end_date": "2026-01-22T15:17:29.362000+00:00",
+            "count_packages": 1,
+            "count_pallets": 1,
+            "is_send_aggregation": true,
+            "product_group": "water"
+          },
+          {
+            "id_agg_session": "696a37434c785a0acf4ace36",
+            "line_number": 9015,
+            "name": "Сессия 391",
+            "number": 391,
+            "is_active": false,
+            "start_date": "2026-01-16T13:04:03.185000+00:00",
+            "end_date": "2026-01-16T13:04:45.261000+00:00",
+            "count_packages": 2,
+            "count_pallets": 1,
+            "is_send_aggregation": true,
+            "product_group": "milk"
+          },
+          {
+            "id_agg_session": "6968e2945c582e4fe85e4fcb",
+            "line_number": 9015,
+            "name": "Сессия 390",
+            "number": 390,
+            "is_active": false,
+            "start_date": "2026-01-15T12:50:28.573000+00:00",
+            "end_date": "2026-01-15T12:51:26.789000+00:00",
+            "count_packages": 2,
+            "count_pallets": 1,
+            "is_send_aggregation": true,
+            "product_group": "milk"
+          }
+        ],
+        "meta": {
+          "total_count": 366
+        }
+      }
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/aggregation_session/pallets/filter
+    REQUEST BODY:
+      {
+        "limit": 5,
+        "offset": 5
+      }
+    RESPONSE STATUS: 200
+    RESPONSE BODY:
+      {
+        "data": [
+          {
+            "id_agg_session": "698c736dc0a08305e347b9cd",
+            "line_number": 995077,
+            "name": "Сессия 394",
+            "number": 394,
+            "is_active": false,
+            "start_date": "2026-02-11T12:17:49.213000+00:00",
+            "end_date": "2026-02-11T12:18:23.057000+00:00",
+            "count_packages": 2,
+            "count_pallets": 1,
+            "is_send_aggregation": true,
+            "product_group": "milk"
+          },
+          {
+            "id_agg_session": "6977504cf62bdbb988b4c95b",
+            "line_number": 995077,
+            "name": "Сессия 393",
+            "number": 393,
+            "is_active": false,
+            "start_date": "2026-01-26T11:30:20.566000+00:00",
+            "end_date": "2026-01-26T11:31:49.648000+00:00",
+            "count_packages": 3,
+            "count_pallets": 1,
+            "is_send_aggregation": true,
+            "product_group": "milk"
+          },
+          {
+            "id_agg_session": "69723f5dba73024e9431b3f0",
+            "line_number": 994952,
+            "name": "Сессия 392",
+            "number": 392,
+            "is_active": false,
+            "start_date": "2026-01-22T15:16:45.240000+00:00",
+            "end_date": "2026-01-22T15:17:29.362000+00:00",
+            "count_packages": 1,
+            "count_pallets": 1,
+            "is_send_aggregation": true,
+            "product_group": "water"
+          },
+          {
+            "id_agg_session": "696a37434c785a0acf4ace36",
+            "line_number": 9015,
+            "name": "Сессия 391",
+            "number": 391,
+            "is_active": false,
+            "start_date": "2026-01-16T13:04:03.185000+00:00",
+            "end_date": "2026-01-16T13:04:45.261000+00:00",
+            "count_packages": 2,
+            "count_pallets": 1,
+            "is_send_aggregation": true,
+            "product_group": "milk"
+          },
+          {
+            "id_agg_session": "6968e2945c582e4fe85e4fcb",
+            "line_number": 9015,
+            "name": "Сессия 390",
+            "number": 390,
+            "is_active": false,
+            "start_date": "2026-01-15T12:50:28.573000+00:00",
+            "end_date": "2026-01-15T12:51:26.789000+00:00",
+            "count_packages": 2,
+            "count_pallets": 1,
+            "is_send_aggregation": true,
+            "product_group": "milk"
+          }
+        ],
+        "meta": {
+          "total_count": 366
+        }
+      }

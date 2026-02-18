@@ -1,0 +1,333 @@
+========================================================================
+TEST: tests/integration/test_gtin_and_line.py::TestLineManagement::test_filter_lines_default
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/line/filter
+    REQUEST BODY:
+      {
+        "limit": 20,
+        "offset": 0
+      }
+    RESPONSE STATUS: 200
+    RESPONSE BODY:
+      {
+        "data": [
+          {
+            "id": "61f7c1ae9c982b5c67fd16fc",
+            "line_number": 0,
+            "name": "string",
+            "is_active": false,
+            "product_group": "antiseptic",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": 0,
+            "report_to_send": [
+              1
+            ]
+          },
+          {
+            "id": "60e431f7b62082049a6aa2db",
+            "line_number": 1,
+            "name": "UpdatedLine-77386815",
+            "is_active": true,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": false,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "60eda9473d9f8c1ceea2d2a9",
+            "line_number": 2,
+            "name": "antiseptic",
+            "is_active": false,
+            "product_group": "antiseptic",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "610d0aa43d9f8c1ceea2e07d",
+            "line_number": 3,
+            "name": "water",
+            "is_active": false,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "612752c89841f9cc771c047d",
+            "line_number": 4,
+            "name": "milk223",
+            "is_active": false,
+            "product_group": "milk",
+            "production_type": 2,
+            "camera_host": "s",
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": 2,
+            "report_to_send": [
+              1
+            ]
+          },
+          {
+            "id": "612c86849c2a20539e649861",
+            "line_number": 5,
+            "name": "bio",
+            "is_active": true,
+            "product_group": "bio",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": false,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "615571229c2a20539e64a841",
+            "line_number": 6,
+            "name": "Молоко 1.5 литра",
+            "is_active": false,
+            "product_group": "milk",
+            "production_type": 1,
+            "camera_host": "192.111.1.1",
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": false,
+            "is_auto_send_report": false,
+            "count_in_report": 2,
+            "report_to_send": [
+              1
+            ]
+          },
+          {
+            "id": "61716c2c1da06c439e359711",
+            "line_number": 7,
+            "name": "Агрегация тест1",
+            "is_active": true,
+            "product_group": "water",
+            "production_type": 1,
+            "camera_host": null,
+            "line_type": 2,
+            "action_read_type": 2,
+            "is_deleted": false,
+            "is_auto_send_report": false,
+            "count_in_report": 2,
+            "report_to_send": []
+          },
+          {
+            "id": "625cf44a7a2a2a7da565e553",
+            "line_number": 14,
+            "name": "string",
+            "is_active": false,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "61a77a9609af8acf970d21ff",
+            "line_number": 19,
+            "name": "11111111114444",
+            "is_active": false,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": 10,
+            "report_to_send": [
+              1
+            ]
+          },
+          {
+            "id": "61a8ab678433114ba88c4a6d",
+            "line_number": 21,
+            "name": "beer",
+            "is_active": false,
+            "product_group": "beer",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": 2,
+            "report_to_send": [
+              1
+            ]
+          },
+          {
+            "id": "61af4ae18433114ba88c4cd2",
+            "line_number": 23,
+            "name": "1234567",
+            "is_active": false,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "61b9e87f195e0bc0d6ba0472",
+            "line_number": 25,
+            "name": "Вода 1 литр",
+            "is_active": false,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "61c04602195e0bc0d6bac9e0",
+            "line_number": 26,
+            "name": "Агрегационная линия 1",
+            "is_active": false,
+            "product_group": "antiseptic",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 2,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "61e82dff536e6a22bd20544a",
+            "line_number": 28,
+            "name": "test_mob",
+            "is_active": false,
+            "product_group": "water",
+            "production_type": 1,
+            "camera_host": null,
+            "line_type": 2,
+            "action_read_type": null,
+            "is_deleted": false,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "61e8704a536e6a22bd205471",
+            "line_number": 29,
+            "name": "Агрегация вода",
+            "is_active": true,
+            "product_group": "water",
+            "production_type": 1,
+            "camera_host": null,
+            "line_type": 2,
+            "action_read_type": 2,
+            "is_deleted": false,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "61ea84035a5d1602a3b1860a",
+            "line_number": 30,
+            "name": "Линия для молочной продукции",
+            "is_active": true,
+            "product_group": "milk",
+            "production_type": 1,
+            "camera_host": null,
+            "line_type": 2,
+            "action_read_type": 2,
+            "is_deleted": false,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "61ee42e103f0a7cb31d6b23c",
+            "line_number": 31,
+            "name": "Test_package_code_debug",
+            "is_active": false,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 2,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": 2,
+            "report_to_send": [
+              1,
+              3
+            ]
+          },
+          {
+            "id": "61ee44f203f0a7cb31d6b251",
+            "line_number": 32,
+            "name": "Test_adding_packages_to_pallet",
+            "is_active": false,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 2,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "61ee4c5dec92a8e48240ad2c",
+            "line_number": 33,
+            "name": "Test_close_session_not_full_package",
+            "is_active": false,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 2,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          }
+        ],
+        "meta": {
+          "total_count": 1162
+        }
+      }
+

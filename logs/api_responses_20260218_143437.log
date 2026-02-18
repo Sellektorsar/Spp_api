@@ -1,0 +1,5225 @@
+========================================================================
+TEST: tests/integration/test_aggregation_session.py::TestAggregationSessionLifecycle::test_create_session
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/aggregation_session/dashboard/create
+    REQUEST BODY:
+      {
+        "name": "Test Dashboard"
+      }
+    RESPONSE STATUS: 200
+    RESPONSE BODY:
+      {
+        "data": "699595bee8218de0f52ebb66"
+      }
+
+========================================================================
+TEST: tests/integration/test_aggregation_session.py::TestAggregationSessionLifecycle::test_start_session
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/aggregation_session/pallets/start
+    REQUEST BODY:
+      {
+        "id": "699595bee8218de0f52ebb66",
+        "line_number": 1
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "read_type"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          },
+          {
+            "loc": [
+              "body",
+              "print_type"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_aggregation_session.py::TestAggregationSessionLifecycle::test_add_single_code
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/aggregation_session/vision/scanner/add_code
+    REQUEST BODY:
+      {
+        "id": "699595bee8218de0f52ebb66",
+        "code": "010460620339973721testcode93Ab=="
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "line_number"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_aggregation_session.py::TestAggregationSessionLifecycle::test_add_multiple_codes
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/aggregation_session/vision/add_codes
+    REQUEST BODY:
+      {
+        "id": "699595bee8218de0f52ebb66",
+        "codes": [
+          "010460620339973721code1==",
+          "010460620339973721code2==",
+          "010460620339973721code3=="
+        ]
+      }
+    RESPONSE STATUS: 500
+    RESPONSE BODY: Internal Server Error
+
+========================================================================
+TEST: tests/integration/test_aggregation_session.py::TestAggregationSessionLifecycle::test_add_package
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/aggregation_session/pallets/add_package
+    REQUEST BODY:
+      {
+        "id": "699595bee8218de0f52ebb66",
+        "package_code": "00000000100000001"
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "line_number"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          },
+          {
+            "loc": [
+              "body",
+              "package_code"
+            ],
+            "msg": "Неверный формат кода упаковки",
+            "type": "value_error"
+          },
+          {
+            "loc": [
+              "body",
+              "package_code"
+            ],
+            "msg": "Неверный формат кода упаковки",
+            "type": "value_error"
+          },
+          {
+            "loc": [
+              "body",
+              "package_code"
+            ],
+            "msg": "Неверный формат кода упаковки",
+            "type": "value_error"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_aggregation_session.py::TestAggregationSessionLifecycle::test_add_pallet
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/aggregation_session/pallets/add_pallet
+    REQUEST BODY:
+      {
+        "id": "699595bee8218de0f52ebb66",
+        "pallet_code": "00380060191111150000000001"
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "line_number"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          },
+          {
+            "loc": [
+              "body",
+              "package_code"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          },
+          {
+            "loc": [
+              "body",
+              "pallet_code"
+            ],
+            "msg": "Неверный формат кода палеты",
+            "type": "value_error"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_aggregation_session.py::TestAggregationSessionLifecycle::test_get_session_stats
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/aggregation_session/dashboard/get_stats
+    REQUEST BODY:
+      {
+        "id": "699595bee8218de0f52ebb66",
+        "start_date": "2026-02-11T10:34:38.375825Z",
+        "end_date": "2026-02-18T10:34:38.375825Z"
+      }
+    RESPONSE STATUS: 200
+    RESPONSE BODY:
+      {
+        "data": {
+          "agg_session_count": 6,
+          "code_count": 21,
+          "package_count": 10,
+          "pallet_count": 4
+        }
+      }
+
+========================================================================
+TEST: tests/integration/test_aggregation_session.py::TestAggregationSessionLifecycle::test_finish_session
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/aggregation_session/pallets/finish
+    REQUEST BODY:
+      {
+        "id": "699595bee8218de0f52ebb66"
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "line_number"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_aggregation_session.py::TestAggregationSessionFilter::test_filter_all_sessions
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/aggregation_session/pallets/filter
+    REQUEST BODY:
+      {
+        "limit": 10,
+        "offset": 0
+      }
+    RESPONSE STATUS: 200
+    RESPONSE BODY:
+      {
+        "data": [
+          {
+            "id_agg_session": "698c736dc0a08305e347b9cd",
+            "line_number": 995077,
+            "name": "Сессия 394",
+            "number": 394,
+            "is_active": false,
+            "start_date": "2026-02-11T12:17:49.213000+00:00",
+            "end_date": "2026-02-11T12:18:23.057000+00:00",
+            "count_packages": 2,
+            "count_pallets": 1,
+            "is_send_aggregation": true,
+            "product_group": "milk"
+          },
+          {
+            "id_agg_session": "6977504cf62bdbb988b4c95b",
+            "line_number": 995077,
+            "name": "Сессия 393",
+            "number": 393,
+            "is_active": false,
+            "start_date": "2026-01-26T11:30:20.566000+00:00",
+            "end_date": "2026-01-26T11:31:49.648000+00:00",
+            "count_packages": 3,
+            "count_pallets": 1,
+            "is_send_aggregation": true,
+            "product_group": "milk"
+          },
+          {
+            "id_agg_session": "69723f5dba73024e9431b3f0",
+            "line_number": 994952,
+            "name": "Сессия 392",
+            "number": 392,
+            "is_active": false,
+            "start_date": "2026-01-22T15:16:45.240000+00:00",
+            "end_date": "2026-01-22T15:17:29.362000+00:00",
+            "count_packages": 1,
+            "count_pallets": 1,
+            "is_send_aggregation": true,
+            "product_group": "water"
+          },
+          {
+            "id_agg_session": "696a37434c785a0acf4ace36",
+            "line_number": 9015,
+            "name": "Сессия 391",
+            "number": 391,
+            "is_active": false,
+            "start_date": "2026-01-16T13:04:03.185000+00:00",
+            "end_date": "2026-01-16T13:04:45.261000+00:00",
+            "count_packages": 2,
+            "count_pallets": 1,
+            "is_send_aggregation": true,
+            "product_group": "milk"
+          },
+          {
+            "id_agg_session": "6968e2945c582e4fe85e4fcb",
+            "line_number": 9015,
+            "name": "Сессия 390",
+            "number": 390,
+            "is_active": false,
+            "start_date": "2026-01-15T12:50:28.573000+00:00",
+            "end_date": "2026-01-15T12:51:26.789000+00:00",
+            "count_packages": 2,
+            "count_pallets": 1,
+            "is_send_aggregation": true,
+            "product_group": "milk"
+          },
+          {
+            "id_agg_session": "692854e0b1feb00b12ec7e17",
+            "line_number": 995064,
+            "name": "Сессия 389",
+            "number": 389,
+            "is_active": true,
+            "start_date": "2025-11-27T13:40:48.566000+00:00",
+            "end_date": null,
+            "count_packages": 0,
+            "count_pallets": 0,
+            "is_send_aggregation": false,
+            "product_group": "water"
+          },
+          {
+            "id_agg_session": "692851f7b1feb00b12ec7e09",
+            "line_number": 995064,
+            "name": "Сессия 388",
+            "number": 388,
+            "is_active": false,
+            "start_date": "2025-11-27T13:28:23.742000+00:00",
+            "end_date": "2025-11-27T13:40:41.907000+00:00",
+            "count_packages": 2,
+            "count_pallets": 1,
+            "is_send_aggregation": false,
+            "product_group": "water"
+          },
+          {
+            "id_agg_session": "6926cfe911e5196b7018c961",
+            "line_number": 995064,
+            "name": "Сессия 387",
+            "number": 387,
+            "is_active": false,
+            "start_date": "2025-11-26T10:01:13.032000+00:00",
+            "end_date": "2025-11-27T13:28:16.056000+00:00",
+            "count_packages": 1,
+            "count_pallets": 1,
+            "is_send_aggregation": false,
+            "product_group": "water"
+          },
+          {
+            "id_agg_session": "6926cf9e11e5196b7018c95d",
+            "line_number": 995064,
+            "name": "Сессия 386",
+            "number": 386,
+            "is_active": false,
+            "start_date": "2025-11-26T09:59:58.488000+00:00",
+            "end_date": "2025-11-26T10:01:09.258000+00:00",
+            "count_packages": 0,
+            "count_pallets": 1,
+            "is_send_aggregation": false,
+            "product_group": "water"
+          },
+          {
+            "id_agg_session": "692443bf0d8abcd03729e2d6",
+            "line_number": 994926,
+            "name": "Сессия 385",
+            "number": 385,
+            "is_active": true,
+            "start_date": "2025-11-24T11:38:39.598000+00:00",
+            "end_date": null,
+            "count_packages": 1,
+            "count_pallets": 1,
+            "is_send_aggregation": false,
+            "product_group": "water"
+          }
+        ],
+        "meta": {
+          "total_count": 366
+        }
+      }
+
+========================================================================
+TEST: tests/integration/test_aggregation_session.py::TestAggregationSessionFilter::test_filter_active_sessions
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/aggregation_session/pallets/filter
+    REQUEST BODY:
+      {
+        "limit": 10,
+        "offset": 0,
+        "status": "active"
+      }
+    RESPONSE STATUS: 200
+    RESPONSE BODY:
+      {
+        "data": [
+          {
+            "id_agg_session": "698c736dc0a08305e347b9cd",
+            "line_number": 995077,
+            "name": "Сессия 394",
+            "number": 394,
+            "is_active": false,
+            "start_date": "2026-02-11T12:17:49.213000+00:00",
+            "end_date": "2026-02-11T12:18:23.057000+00:00",
+            "count_packages": 2,
+            "count_pallets": 1,
+            "is_send_aggregation": true,
+            "product_group": "milk"
+          },
+          {
+            "id_agg_session": "6977504cf62bdbb988b4c95b",
+            "line_number": 995077,
+            "name": "Сессия 393",
+            "number": 393,
+            "is_active": false,
+            "start_date": "2026-01-26T11:30:20.566000+00:00",
+            "end_date": "2026-01-26T11:31:49.648000+00:00",
+            "count_packages": 3,
+            "count_pallets": 1,
+            "is_send_aggregation": true,
+            "product_group": "milk"
+          },
+          {
+            "id_agg_session": "69723f5dba73024e9431b3f0",
+            "line_number": 994952,
+            "name": "Сессия 392",
+            "number": 392,
+            "is_active": false,
+            "start_date": "2026-01-22T15:16:45.240000+00:00",
+            "end_date": "2026-01-22T15:17:29.362000+00:00",
+            "count_packages": 1,
+            "count_pallets": 1,
+            "is_send_aggregation": true,
+            "product_group": "water"
+          },
+          {
+            "id_agg_session": "696a37434c785a0acf4ace36",
+            "line_number": 9015,
+            "name": "Сессия 391",
+            "number": 391,
+            "is_active": false,
+            "start_date": "2026-01-16T13:04:03.185000+00:00",
+            "end_date": "2026-01-16T13:04:45.261000+00:00",
+            "count_packages": 2,
+            "count_pallets": 1,
+            "is_send_aggregation": true,
+            "product_group": "milk"
+          },
+          {
+            "id_agg_session": "6968e2945c582e4fe85e4fcb",
+            "line_number": 9015,
+            "name": "Сессия 390",
+            "number": 390,
+            "is_active": false,
+            "start_date": "2026-01-15T12:50:28.573000+00:00",
+            "end_date": "2026-01-15T12:51:26.789000+00:00",
+            "count_packages": 2,
+            "count_pallets": 1,
+            "is_send_aggregation": true,
+            "product_group": "milk"
+          },
+          {
+            "id_agg_session": "692854e0b1feb00b12ec7e17",
+            "line_number": 995064,
+            "name": "Сессия 389",
+            "number": 389,
+            "is_active": true,
+            "start_date": "2025-11-27T13:40:48.566000+00:00",
+            "end_date": null,
+            "count_packages": 0,
+            "count_pallets": 0,
+            "is_send_aggregation": false,
+            "product_group": "water"
+          },
+          {
+            "id_agg_session": "692851f7b1feb00b12ec7e09",
+            "line_number": 995064,
+            "name": "Сессия 388",
+            "number": 388,
+            "is_active": false,
+            "start_date": "2025-11-27T13:28:23.742000+00:00",
+            "end_date": "2025-11-27T13:40:41.907000+00:00",
+            "count_packages": 2,
+            "count_pallets": 1,
+            "is_send_aggregation": false,
+            "product_group": "water"
+          },
+          {
+            "id_agg_session": "6926cfe911e5196b7018c961",
+            "line_number": 995064,
+            "name": "Сессия 387",
+            "number": 387,
+            "is_active": false,
+            "start_date": "2025-11-26T10:01:13.032000+00:00",
+            "end_date": "2025-11-27T13:28:16.056000+00:00",
+            "count_packages": 1,
+            "count_pallets": 1,
+            "is_send_aggregation": false,
+            "product_group": "water"
+          },
+          {
+            "id_agg_session": "6926cf9e11e5196b7018c95d",
+            "line_number": 995064,
+            "name": "Сессия 386",
+            "number": 386,
+            "is_active": false,
+            "start_date": "2025-11-26T09:59:58.488000+00:00",
+            "end_date": "2025-11-26T10:01:09.258000+00:00",
+            "count_packages": 0,
+            "count_pallets": 1,
+            "is_send_aggregation": false,
+            "product_group": "water"
+          },
+          {
+            "id_agg_session": "692443bf0d8abcd03729e2d6",
+            "line_number": 994926,
+            "name": "Сессия 385",
+            "number": 385,
+            "is_active": true,
+            "start_date": "2025-11-24T11:38:39.598000+00:00",
+            "end_date": null,
+            "count_packages": 1,
+            "count_pallets": 1,
+            "is_send_aggregation": false,
+            "product_group": "water"
+          }
+        ],
+        "meta": {
+          "total_count": 366
+        }
+      }
+
+========================================================================
+TEST: tests/integration/test_aggregation_session.py::TestAggregationSessionFilter::test_get_session_detail
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/aggregation_session/hierarchy/detail
+    REQUEST BODY:
+      {
+        "id": "699595bee8218de0f52ebb66"
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "id_agg_session"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_aggregation_session.py::TestAggregationSessionCorrections::test_withdrawal_code
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/aggregation_session/withdrawal_code
+    REQUEST BODY:
+      {
+        "id": "699595bee8218de0f52ebb66",
+        "code": "010460620339973721testcode93Ab=="
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "package_code"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_aggregation_session.py::TestAggregationSessionCorrections::test_disbandment_package
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/aggregation_session/disbandment_package
+    REQUEST BODY:
+      {
+        "id": "699595bee8218de0f52ebb66",
+        "package_code": "00000000100000001"
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "package_code"
+            ],
+            "msg": "Неверный формат кода упаковки",
+            "type": "value_error"
+          },
+          {
+            "loc": [
+              "body",
+              "package_code"
+            ],
+            "msg": "Неверный формат кода упаковки",
+            "type": "value_error"
+          },
+          {
+            "loc": [
+              "body",
+              "package_code"
+            ],
+            "msg": "Неверный формат кода упаковки",
+            "type": "value_error"
+          },
+          {
+            "loc": [
+              "body",
+              "package_code"
+            ],
+            "msg": "Неверный формат кода упаковки",
+            "type": "value_error"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_chain.py::test_production_chain
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/line/create
+    REQUEST BODY:
+      {
+        "name": "Chain Test Line"
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "line_type"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          },
+          {
+            "loc": [
+              "body",
+              "product_group"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          },
+          {
+            "loc": [
+              "body",
+              "production_type"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          }
+        ]
+      }
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/work_shift/start
+    REQUEST BODY:
+      {
+        "line_number": 1,
+        "start_date": "2026-02-18T10:34:38.715600Z",
+        "is_allow_other_gtins": false,
+        "product_group": "milk",
+        "with_variable_weight": false,
+        "production_date": "2026-02-18T10:34:38.715603Z",
+        "camera_is_active": false
+      }
+    RESPONSE STATUS: 400
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "order": 100,
+            "description": "Нельзя начать новую партию. Рабочая партия уже активна"
+          }
+        ]
+      }
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/work_shift/finish
+    REQUEST BODY:
+      {
+        "id": "ed4aee89-706a-42b5-8260-ef2a4869a83a"
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "line_number"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_devices_and_printers.py::TestDeviceManagement::test_filter_devices
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/devices/filter
+    REQUEST BODY:
+      {
+        "limit": 20,
+        "offset": 0
+      }
+    RESPONSE STATUS: 200
+    RESPONSE BODY:
+      {
+        "data": [
+          {
+            "device_id": "690b23602747c6419e42fa4c",
+            "mob_device_id": "f6fb433373ba8d29",
+            "name": null,
+            "is_active": true,
+            "type": 1,
+            "registration_date": "2025-11-05T10:13:52.497000+00:00",
+            "last_active_date": "2025-11-05T10:13:52.523000+00:00"
+          },
+          {
+            "device_id": "699585dee8218de0f52ebb48",
+            "mob_device_id": "test-device-0f694a83",
+            "name": null,
+            "is_active": true,
+            "type": 1,
+            "registration_date": "2026-02-18T09:26:54.352000+00:00",
+            "last_active_date": "2026-02-18T09:26:54.352000+00:00"
+          },
+          {
+            "device_id": "699586b3e8218de0f52ebb4d",
+            "mob_device_id": "test-device-8e241b6f",
+            "name": null,
+            "is_active": true,
+            "type": 1,
+            "registration_date": "2026-02-18T09:30:27.048000+00:00",
+            "last_active_date": "2026-02-18T09:30:27.048000+00:00"
+          },
+          {
+            "device_id": "699586dae8218de0f52ebb52",
+            "mob_device_id": "test-device-94181ac9",
+            "name": null,
+            "is_active": true,
+            "type": 1,
+            "registration_date": "2026-02-18T09:31:06.864000+00:00",
+            "last_active_date": "2026-02-18T09:31:06.864000+00:00"
+          },
+          {
+            "device_id": "699588cae8218de0f52ebb57",
+            "mob_device_id": "test-device-a7e0abe9",
+            "name": null,
+            "is_active": true,
+            "type": 1,
+            "registration_date": "2026-02-18T09:39:22.926000+00:00",
+            "last_active_date": "2026-02-18T09:39:22.926000+00:00"
+          },
+          {
+            "device_id": "69959175e8218de0f52ebb5d",
+            "mob_device_id": "test-device-d9b9b7d9",
+            "name": null,
+            "is_active": true,
+            "type": 1,
+            "registration_date": "2026-02-18T10:16:21.120000+00:00",
+            "last_active_date": "2026-02-18T10:16:21.120000+00:00"
+          },
+          {
+            "device_id": "69959186e8218de0f52ebb62",
+            "mob_device_id": "test-device-28b241e1",
+            "name": null,
+            "is_active": true,
+            "type": 1,
+            "registration_date": "2026-02-18T10:16:38.965000+00:00",
+            "last_active_date": "2026-02-18T10:16:38.965000+00:00"
+          }
+        ],
+        "meta": {
+          "total_count": 7
+        }
+      }
+
+========================================================================
+TEST: tests/integration/test_devices_and_printers.py::TestDeviceManagement::test_add_device
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/devices/add
+    REQUEST BODY:
+      {
+        "mob_device_id": "test-device-cb1a334c",
+        "type": 1
+      }
+    RESPONSE STATUS: 200
+    RESPONSE BODY:
+      {
+        "data": true
+      }
+
+========================================================================
+TEST: tests/integration/test_devices_and_printers.py::TestDeviceManagement::test_block_device
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/devices/block
+    REQUEST BODY:
+      {
+        "id": "6a90d854-f9b9-422d-b0d7-4b5658418bb5"
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "device_id"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_devices_and_printers.py::TestDeviceManagement::test_delete_device
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/devices/delete
+    REQUEST BODY:
+      {
+        "id": "6a90d854-f9b9-422d-b0d7-4b5658418bb5"
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "device_id"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_devices_and_printers.py::TestPrinterManagement::test_filter_printers
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/printer/layout/filter
+    REQUEST BODY:
+      {
+        "limit": 20,
+        "offset": 0
+      }
+    RESPONSE STATUS: 200
+    RESPONSE BODY:
+      {
+        "data": [
+          {
+            "layout_id": "67d19b5e62db1f37be81f6cc",
+            "name": "КИГУ",
+            "print_type": 1,
+            "is_favorite": true
+          },
+          {
+            "layout_id": "669e582f2d6bc270aa13e893",
+            "name": "57x59 - НА УПАКОВКУ с DM, с датой производства, сроком годности, названием товара",
+            "print_type": 1,
+            "is_favorite": true
+          },
+          {
+            "layout_id": "67da6096e6b8056c0926a5c9",
+            "name": "КИГУ {kigu_code} + {kigu_view}",
+            "print_type": 1,
+            "is_favorite": true
+          },
+          {
+            "layout_id": "6156fc871c0e039def1421bb",
+            "name": "90х50, без лого, без DM",
+            "print_type": 2,
+            "is_favorite": false
+          },
+          {
+            "layout_id": "694c0b273cec504ca37f4e7a",
+            "name": "Супервейв палета КИТУ 100*80: gtin, название товара, кол-во",
+            "print_type": 1,
+            "is_favorite": false
+          },
+          {
+            "layout_id": "6854face987b70391b67a930",
+            "name": "КИГУ 59x59 - упаковка 0.25 негаз",
+            "print_type": 1,
+            "is_favorite": false
+          },
+          {
+            "layout_id": "6156fc871c0e039def1421bc",
+            "name": "90х50, лого сверху, без DM",
+            "print_type": 2,
+            "is_favorite": false
+          },
+          {
+            "layout_id": "67e3ff3cd53156166013eabf",
+            "name": "58x40 -  с датой производства,  названием товара",
+            "print_type": 1,
+            "is_favorite": false
+          },
+          {
+            "layout_id": "6854fae4987b70391b67a932",
+            "name": "КИГУ 59x59 - упаковка 0.5 негаз",
+            "print_type": 1,
+            "is_favorite": false
+          },
+          {
+            "layout_id": "6854faf1987b70391b67a933",
+            "name": "КИГУ 59x59 - упаковка 0.5 газ",
+            "print_type": 1,
+            "is_favorite": false
+          },
+          {
+            "layout_id": "67e664e819e5224d66a358e6",
+            "name": "58x40 -  палета с датой производства,  названием товара, кол-вом единиц",
+            "print_type": 1,
+            "is_favorite": false
+          },
+          {
+            "layout_id": "6854fafb987b70391b67a934",
+            "name": "КИГУ 59x59 - упаковка 0.75 негаз",
+            "print_type": 1,
+            "is_favorite": false
+          },
+          {
+            "layout_id": "694969b18fd0c66e5249806f",
+            "name": "копия 57x59 - НА УПАКОВКУ с DM, с датой производства, сроком годности, названием товара",
+            "print_type": 1,
+            "is_favorite": false
+          },
+          {
+            "layout_id": "6854fac3987b70391b67a92f",
+            "name": "Палета 59x59 с кол-вом вложений",
+            "print_type": 1,
+            "is_favorite": false
+          },
+          {
+            "layout_id": "694c171d3cec504ca37f4e8c",
+            "name": "Супервейв упаковка КИТУ 100*80: gtin, название товара, кол-во",
+            "print_type": 1,
+            "is_favorite": false
+          },
+          {
+            "layout_id": "6854fad9987b70391b67a931",
+            "name": "КИГУ 59x59 - упаковка 0.25 газ",
+            "print_type": 1,
+            "is_favorite": false
+          },
+          {
+            "layout_id": "6854fb06987b70391b67a935",
+            "name": "КИГУ 59x59 - упаковка 0.75 газ",
+            "print_type": 1,
+            "is_favorite": false
+          },
+          {
+            "layout_id": "67d952b500072d2ec46a3f4c",
+            "name": "тест кол-ва единиц в палете и названия компании",
+            "print_type": 1,
+            "is_favorite": false
+          },
+          {
+            "layout_id": "680a5026673da169ee6475c0",
+            "name": "КИГУ package_gtin",
+            "print_type": 1,
+            "is_favorite": false
+          },
+          {
+            "layout_id": "690c6168cb1e7b55ca3b535e",
+            "name": "100х80 упаковка",
+            "print_type": 1,
+            "is_favorite": false
+          }
+        ],
+        "meta": {
+          "total_count": 47
+        }
+      }
+
+========================================================================
+TEST: tests/integration/test_devices_and_printers.py::TestPrinterManagement::test_add_printer
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/printer/add
+    REQUEST BODY:
+      {
+        "name": "New Printer",
+        "ip": "192.168.1.200",
+        "port": 9100
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "printer_cups_name"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          },
+          {
+            "loc": [
+              "body",
+              "print_type"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          },
+          {
+            "loc": [
+              "body",
+              "host"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_devices_and_printers.py::TestPrinterManagement::test_send_to_print_by_gtin
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/printer/cups/send_to_print_by_gtin
+    REQUEST BODY:
+      {
+        "printer_id": "67d19b5e62db1f37be81f6cc",
+        "gtin": "04600494009044",
+        "quantity": 100
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "type"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          },
+          {
+            "loc": [
+              "body",
+              "count_codes"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          },
+          {
+            "loc": [
+              "body",
+              "count_copies"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          },
+          {
+            "loc": [
+              "body",
+              "layout_id"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_devices_and_printers.py::TestPrinterManagement::test_toggle_printer_favorite
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/printer/layout/toggle_favorite
+    REQUEST BODY:
+      {
+        "id": "67d19b5e62db1f37be81f6cc"
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "layout_id"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          },
+          {
+            "loc": [
+              "body",
+              "is_favorite"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_devices_and_printers.py::TestPrinterManagement::test_delete_printer
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/printer/delete
+    REQUEST BODY:
+      {
+        "id": "16c3810a-360a-4b42-b3d2-93f337d1155a"
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "printer_id"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_gtin_and_line.py::TestLineManagement::test_create_line
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/line/create
+    REQUEST BODY:
+      {
+        "name": "Test Line",
+        "line_type": 1,
+        "product_group": "milk",
+        "production_type": 1,
+        "pin_code": "0000",
+        "is_auto_send_report": false
+      }
+    RESPONSE STATUS: 200
+    RESPONSE BODY:
+      {
+        "data": true
+      }
+
+========================================================================
+TEST: tests/integration/test_gtin_and_line.py::TestLineManagement::test_filter_lines
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/line/filter
+    REQUEST BODY:
+      {
+        "limit": 20,
+        "offset": 0
+      }
+    RESPONSE STATUS: 200
+    RESPONSE BODY:
+      {
+        "data": [
+          {
+            "id": "61f7c1ae9c982b5c67fd16fc",
+            "line_number": 0,
+            "name": "string",
+            "is_active": false,
+            "product_group": "antiseptic",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": 0,
+            "report_to_send": [
+              1
+            ]
+          },
+          {
+            "id": "60e431f7b62082049a6aa2db",
+            "line_number": 1,
+            "name": "UpdatedLine-77386815",
+            "is_active": true,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": false,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "60eda9473d9f8c1ceea2d2a9",
+            "line_number": 2,
+            "name": "antiseptic",
+            "is_active": false,
+            "product_group": "antiseptic",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "610d0aa43d9f8c1ceea2e07d",
+            "line_number": 3,
+            "name": "water",
+            "is_active": false,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "612752c89841f9cc771c047d",
+            "line_number": 4,
+            "name": "milk223",
+            "is_active": false,
+            "product_group": "milk",
+            "production_type": 2,
+            "camera_host": "s",
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": 2,
+            "report_to_send": [
+              1
+            ]
+          },
+          {
+            "id": "612c86849c2a20539e649861",
+            "line_number": 5,
+            "name": "bio",
+            "is_active": true,
+            "product_group": "bio",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": false,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "615571229c2a20539e64a841",
+            "line_number": 6,
+            "name": "Молоко 1.5 литра",
+            "is_active": false,
+            "product_group": "milk",
+            "production_type": 1,
+            "camera_host": "192.111.1.1",
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": false,
+            "is_auto_send_report": false,
+            "count_in_report": 2,
+            "report_to_send": [
+              1
+            ]
+          },
+          {
+            "id": "61716c2c1da06c439e359711",
+            "line_number": 7,
+            "name": "Агрегация тест1",
+            "is_active": true,
+            "product_group": "water",
+            "production_type": 1,
+            "camera_host": null,
+            "line_type": 2,
+            "action_read_type": 2,
+            "is_deleted": false,
+            "is_auto_send_report": false,
+            "count_in_report": 2,
+            "report_to_send": []
+          },
+          {
+            "id": "625cf44a7a2a2a7da565e553",
+            "line_number": 14,
+            "name": "string",
+            "is_active": false,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "61a77a9609af8acf970d21ff",
+            "line_number": 19,
+            "name": "11111111114444",
+            "is_active": false,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": 10,
+            "report_to_send": [
+              1
+            ]
+          },
+          {
+            "id": "61a8ab678433114ba88c4a6d",
+            "line_number": 21,
+            "name": "beer",
+            "is_active": false,
+            "product_group": "beer",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": 2,
+            "report_to_send": [
+              1
+            ]
+          },
+          {
+            "id": "61af4ae18433114ba88c4cd2",
+            "line_number": 23,
+            "name": "1234567",
+            "is_active": false,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "61b9e87f195e0bc0d6ba0472",
+            "line_number": 25,
+            "name": "Вода 1 литр",
+            "is_active": false,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "61c04602195e0bc0d6bac9e0",
+            "line_number": 26,
+            "name": "Агрегационная линия 1",
+            "is_active": false,
+            "product_group": "antiseptic",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 2,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "61e82dff536e6a22bd20544a",
+            "line_number": 28,
+            "name": "test_mob",
+            "is_active": false,
+            "product_group": "water",
+            "production_type": 1,
+            "camera_host": null,
+            "line_type": 2,
+            "action_read_type": null,
+            "is_deleted": false,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "61e8704a536e6a22bd205471",
+            "line_number": 29,
+            "name": "Агрегация вода",
+            "is_active": true,
+            "product_group": "water",
+            "production_type": 1,
+            "camera_host": null,
+            "line_type": 2,
+            "action_read_type": 2,
+            "is_deleted": false,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "61ea84035a5d1602a3b1860a",
+            "line_number": 30,
+            "name": "Линия для молочной продукции",
+            "is_active": true,
+            "product_group": "milk",
+            "production_type": 1,
+            "camera_host": null,
+            "line_type": 2,
+            "action_read_type": 2,
+            "is_deleted": false,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "61ee42e103f0a7cb31d6b23c",
+            "line_number": 31,
+            "name": "Test_package_code_debug",
+            "is_active": false,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 2,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": 2,
+            "report_to_send": [
+              1,
+              3
+            ]
+          },
+          {
+            "id": "61ee44f203f0a7cb31d6b251",
+            "line_number": 32,
+            "name": "Test_adding_packages_to_pallet",
+            "is_active": false,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 2,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "61ee4c5dec92a8e48240ad2c",
+            "line_number": 33,
+            "name": "Test_close_session_not_full_package",
+            "is_active": false,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 2,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          }
+        ],
+        "meta": {
+          "total_count": 1157
+        }
+      }
+
+========================================================================
+TEST: tests/integration/test_gtin_and_line.py::TestLineManagement::test_filter_lines_by_product_group
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/line/filter
+    REQUEST BODY:
+      {
+        "limit": 10,
+        "offset": 0,
+        "product_group": "milk"
+      }
+    RESPONSE STATUS: 200
+    RESPONSE BODY:
+      {
+        "data": [
+          {
+            "id": "61f7c1ae9c982b5c67fd16fc",
+            "line_number": 0,
+            "name": "string",
+            "is_active": false,
+            "product_group": "antiseptic",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": 0,
+            "report_to_send": [
+              1
+            ]
+          },
+          {
+            "id": "60e431f7b62082049a6aa2db",
+            "line_number": 1,
+            "name": "UpdatedLine-77386815",
+            "is_active": true,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": false,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "60eda9473d9f8c1ceea2d2a9",
+            "line_number": 2,
+            "name": "antiseptic",
+            "is_active": false,
+            "product_group": "antiseptic",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "610d0aa43d9f8c1ceea2e07d",
+            "line_number": 3,
+            "name": "water",
+            "is_active": false,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "612752c89841f9cc771c047d",
+            "line_number": 4,
+            "name": "milk223",
+            "is_active": false,
+            "product_group": "milk",
+            "production_type": 2,
+            "camera_host": "s",
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": 2,
+            "report_to_send": [
+              1
+            ]
+          },
+          {
+            "id": "612c86849c2a20539e649861",
+            "line_number": 5,
+            "name": "bio",
+            "is_active": true,
+            "product_group": "bio",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": false,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "615571229c2a20539e64a841",
+            "line_number": 6,
+            "name": "Молоко 1.5 литра",
+            "is_active": false,
+            "product_group": "milk",
+            "production_type": 1,
+            "camera_host": "192.111.1.1",
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": false,
+            "is_auto_send_report": false,
+            "count_in_report": 2,
+            "report_to_send": [
+              1
+            ]
+          },
+          {
+            "id": "61716c2c1da06c439e359711",
+            "line_number": 7,
+            "name": "Агрегация тест1",
+            "is_active": true,
+            "product_group": "water",
+            "production_type": 1,
+            "camera_host": null,
+            "line_type": 2,
+            "action_read_type": 2,
+            "is_deleted": false,
+            "is_auto_send_report": false,
+            "count_in_report": 2,
+            "report_to_send": []
+          },
+          {
+            "id": "625cf44a7a2a2a7da565e553",
+            "line_number": 14,
+            "name": "string",
+            "is_active": false,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "61a77a9609af8acf970d21ff",
+            "line_number": 19,
+            "name": "11111111114444",
+            "is_active": false,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": 10,
+            "report_to_send": [
+              1
+            ]
+          }
+        ],
+        "meta": {
+          "total_count": 1157
+        }
+      }
+
+========================================================================
+TEST: tests/integration/test_gtin_and_line.py::TestLineManagement::test_edit_line
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/line/edit
+    REQUEST BODY:
+      {
+        "id": "eeca3221-74cf-4def-a5f3-98392b7e38d4",
+        "name": "Updated Line Name"
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "line_number"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_gtin_and_line.py::TestLineManagement::test_delete_line
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/line/delete
+    REQUEST BODY:
+      {
+        "id": "eeca3221-74cf-4def-a5f3-98392b7e38d4"
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "line_number"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_gtin_and_line.py::TestLineManagement::test_recover_line
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/line/recover
+    REQUEST BODY:
+      {
+        "id": "eeca3221-74cf-4def-a5f3-98392b7e38d4"
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "line_number"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_gtin_and_line.py::TestLineManagement::test_create_and_find_line
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/line/create
+    REQUEST BODY:
+      {
+        "name": "Integration Test Line",
+        "line_type": 1,
+        "product_group": "milk",
+        "production_type": 1,
+        "pin_code": "0000",
+        "is_auto_send_report": false
+      }
+    RESPONSE STATUS: 200
+    RESPONSE BODY:
+      {
+        "data": true
+      }
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/line/filter
+    REQUEST BODY:
+      {
+        "limit": 10,
+        "offset": 0
+      }
+    RESPONSE STATUS: 200
+    RESPONSE BODY:
+      {
+        "data": [
+          {
+            "id": "61f7c1ae9c982b5c67fd16fc",
+            "line_number": 0,
+            "name": "string",
+            "is_active": false,
+            "product_group": "antiseptic",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": 0,
+            "report_to_send": [
+              1
+            ]
+          },
+          {
+            "id": "60e431f7b62082049a6aa2db",
+            "line_number": 1,
+            "name": "UpdatedLine-77386815",
+            "is_active": true,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": false,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "60eda9473d9f8c1ceea2d2a9",
+            "line_number": 2,
+            "name": "antiseptic",
+            "is_active": false,
+            "product_group": "antiseptic",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "610d0aa43d9f8c1ceea2e07d",
+            "line_number": 3,
+            "name": "water",
+            "is_active": false,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "612752c89841f9cc771c047d",
+            "line_number": 4,
+            "name": "milk223",
+            "is_active": false,
+            "product_group": "milk",
+            "production_type": 2,
+            "camera_host": "s",
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": 2,
+            "report_to_send": [
+              1
+            ]
+          },
+          {
+            "id": "612c86849c2a20539e649861",
+            "line_number": 5,
+            "name": "bio",
+            "is_active": true,
+            "product_group": "bio",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": false,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "615571229c2a20539e64a841",
+            "line_number": 6,
+            "name": "Молоко 1.5 литра",
+            "is_active": false,
+            "product_group": "milk",
+            "production_type": 1,
+            "camera_host": "192.111.1.1",
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": false,
+            "is_auto_send_report": false,
+            "count_in_report": 2,
+            "report_to_send": [
+              1
+            ]
+          },
+          {
+            "id": "61716c2c1da06c439e359711",
+            "line_number": 7,
+            "name": "Агрегация тест1",
+            "is_active": true,
+            "product_group": "water",
+            "production_type": 1,
+            "camera_host": null,
+            "line_type": 2,
+            "action_read_type": 2,
+            "is_deleted": false,
+            "is_auto_send_report": false,
+            "count_in_report": 2,
+            "report_to_send": []
+          },
+          {
+            "id": "625cf44a7a2a2a7da565e553",
+            "line_number": 14,
+            "name": "string",
+            "is_active": false,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "61a77a9609af8acf970d21ff",
+            "line_number": 19,
+            "name": "11111111114444",
+            "is_active": false,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": 10,
+            "report_to_send": [
+              1
+            ]
+          }
+        ],
+        "meta": {
+          "total_count": 1158
+        }
+      }
+
+========================================================================
+TEST: tests/integration/test_gtin_and_line.py::TestGTINManagement::test_filter_gtin
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/gtin/filter
+    REQUEST BODY:
+      {
+        "limit": 20,
+        "offset": 0
+      }
+    RESPONSE STATUS: 200
+    RESPONSE BODY:
+      {
+        "data": [
+          {
+            "gtin": "04600494009044",
+            "good_name": "Мороженка",
+            "brand_name": "Коровка из Кореновки",
+            "is_required_vsd": true,
+            "tnved_code": "2105000000",
+            "certificate_type": 1,
+            "certificate_number": "ЕАЭС RU С-CN.АМ04.В.00391/19",
+            "certificate_date": "2022-11-21T03:00:00+00:00",
+            "is_required_variable_weight": false,
+            "variable_weight": 100.0,
+            "exp_date_delta": 12,
+            "package_gtin": null,
+            "product_group": "milk",
+            "well_number": "6666666666666666666",
+            "licences": {
+              "licence_number": "3131313131313131313131",
+              "licence_date": "2024-03-21T00:00:00+00:00"
+            },
+            "kpp": null,
+            "fias_id": null,
+            "alcohol_volume": null,
+            "tax_number": "32132133",
+            "exporter_name": "ООО \"Экспортер\"",
+            "exporter_country": "AM",
+            "owner_inn": "7724211288",
+            "producer_inn": "444444444444",
+            "is_required_certificate": true
+          },
+          {
+            "gtin": "04640043461114",
+            "good_name": "Молоко для групповой упаковки",
+            "brand_name": "Азбука сыра",
+            "is_required_vsd": true,
+            "tnved_code": "0401101000",
+            "certificate_type": 1,
+            "certificate_number": "12324234",
+            "certificate_date": "2022-11-16T03:00:00+00:00",
+            "is_required_variable_weight": false,
+            "variable_weight": 900.0,
+            "exp_date_delta": null,
+            "package_gtin": null,
+            "product_group": "milk",
+            "well_number": null,
+            "licences": null,
+            "kpp": null,
+            "fias_id": null,
+            "alcohol_volume": null,
+            "tax_number": "32132133",
+            "exporter_name": "ООО \"Экспортер\"",
+            "exporter_country": "AM",
+            "owner_inn": "7731376812",
+            "producer_inn": null,
+            "is_required_certificate": true
+          },
+          {
+            "gtin": "04640043463996",
+            "good_name": "БОТИНКИ ARMACO",
+            "brand_name": null,
+            "is_required_vsd": null,
+            "tnved_code": "6404110000",
+            "certificate_type": 2,
+            "certificate_number": "12345671",
+            "certificate_date": "2022-10-06T03:00:00+00:00",
+            "is_required_variable_weight": false,
+            "variable_weight": 0.0,
+            "exp_date_delta": 14,
+            "package_gtin": null,
+            "product_group": "shoes",
+            "well_number": null,
+            "licences": {
+              "licence_number": "2222222",
+              "licence_date": "2025-01-28T15:58:52.555000+00:00"
+            },
+            "kpp": "5555555555",
+            "fias_id": "112233445566",
+            "alcohol_volume": "40",
+            "tax_number": "32132132",
+            "exporter_name": "ООО \"Ованес\"",
+            "exporter_country": "AM",
+            "owner_inn": "7731376812",
+            "producer_inn": null,
+            "is_required_certificate": false
+          },
+          {
+            "gtin": "04600494009013",
+            "good_name": "Вода Кроки",
+            "brand_name": null,
+            "is_required_vsd": false,
+            "tnved_code": "2201101100",
+            "certificate_type": 2,
+            "certificate_number": "rt45ytgfe4t567uyjt",
+            "certificate_date": "2023-01-25T03:00:00+00:00",
+            "is_required_variable_weight": false,
+            "variable_weight": null,
+            "exp_date_delta": null,
+            "package_gtin": null,
+            "product_group": "water",
+            "well_number": "123456789",
+            "licences": {
+              "licence_number": "1254АА443343",
+              "licence_date": "2024-03-26T03:00:00+00:00"
+            },
+            "kpp": "770301001",
+            "fias_id": "cf7e18f5-925c-4926-8e07-6a2d37116502",
+            "alcohol_volume": null,
+            "tax_number": "32132132",
+            "exporter_name": "ООО \"Ованес\"",
+            "exporter_country": "AM",
+            "owner_inn": "7724211288",
+            "producer_inn": "7724211288",
+            "is_required_certificate": true
+          },
+          {
+            "gtin": "04600433600622",
+            "good_name": "Вода минеральная природная столовая питьевая Кубай негазированная",
+            "brand_name": "Кубай",
+            "is_required_vsd": null,
+            "tnved_code": "2201101100",
+            "certificate_type": null,
+            "certificate_number": null,
+            "certificate_date": null,
+            "is_required_variable_weight": false,
+            "variable_weight": 5000.0,
+            "exp_date_delta": null,
+            "package_gtin": null,
+            "product_group": "water",
+            "well_number": null,
+            "licences": null,
+            "kpp": null,
+            "fias_id": null,
+            "alcohol_volume": null,
+            "tax_number": "321",
+            "exporter_name": "abcd",
+            "exporter_country": "AM",
+            "owner_inn": null,
+            "producer_inn": null,
+            "is_required_certificate": true
+          },
+          {
+            "gtin": "04600494008641",
+            "good_name": "Очень хочется в Италию",
+            "brand_name": "ЦРПТ 3",
+            "is_required_vsd": false,
+            "tnved_code": "0406906100",
+            "certificate_type": null,
+            "certificate_number": "ЕАЭС RU С-CN.НР15.А.01110/20",
+            "certificate_date": null,
+            "is_required_variable_weight": false,
+            "variable_weight": 3000.0,
+            "exp_date_delta": null,
+            "package_gtin": null,
+            "product_group": "milk",
+            "well_number": null,
+            "licences": null,
+            "kpp": null,
+            "fias_id": null,
+            "alcohol_volume": null,
+            "tax_number": "321234434",
+            "exporter_name": "abcd",
+            "exporter_country": "AM",
+            "owner_inn": "7726739740",
+            "producer_inn": null,
+            "is_required_certificate": true
+          },
+          {
+            "gtin": "03456789873699",
+            "good_name": "Экземпляр 1, вода Честный знак",
+            "brand_name": "Честный Знак",
+            "is_required_vsd": null,
+            "tnved_code": "2201101900",
+            "certificate_type": 1,
+            "certificate_number": "документ№1",
+            "certificate_date": "2022-11-30T03:00:00+00:00",
+            "is_required_variable_weight": false,
+            "variable_weight": 1000.0,
+            "exp_date_delta": null,
+            "package_gtin": null,
+            "product_group": "water",
+            "well_number": "9875555",
+            "licences": {
+              "licence_number": "8888811111",
+              "licence_date": "2024-04-04T00:00:00+00:00"
+            },
+            "kpp": null,
+            "fias_id": null,
+            "alcohol_volume": null,
+            "tax_number": "321",
+            "exporter_name": "abcd",
+            "exporter_country": "AM",
+            "owner_inn": "7724211288",
+            "producer_inn": "7731376812",
+            "is_required_certificate": true
+          },
+          {
+            "gtin": "04607980207724",
+            "good_name": "Вода минеральная К",
+            "brand_name": "Мой знак",
+            "is_required_vsd": null,
+            "tnved_code": "2201101100",
+            "certificate_type": 1,
+            "certificate_number": "iuhjkiy7hjkioujou8",
+            "certificate_date": "2023-01-24T15:56:58.714000+00:00",
+            "is_required_variable_weight": false,
+            "variable_weight": 1000.0,
+            "exp_date_delta": null,
+            "package_gtin": null,
+            "product_group": "water",
+            "well_number": null,
+            "licences": null,
+            "kpp": null,
+            "fias_id": null,
+            "alcohol_volume": null,
+            "tax_number": "32123424",
+            "exporter_name": "abcd",
+            "exporter_country": "AM",
+            "owner_inn": "7731376812",
+            "producer_inn": null,
+            "is_required_certificate": true
+          },
+          {
+            "gtin": "04607980207786",
+            "good_name": "Маслице",
+            "brand_name": "ЧЕСТНЫЙ МАСЛОДЕЛ",
+            "is_required_vsd": true,
+            "tnved_code": "0405101900",
+            "certificate_type": null,
+            "certificate_number": null,
+            "certificate_date": null,
+            "is_required_variable_weight": false,
+            "variable_weight": 500.0,
+            "exp_date_delta": null,
+            "package_gtin": null,
+            "product_group": "milk",
+            "well_number": null,
+            "licences": null,
+            "kpp": null,
+            "fias_id": null,
+            "alcohol_volume": null,
+            "tax_number": "321234434",
+            "exporter_name": "abcd",
+            "exporter_country": "AM",
+            "owner_inn": "7731376812",
+            "producer_inn": null,
+            "is_required_certificate": true
+          },
+          {
+            "gtin": "04607980207922",
+            "good_name": "Вода минеральная",
+            "brand_name": "вода минеральная газированная вкусная 1,5 л",
+            "is_required_vsd": false,
+            "tnved_code": "2201101100",
+            "certificate_type": 1,
+            "certificate_number": "12345",
+            "certificate_date": "2023-09-01T03:00:00+00:00",
+            "is_required_variable_weight": false,
+            "variable_weight": 500000.0,
+            "exp_date_delta": null,
+            "package_gtin": [
+              "04607980207900"
+            ],
+            "product_group": "water",
+            "well_number": "567",
+            "licences": {
+              "licence_number": "АА32325232",
+              "licence_date": "2024-01-01T00:00:00+00:00"
+            },
+            "kpp": null,
+            "fias_id": null,
+            "alcohol_volume": null,
+            "tax_number": "321",
+            "exporter_name": "abcd",
+            "exporter_country": "AM",
+            "owner_inn": "7731376812",
+            "producer_inn": null,
+            "is_required_certificate": true
+          },
+          {
+            "gtin": "04647297654873",
+            "good_name": "Витаминки",
+            "brand_name": "Тестй",
+            "is_required_vsd": null,
+            "tnved_code": "2936290009",
+            "certificate_type": 1,
+            "certificate_number": "number doc",
+            "certificate_date": "2022-11-17T06:00:00+00:00",
+            "is_required_variable_weight": false,
+            "variable_weight": 5.0,
+            "exp_date_delta": null,
+            "package_gtin": null,
+            "product_group": "bio",
+            "well_number": null,
+            "licences": null,
+            "kpp": null,
+            "fias_id": null,
+            "alcohol_volume": null,
+            "tax_number": "321",
+            "exporter_name": "abcd",
+            "exporter_country": "AM",
+            "owner_inn": "7731376812",
+            "producer_inn": null,
+            "is_required_certificate": false
+          },
+          {
+            "gtin": "04607980207656",
+            "good_name": "Гель антисептический",
+            "brand_name": "нет",
+            "is_required_vsd": null,
+            "tnved_code": "3808949000",
+            "certificate_type": 2,
+            "certificate_number": "123456",
+            "certificate_date": "2023-09-19T03:00:00+00:00",
+            "is_required_variable_weight": false,
+            "variable_weight": null,
+            "exp_date_delta": null,
+            "package_gtin": [
+              "001"
+            ],
+            "product_group": "antiseptic",
+            "well_number": null,
+            "licences": null,
+            "kpp": null,
+            "fias_id": null,
+            "alcohol_volume": null,
+            "tax_number": "321",
+            "exporter_name": "abcd",
+            "exporter_country": "AM",
+            "owner_inn": "7731376812",
+            "producer_inn": null,
+            "is_required_certificate": true
+          },
+          {
+            "gtin": "04647297654767",
+            "good_name": "Анти гель",
+            "brand_name": "Тест",
+            "is_required_vsd": null,
+            "tnved_code": "3808949000",
+            "certificate_type": 1,
+            "certificate_number": "2345678",
+            "certificate_date": "2023-06-19T03:00:00+00:00",
+            "is_required_variable_weight": false,
+            "variable_weight": null,
+            "exp_date_delta": null,
+            "package_gtin": null,
+            "product_group": "antiseptic",
+            "well_number": null,
+            "licences": null,
+            "kpp": null,
+            "fias_id": null,
+            "alcohol_volume": null,
+            "tax_number": "321",
+            "exporter_name": "abcd",
+            "exporter_country": "AM",
+            "owner_inn": "7731376812",
+            "producer_inn": null,
+            "is_required_certificate": true
+          },
+          {
+            "gtin": "04647297654781",
+            "good_name": "Вита",
+            "brand_name": "Тестй",
+            "is_required_vsd": null,
+            "tnved_code": "2936290009",
+            "certificate_type": 1,
+            "certificate_number": "ЕАЭС RU С-RU.АЕ56.В.00019/19",
+            "certificate_date": "2023-03-14T03:00:00+00:00",
+            "is_required_variable_weight": false,
+            "variable_weight": 50.0,
+            "exp_date_delta": null,
+            "package_gtin": null,
+            "product_group": "bio",
+            "well_number": null,
+            "licences": null,
+            "kpp": null,
+            "fias_id": null,
+            "alcohol_volume": null,
+            "tax_number": "321",
+            "exporter_name": "abcd",
+            "exporter_country": "AM",
+            "owner_inn": "7731376812",
+            "producer_inn": null,
+            "is_required_certificate": false
+          },
+          {
+            "gtin": "04669318392939",
+            "good_name": "Антисептики",
+            "brand_name": "тест бренд",
+            "is_required_vsd": null,
+            "tnved_code": "3808949000",
+            "certificate_type": 1,
+            "certificate_number": "12345678/010823/1234567",
+            "certificate_date": "2023-08-16T03:00:00+00:00",
+            "is_required_variable_weight": false,
+            "variable_weight": null,
+            "exp_date_delta": null,
+            "package_gtin": null,
+            "product_group": "antiseptic",
+            "well_number": null,
+            "licences": null,
+            "kpp": null,
+            "fias_id": null,
+            "alcohol_volume": null,
+            "tax_number": "321",
+            "exporter_name": "abcd",
+            "exporter_country": "AM",
+            "owner_inn": "7731376812",
+            "producer_inn": null,
+            "is_required_certificate": true
+          },
+          {
+            "gtin": "04647297654910",
+            "good_name": "Вода",
+            "brand_name": "тест бренд",
+            "is_required_vsd": null,
+            "tnved_code": "2201109000",
+            "certificate_type": 2,
+            "certificate_number": "ЕАЭС N RU Д-RU.РА01.В.50673/21",
+            "certificate_date": "2023-01-25T07:00:00+00:00",
+            "is_required_variable_weight": false,
+            "variable_weight": 15000.0,
+            "exp_date_delta": 365,
+            "package_gtin": null,
+            "product_group": "water",
+            "well_number": "111",
+            "licences": {
+              "licence_number": "123ВВ12345111а",
+              "licence_date": "2024-07-10T00:00:00+00:00"
+            },
+            "kpp": "132132135",
+            "fias_id": null,
+            "alcohol_volume": null,
+            "tax_number": "321123124",
+            "exporter_name": "abcdd",
+            "exporter_country": "KZ",
+            "owner_inn": "7731376812",
+            "producer_inn": "7724211288",
+            "is_required_certificate": false
+          },
+          {
+            "gtin": "04607980207113",
+            "good_name": "TRUSSARDI PARFUMS / TRUSSARDI UOMO THE RED men (тестер) 100 мл туалетная вода",
+            "brand_name": "TRUSSARDI",
+            "is_required_vsd": null,
+            "tnved_code": "3303000000",
+            "certificate_type": 1,
+            "certificate_number": "12345",
+            "certificate_date": "2022-11-16T03:00:00+00:00",
+            "is_required_variable_weight": false,
+            "variable_weight": 100.0,
+            "exp_date_delta": null,
+            "package_gtin": null,
+            "product_group": "perfumery",
+            "well_number": null,
+            "licences": null,
+            "kpp": null,
+            "fias_id": null,
+            "alcohol_volume": null,
+            "tax_number": "321",
+            "exporter_name": "abcd",
+            "exporter_country": "AM",
+            "owner_inn": "7731376812",
+            "producer_inn": null,
+            "is_required_certificate": true
+          },
+          {
+            "gtin": "04669318392526",
+            "good_name": "Честная вода",
+            "brand_name": null,
+            "is_required_vsd": false,
+            "tnved_code": "2201101100",
+            "certificate_type": 2,
+            "certificate_number": "ЕАЭС N RU Д-RU.РА01.В.50673/21",
+            "certificate_date": "2023-03-01T03:00:00+00:00",
+            "is_required_variable_weight": false,
+            "variable_weight": 500.0,
+            "exp_date_delta": 365,
+            "package_gtin": [
+              "04669318392540"
+            ],
+            "product_group": "water",
+            "well_number": "17",
+            "licences": {
+              "licence_number": "МОС06318ВЭ",
+              "licence_date": "2024-01-01T03:00:00+00:00"
+            },
+            "kpp": null,
+            "fias_id": null,
+            "alcohol_volume": null,
+            "tax_number": "32112343",
+            "exporter_name": "Ромашка",
+            "exporter_country": "BY",
+            "owner_inn": "7731376812",
+            "producer_inn": "7731376812",
+            "is_required_certificate": true
+          },
+          {
+            "gtin": "04640043461343",
+            "good_name": "Полотенце Элиза коричневый 40*60",
+            "brand_name": "600534",
+            "is_required_vsd": null,
+            "tnved_code": null,
+            "certificate_type": 1,
+            "certificate_number": "32324234",
+            "certificate_date": "2022-01-01T03:00:00+00:00",
+            "is_required_variable_weight": false,
+            "variable_weight": null,
+            "exp_date_delta": null,
+            "package_gtin": null,
+            "product_group": "lp",
+            "well_number": null,
+            "licences": null,
+            "kpp": null,
+            "fias_id": null,
+            "alcohol_volume": null,
+            "tax_number": "321",
+            "exporter_name": "abcd",
+            "exporter_country": "AM",
+            "owner_inn": "7731376812",
+            "producer_inn": null,
+            "is_required_certificate": true
+          },
+          {
+            "gtin": "04607980207199",
+            "good_name": "Комплекты постельного белья",
+            "brand_name": "\"Постелька\"",
+            "is_required_vsd": null,
+            "tnved_code": "6302100001",
+            "certificate_type": null,
+            "certificate_number": null,
+            "certificate_date": null,
+            "is_required_variable_weight": false,
+            "variable_weight": null,
+            "exp_date_delta": null,
+            "package_gtin": null,
+            "product_group": "lp",
+            "well_number": null,
+            "licences": null,
+            "kpp": null,
+            "fias_id": null,
+            "alcohol_volume": null,
+            "tax_number": "321",
+            "exporter_name": "abcd",
+            "exporter_country": "AM",
+            "owner_inn": "7731376812",
+            "producer_inn": null,
+            "is_required_certificate": true
+          }
+        ],
+        "meta": {
+          "total_count": 133
+        }
+      }
+
+========================================================================
+TEST: tests/integration/test_gtin_and_line.py::TestGTINManagement::test_add_gtin
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/gtin/add_many
+    REQUEST BODY:
+      {
+        "gtins": [
+          "04606203399737"
+        ]
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "data"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_gtin_and_line.py::TestGTINManagement::test_edit_gtin
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/gtin/edit
+    REQUEST BODY:
+      {
+        "gtin": "04606203399737",
+        "name": "Updated Product Name"
+      }
+    RESPONSE STATUS: 400
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "order": 1,
+            "description": "Данные не найдены"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_gtin_and_line.py::TestGTINManagement::test_delete_gtin
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/gtin/delete
+    REQUEST BODY:
+      {
+        "gtin": "04606203399737"
+      }
+    RESPONSE STATUS: 400
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "order": 1,
+            "description": "Данные не найдены"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_gtin_and_line.py::TestGTINManagement::test_filter_gtin_by_product_group
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/gtin/filter
+    REQUEST BODY:
+      {
+        "limit": 10,
+        "offset": 0,
+        "product_group": "milk"
+      }
+    RESPONSE STATUS: 200
+    RESPONSE BODY:
+      {
+        "data": [
+          {
+            "gtin": "04600494009044",
+            "good_name": "Мороженка",
+            "brand_name": "Коровка из Кореновки",
+            "is_required_vsd": true,
+            "tnved_code": "2105000000",
+            "certificate_type": 1,
+            "certificate_number": "ЕАЭС RU С-CN.АМ04.В.00391/19",
+            "certificate_date": "2022-11-21T03:00:00+00:00",
+            "is_required_variable_weight": false,
+            "variable_weight": 100.0,
+            "exp_date_delta": 12,
+            "package_gtin": null,
+            "product_group": "milk",
+            "well_number": "6666666666666666666",
+            "licences": {
+              "licence_number": "3131313131313131313131",
+              "licence_date": "2024-03-21T00:00:00+00:00"
+            },
+            "kpp": null,
+            "fias_id": null,
+            "alcohol_volume": null,
+            "tax_number": "32132133",
+            "exporter_name": "ООО \"Экспортер\"",
+            "exporter_country": "AM",
+            "owner_inn": "7724211288",
+            "producer_inn": "444444444444",
+            "is_required_certificate": true
+          },
+          {
+            "gtin": "04640043461114",
+            "good_name": "Молоко для групповой упаковки",
+            "brand_name": "Азбука сыра",
+            "is_required_vsd": true,
+            "tnved_code": "0401101000",
+            "certificate_type": 1,
+            "certificate_number": "12324234",
+            "certificate_date": "2022-11-16T03:00:00+00:00",
+            "is_required_variable_weight": false,
+            "variable_weight": 900.0,
+            "exp_date_delta": null,
+            "package_gtin": null,
+            "product_group": "milk",
+            "well_number": null,
+            "licences": null,
+            "kpp": null,
+            "fias_id": null,
+            "alcohol_volume": null,
+            "tax_number": "32132133",
+            "exporter_name": "ООО \"Экспортер\"",
+            "exporter_country": "AM",
+            "owner_inn": "7731376812",
+            "producer_inn": null,
+            "is_required_certificate": true
+          },
+          {
+            "gtin": "04600494008641",
+            "good_name": "Очень хочется в Италию",
+            "brand_name": "ЦРПТ 3",
+            "is_required_vsd": false,
+            "tnved_code": "0406906100",
+            "certificate_type": null,
+            "certificate_number": "ЕАЭС RU С-CN.НР15.А.01110/20",
+            "certificate_date": null,
+            "is_required_variable_weight": false,
+            "variable_weight": 3000.0,
+            "exp_date_delta": null,
+            "package_gtin": null,
+            "product_group": "milk",
+            "well_number": null,
+            "licences": null,
+            "kpp": null,
+            "fias_id": null,
+            "alcohol_volume": null,
+            "tax_number": "321234434",
+            "exporter_name": "abcd",
+            "exporter_country": "AM",
+            "owner_inn": "7726739740",
+            "producer_inn": null,
+            "is_required_certificate": true
+          },
+          {
+            "gtin": "04607980207786",
+            "good_name": "Маслице",
+            "brand_name": "ЧЕСТНЫЙ МАСЛОДЕЛ",
+            "is_required_vsd": true,
+            "tnved_code": "0405101900",
+            "certificate_type": null,
+            "certificate_number": null,
+            "certificate_date": null,
+            "is_required_variable_weight": false,
+            "variable_weight": 500.0,
+            "exp_date_delta": null,
+            "package_gtin": null,
+            "product_group": "milk",
+            "well_number": null,
+            "licences": null,
+            "kpp": null,
+            "fias_id": null,
+            "alcohol_volume": null,
+            "tax_number": "321234434",
+            "exporter_name": "abcd",
+            "exporter_country": "AM",
+            "owner_inn": "7731376812",
+            "producer_inn": null,
+            "is_required_certificate": true
+          },
+          {
+            "gtin": "04648349498834",
+            "good_name": "Сгущенка \"Коровушка\"",
+            "brand_name": "Proud Ostrich",
+            "is_required_vsd": false,
+            "tnved_code": "0402109900",
+            "certificate_type": 1,
+            "certificate_number": "12345678/290523/1234567",
+            "certificate_date": "2023-08-01T03:00:00+00:00",
+            "is_required_variable_weight": false,
+            "variable_weight": 900.0,
+            "exp_date_delta": null,
+            "package_gtin": null,
+            "product_group": "milk",
+            "well_number": null,
+            "licences": null,
+            "kpp": null,
+            "fias_id": null,
+            "alcohol_volume": null,
+            "tax_number": "321",
+            "exporter_name": "abcd",
+            "exporter_country": "AM",
+            "owner_inn": "7731376812",
+            "producer_inn": null,
+            "is_required_certificate": true
+          },
+          {
+            "gtin": "04648349498155",
+            "good_name": "Молоко молоко",
+            "brand_name": "Молочная Страна",
+            "is_required_vsd": false,
+            "tnved_code": "0401301100",
+            "certificate_type": 2,
+            "certificate_number": "456",
+            "certificate_date": "2022-11-02T03:00:00+00:00",
+            "is_required_variable_weight": true,
+            "variable_weight": 5000.0,
+            "exp_date_delta": null,
+            "package_gtin": null,
+            "product_group": "milk",
+            "well_number": null,
+            "licences": null,
+            "kpp": null,
+            "fias_id": null,
+            "alcohol_volume": null,
+            "tax_number": "321",
+            "exporter_name": "abcd",
+            "exporter_country": "AM",
+            "owner_inn": "7731376812",
+            "producer_inn": null,
+            "is_required_certificate": true
+          },
+          {
+            "gtin": "09475623034540",
+            "good_name": "Голубой сыр с переменным весом",
+            "brand_name": "Новый Сыр",
+            "is_required_vsd": false,
+            "tnved_code": "0406409000",
+            "certificate_type": 1,
+            "certificate_number": null,
+            "certificate_date": null,
+            "is_required_variable_weight": false,
+            "variable_weight": 500.0,
+            "exp_date_delta": null,
+            "package_gtin": null,
+            "product_group": "milk",
+            "well_number": null,
+            "licences": null,
+            "kpp": null,
+            "fias_id": null,
+            "alcohol_volume": null,
+            "tax_number": "321",
+            "exporter_name": "abcd",
+            "exporter_country": "AM",
+            "owner_inn": "7731376812",
+            "producer_inn": null,
+            "is_required_certificate": true
+          },
+          {
+            "gtin": "04750025897227",
+            "good_name": "Еще сыр",
+            "brand_name": "EKSELENCE",
+            "is_required_vsd": true,
+            "tnved_code": "0406103000",
+            "certificate_type": null,
+            "certificate_number": null,
+            "certificate_date": null,
+            "is_required_variable_weight": false,
+            "variable_weight": 1000.0,
+            "exp_date_delta": null,
+            "package_gtin": null,
+            "product_group": "milk",
+            "well_number": null,
+            "licences": null,
+            "kpp": null,
+            "fias_id": null,
+            "alcohol_volume": null,
+            "tax_number": "321",
+            "exporter_name": "abcd",
+            "exporter_country": "AM",
+            "owner_inn": "7731376812",
+            "producer_inn": null,
+            "is_required_certificate": true
+          },
+          {
+            "gtin": "04600494008887",
+            "good_name": "Молоко с упаковкой",
+            "brand_name": null,
+            "is_required_vsd": null,
+            "tnved_code": null,
+            "certificate_type": null,
+            "certificate_number": null,
+            "certificate_date": null,
+            "is_required_variable_weight": false,
+            "variable_weight": null,
+            "exp_date_delta": null,
+            "package_gtin": null,
+            "product_group": "milk",
+            "well_number": null,
+            "licences": null,
+            "kpp": null,
+            "fias_id": null,
+            "alcohol_volume": null,
+            "tax_number": "321",
+            "exporter_name": "abcd",
+            "exporter_country": "AM",
+            "owner_inn": null,
+            "producer_inn": null,
+            "is_required_certificate": true
+          },
+          {
+            "gtin": "08501479170611",
+            "good_name": "Молоко 3,2%",
+            "brand_name": null,
+            "is_required_vsd": null,
+            "tnved_code": "0401201109",
+            "certificate_type": null,
+            "certificate_number": null,
+            "certificate_date": null,
+            "is_required_variable_weight": false,
+            "variable_weight": 900.0,
+            "exp_date_delta": null,
+            "package_gtin": null,
+            "product_group": "milk",
+            "well_number": null,
+            "licences": null,
+            "kpp": null,
+            "fias_id": null,
+            "alcohol_volume": null,
+            "tax_number": "321",
+            "exporter_name": "abcd",
+            "exporter_country": "AM",
+            "owner_inn": "7731376812",
+            "producer_inn": null,
+            "is_required_certificate": true
+          }
+        ],
+        "meta": {
+          "total_count": 20
+        }
+      }
+
+========================================================================
+TEST: tests/integration/test_line_management.py::test_create_and_find_line
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/line/create
+    REQUEST BODY:
+      {
+        "name": "Test Line",
+        "line_type": 1,
+        "product_group": "milk",
+        "production_type": 1,
+        "pin_code": "0000",
+        "is_auto_send_report": false
+      }
+    RESPONSE STATUS: 200
+    RESPONSE BODY:
+      {
+        "data": true
+      }
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/line/filter
+    REQUEST BODY:
+      {
+        "skip": 0,
+        "limit": 10
+      }
+    RESPONSE STATUS: 200
+    RESPONSE BODY:
+      {
+        "data": [
+          {
+            "id": "61f7c1ae9c982b5c67fd16fc",
+            "line_number": 0,
+            "name": "string",
+            "is_active": false,
+            "product_group": "antiseptic",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": 0,
+            "report_to_send": [
+              1
+            ]
+          },
+          {
+            "id": "60e431f7b62082049a6aa2db",
+            "line_number": 1,
+            "name": "UpdatedLine-77386815",
+            "is_active": true,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": false,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "60eda9473d9f8c1ceea2d2a9",
+            "line_number": 2,
+            "name": "antiseptic",
+            "is_active": false,
+            "product_group": "antiseptic",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "610d0aa43d9f8c1ceea2e07d",
+            "line_number": 3,
+            "name": "water",
+            "is_active": false,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "612752c89841f9cc771c047d",
+            "line_number": 4,
+            "name": "milk223",
+            "is_active": false,
+            "product_group": "milk",
+            "production_type": 2,
+            "camera_host": "s",
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": 2,
+            "report_to_send": [
+              1
+            ]
+          },
+          {
+            "id": "612c86849c2a20539e649861",
+            "line_number": 5,
+            "name": "bio",
+            "is_active": true,
+            "product_group": "bio",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": false,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "615571229c2a20539e64a841",
+            "line_number": 6,
+            "name": "Молоко 1.5 литра",
+            "is_active": false,
+            "product_group": "milk",
+            "production_type": 1,
+            "camera_host": "192.111.1.1",
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": false,
+            "is_auto_send_report": false,
+            "count_in_report": 2,
+            "report_to_send": [
+              1
+            ]
+          },
+          {
+            "id": "61716c2c1da06c439e359711",
+            "line_number": 7,
+            "name": "Агрегация тест1",
+            "is_active": true,
+            "product_group": "water",
+            "production_type": 1,
+            "camera_host": null,
+            "line_type": 2,
+            "action_read_type": 2,
+            "is_deleted": false,
+            "is_auto_send_report": false,
+            "count_in_report": 2,
+            "report_to_send": []
+          },
+          {
+            "id": "625cf44a7a2a2a7da565e553",
+            "line_number": 14,
+            "name": "string",
+            "is_active": false,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": null,
+            "report_to_send": null
+          },
+          {
+            "id": "61a77a9609af8acf970d21ff",
+            "line_number": 19,
+            "name": "11111111114444",
+            "is_active": false,
+            "product_group": "water",
+            "production_type": 2,
+            "camera_host": null,
+            "line_type": 1,
+            "action_read_type": null,
+            "is_deleted": true,
+            "is_auto_send_report": false,
+            "count_in_report": 10,
+            "report_to_send": [
+              1
+            ]
+          }
+        ],
+        "meta": {
+          "total_count": 1159
+        }
+      }
+
+========================================================================
+TEST: tests/integration/test_orders.py::TestOrderCreation::test_create_order
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/network_proxy/api/network/v1/orders
+    REQUEST BODY:
+      {
+        "gtin": "04606203399737",
+        "quantity": 1000,
+        "serviceProviderId": "e6d58ea7-100f-44c0-a495-319ff59ebfae"
+      }
+    RESPONSE STATUS: 400
+    RESPONSE BODY:
+      {
+        "type": "about:blank",
+        "title": "Bad Request",
+        "status": 400,
+        "detail": "Invalid request content.",
+        "instance": "/api/network/v1/orders"
+      }
+
+========================================================================
+TEST: tests/integration/test_orders.py::TestOrderCreation::test_create_order_invalid_gtin
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/network_proxy/api/network/v1/orders
+    REQUEST BODY:
+      {
+        "gtin": "INVALID",
+        "quantity": 1000
+      }
+    RESPONSE STATUS: 400
+    RESPONSE BODY:
+      {
+        "type": "about:blank",
+        "title": "Bad Request",
+        "status": 400,
+        "detail": "Invalid request content.",
+        "instance": "/api/network/v1/orders"
+      }
+
+========================================================================
+TEST: tests/integration/test_orders.py::TestOrderCreation::test_create_order_zero_quantity
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/network_proxy/api/network/v1/orders
+    REQUEST BODY:
+      {
+        "gtin": "04606203399737",
+        "quantity": 0
+      }
+    RESPONSE STATUS: 400
+    RESPONSE BODY:
+      {
+        "type": "about:blank",
+        "title": "Bad Request",
+        "status": 400,
+        "detail": "Invalid request content.",
+        "instance": "/api/network/v1/orders"
+      }
+
+========================================================================
+TEST: tests/integration/test_orders.py::TestOrderRetrieval::test_get_order_by_id
+========================================================================
+
+  ► GET  https://spp-dev.smartpack.world/api/network_proxy/api/network/v1/download/order?id=c001d1b6-464c-468a-a971-6051b24f57f5
+    RESPONSE STATUS: 400
+    RESPONSE BODY:
+      {
+        "type": "about:blank",
+        "title": "Bad Request",
+        "status": 400,
+        "detail": "Required parameter 'orderId' is not present.",
+        "instance": "/api/network/v1/download/order"
+      }
+
+========================================================================
+TEST: tests/integration/test_orders.py::TestOrderRetrieval::test_get_approvable_orders
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/network_proxy/api/network/v1/orders/approvable
+    REQUEST BODY:
+      {
+        "limit": 10,
+        "offset": 0
+      }
+    RESPONSE STATUS: 200
+    RESPONSE BODY:
+      [
+        {
+          "id": "649b7a60-c53f-4072-933e-895199c1b191",
+          "createdTimestamp": "2025-10-10 09:15:00",
+          "gtin": "04647297654910",
+          "totalQuantity": 100,
+          "left": 100,
+          "areaName": "СП Алхазов",
+          "issuerAreaName": "ООО \"Оператор-ЦРПТ\""
+        }
+      ]
+
+========================================================================
+TEST: tests/integration/test_orders.py::TestOrderRetrieval::test_get_order_form_data
+========================================================================
+
+  ► GET  https://spp-dev.smartpack.world/api/network_proxy/api/network/v1/orders/form-data
+    RESPONSE STATUS: 200
+    RESPONSE BODY:
+      {
+        "availableContractAreas": [
+          {
+            "value": "75547caf-1747-43eb-be55-d99917f8bfe5",
+            "label": "testig service provider",
+            "issuer": false
+          },
+          {
+            "value": "7fcb2296-8418-42cf-b742-519c1e9bb419",
+            "label": "BY(Иностранец 7 7730255879)",
+            "issuer": false
+          },
+          {
+            "value": "58748044-2788-46b4-a403-f1fa1cc227be",
+            "label": "СП Алхазов",
+            "issuer": false
+          },
+          {
+            "value": "836d9bd9-ab5f-4af2-94f5-fa9744a25bfe",
+            "label": "ООО \"СПТСервис\"",
+            "issuer": false
+          },
+          {
+            "value": "936a30e5-5c42-46a1-af67-26de7f4da3ec",
+            "label": "BY(Иностранец 1 7730255879)",
+            "issuer": false
+          },
+          {
+            "value": "f77e7246-5bfd-43cc-a4d8-6660a39af456",
+            "label": "ООО \"БОГАТЫРЬ 16 ИЗ 33\"\t",
+            "issuer": false
+          },
+          {
+            "value": "f467dc0b-9fb4-4378-ad82-6724a509862a",
+            "label": "Иностранец 2",
+            "issuer": false
+          },
+          {
+            "value": "26bd92cb-bd2b-444e-ad63-e2697a23916e",
+            "label": "\tДемо СП \"ТРЕКМАРК\"",
+            "issuer": false
+          },
+          {
+            "value": "a79d86bd-e338-41e8-bdf2-86d874f48954",
+            "label": "BY(Иностранец 8 7730255879)",
+            "issuer": false
+          },
+          {
+            "value": "c591b346-de65-46db-bf32-c8393bfabc19",
+            "label": "BY(Иностранец 6 7730255879)",
+            "issuer": false
+          },
+          {
+            "value": "0eba5c3c-dcb4-4712-a831-3530b0c28518",
+            "label": "Иностранец 4",
+            "issuer": false
+          },
+          {
+            "value": "6f92fdd0-a1cf-4443-afe7-d8994ff45035",
+            "label": "BY(Иностранец 10 7730255879)",
+            "issuer": false
+          },
+          {
+            "value": "82c7ebd9-5892-47cf-9632-e1b1de1c5f10",
+            "label": "BY(Иностранец 9 7730255879)",
+            "issuer": false
+          },
+          {
+            "value": "094286e9-c661-494e-bdda-67139fab8cc5",
+            "label": "BY(Иностранец 3 7730255879)",
+            "issuer": false
+          },
+          {
+            "value": "25547caf-1747-43eb-be55-d99917f8bfe3",
+            "label": "ООО \"Счастье\"",
+            "issuer": false
+          },
+          {
+            "value": "15a5c520-7e9f-49f9-866a-d8a7f051a6b8",
+            "label": "Иностранец 5",
+            "issuer": false
+          },
+          {
+            "value": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "label": "ООО \"Оператор-ЦРПТ\"",
+            "issuer": true
+          }
+        ],
+        "orderStatuses": [
+          "UNCHECKED",
+          "NEED_APPROVEMENT",
+          "PENDING",
+          "NEED_SIGNING",
+          "SENT_SIGNING",
+          "REJECTED_MANUAL",
+          "DECLINED",
+          "READY_TO_SEND",
+          "EMISSION",
+          "READY",
+          "PRINTING",
+          "CLOSED"
+        ],
+        "productGroups": [
+          "conserve",
+          "carparts",
+          "gadgets",
+          "radio",
+          "electronics",
+          "homeware",
+          "petfood",
+          "cableraw",
+          "books",
+          "toys",
+          "wheelchairs",
+          "tires",
+          "chemistry",
+          "vegetableoil",
+          "autofluids",
+          "milk",
+          "tobacco",
+          "antiseptic",
+          "perfumery",
+          "fertilizers",
+          "water",
+          "meat",
+          "lp",
+          "fire",
+          "grocery",
+          "construction",
+          "shoes",
+          "opticfiber",
+          "polymer",
+          "sweets",
+          "furs",
+          "bio",
+          "softdrinks",
+          "nabeer",
+          "heater",
+          "vetpharma",
+          "beer",
+          "seafood",
+          "nicotindev",
+          "ncp",
+          "otp",
+          "bicycle",
+          "titan"
+        ],
+        "ownerAreas": [
+          {
+            "id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "name": "ООО \"Оператор-ЦРПТ\"",
+            "issuer": false,
+            "hide": false,
+            "tin": "7731376812"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_orders.py::TestOrderRetrieval::test_get_order_statistics
+========================================================================
+
+  ► GET  https://spp-dev.smartpack.world/api/network_proxy/api/network/v1/orders/statistics
+    RESPONSE STATUS: 200
+    RESPONSE BODY:
+      {
+        "totalCodes": 658953925
+      }
+
+========================================================================
+TEST: tests/integration/test_orders.py::TestOrderRetrieval::test_get_contract_areas
+========================================================================
+
+  ► GET  https://spp-dev.smartpack.world/api/network_proxy/api/network/v1/codes-transfer/contract-areas
+    RESPONSE STATUS: 400
+    RESPONSE BODY:
+      {
+        "type": "about:blank",
+        "title": "Bad Request",
+        "status": 400,
+        "detail": "Required parameter 'senderAreaId' is not present.",
+        "instance": "/api/network/v1/codes-transfer/contract-areas"
+      }
+
+========================================================================
+TEST: tests/integration/test_orders.py::TestOrderWorkflow::test_approve_order
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/network_proxy/api/network/v1/orders/approve
+    REQUEST BODY:
+      {
+        "id": "c001d1b6-464c-468a-a971-6051b24f57f5"
+      }
+    RESPONSE STATUS: 400
+    RESPONSE BODY:
+      {
+        "type": "about:blank",
+        "title": "Bad Request",
+        "status": 400,
+        "detail": "Failed to read request",
+        "instance": "/api/network/v1/orders/approve"
+      }
+
+========================================================================
+TEST: tests/integration/test_orders.py::TestOrderWorkflow::test_reject_order_manual
+========================================================================
+
+  ► PUT  https://spp-dev.smartpack.world/api/network_proxy/api/network/v1/orders/reject/manual
+    REQUEST BODY:
+      {
+        "id": "c001d1b6-464c-468a-a971-6051b24f57f5",
+        "reason": "Тестовое отклонение"
+      }
+    RESPONSE STATUS: 400
+    RESPONSE BODY:
+      {
+        "type": "about:blank",
+        "title": "Bad Request",
+        "status": 400,
+        "detail": "Failed to read request",
+        "instance": "/api/network/v1/orders/reject/manual"
+      }
+
+========================================================================
+TEST: tests/integration/test_orders.py::TestOrderWorkflow::test_approve_nonexistent_order
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/network_proxy/api/network/v1/orders/approve
+    REQUEST BODY:
+      {
+        "id": "38ca17c6-3f21-43ee-99dd-36841132d4e8"
+      }
+    RESPONSE STATUS: 400
+    RESPONSE BODY:
+      {
+        "type": "about:blank",
+        "title": "Bad Request",
+        "status": 400,
+        "detail": "Failed to read request",
+        "instance": "/api/network/v1/orders/approve"
+      }
+
+========================================================================
+TEST: tests/integration/test_reports.py::TestReportFilter::test_filter_reports_default
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/report/filter
+    REQUEST BODY:
+      {
+        "limit": 10,
+        "offset": 0
+      }
+    RESPONSE STATUS: 200
+    RESPONSE BODY:
+      {
+        "data": [
+          {
+            "id": "699324fb6d2b05a8dc19758e",
+            "status": 102,
+            "type": 2,
+            "line_number": 994866,
+            "line_name": "Bio Скрипт",
+            "work_shift_id": "67a0ff055fd239a1f69d795e",
+            "work_shift_name": "Партия 2351",
+            "work_shift_start_date": "2025-02-03T17:38:13.195000+00:00",
+            "work_shift_end_date": "2025-02-03T17:38:17.565000+00:00",
+            "product_group": "bio",
+            "production_type": 2,
+            "created_date": "2026-02-16T14:08:59.583000+00:00",
+            "last_edit_date": "2026-02-16T14:08:59.583000+00:00",
+            "retry_count": 9,
+            "report_id": "831a3d5d-dcc7-4828-a952-9f428d99c7dc",
+            "source_report_id": "f0a8e5aa-8d86-49f6-a0b0-4bfeb538b68f",
+            "gtin": "04632064327777",
+            "atk": null,
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": null,
+            "transformation_type": null,
+            "transformation_code": null,
+            "inn": "7731376812",
+            "last_sending_date": "2026-02-16T14:09:55.093000+00:00",
+            "log": [
+              {
+                "op_date": "2026-02-16T14:09:55.135000+00:00",
+                "info": "Отчету присвоен report_id=831a3d5d-dcc7-4828-a952-9f428d99c7dc"
+              },
+              {
+                "op_date": "2026-02-16T14:11:55.958000+00:00",
+                "info": "55: Недопустимая комбинация значений полей \"ИНН производителя\" и \"ИНН собственника\"."
+              }
+            ],
+            "tnv": "2936210000",
+            "owner_inn": "7731376812",
+            "product_name": "Витамины с новым СГР",
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 1,
+            "uot_org_name": null
+          },
+          {
+            "id": "698f34538dc7d022c0be05cb",
+            "status": 102,
+            "type": 31,
+            "line_number": 29,
+            "line_name": "Агрегация вода",
+            "work_shift_id": "698e1c138dc7d022c0bbe2cf",
+            "work_shift_name": "Сессия 2950",
+            "work_shift_start_date": "2026-02-12T18:29:39.522000+00:00",
+            "work_shift_end_date": "2026-02-12T18:32:06.178000+00:00",
+            "product_group": "water",
+            "production_type": 1,
+            "created_date": "2026-02-13T14:25:23.621000+00:00",
+            "last_edit_date": "2026-02-13T14:25:23.621000+00:00",
+            "retry_count": 9,
+            "report_id": "e29b04c6-1f79-4ec2-9c9b-3a62fce10c02",
+            "source_report_id": "21324ef1-1b51-4d7c-811d-982fdb11f0b0",
+            "gtin": "04669318392526",
+            "atk": null,
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": null,
+            "transformation_type": "ADDING",
+            "transformation_code": "00146693183924210218",
+            "inn": "7731376812",
+            "last_sending_date": "2026-02-13T14:25:59.591000+00:00",
+            "log": [
+              {
+                "op_date": "2026-02-13T14:25:59.646000+00:00",
+                "info": "Отчету присвоен report_id=e29b04c6-1f79-4ec2-9c9b-3a62fce10c02"
+              },
+              {
+                "op_date": "2026-02-13T14:28:00.577000+00:00",
+                "info": "06: Код 00146693183924210218 не найден в базе данных."
+              }
+            ],
+            "count_packages": 1,
+            "product_name": "Честная вода",
+            "count_pallets": 0,
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 3,
+            "uot_org_name": null
+          },
+          {
+            "id": "698f2feb8dc7d022c0be05c5",
+            "status": 0,
+            "type": 2,
+            "line_number": 995051,
+            "line_name": "test",
+            "work_shift_id": "698f29bf8dc7d022c0bc581e",
+            "work_shift_name": "Партия 3209",
+            "work_shift_start_date": "2026-02-13T13:40:15.728000+00:00",
+            "work_shift_end_date": "2026-02-13T14:05:28.079000+00:00",
+            "product_group": "water",
+            "production_type": 4,
+            "created_date": "2026-02-13T14:06:35.689000+00:00",
+            "last_edit_date": "2026-02-13T14:06:35.689000+00:00",
+            "retry_count": 10,
+            "report_id": null,
+            "source_report_id": "742a6029-ed88-4176-8064-5f30bdad0a29",
+            "gtin": "04647297654910",
+            "atk": "1234567891234567890123456",
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": null,
+            "transformation_type": null,
+            "transformation_code": null,
+            "inn": "7724211288",
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 109984,
+            "declaration_date": "2026-02-13T03:00:00+00:00",
+            "product_name": "Вода",
+            "production_date": "2026-02-13T03:00:00+00:00",
+            "uot_org_name": null,
+            "declaration_number": "12345678/130226/1234567"
+          },
+          {
+            "id": "698f2fbf8dc7d022c0be05c3",
+            "status": 0,
+            "type": 4,
+            "line_number": 995051,
+            "line_name": "test",
+            "work_shift_id": "698f29bf8dc7d022c0bc581e",
+            "work_shift_name": "Партия 3209",
+            "work_shift_start_date": "2026-02-13T13:40:15.728000+00:00",
+            "work_shift_end_date": "2026-02-13T14:05:28.079000+00:00",
+            "product_group": "water",
+            "production_type": 4,
+            "created_date": "2026-02-13T14:05:51.624000+00:00",
+            "last_edit_date": "2026-02-13T14:05:51.624000+00:00",
+            "retry_count": 10,
+            "report_id": null,
+            "source_report_id": "851146e1-1502-4977-ad1b-adb21961e8cd",
+            "gtin": "04647297654910",
+            "atk": null,
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": null,
+            "transformation_type": null,
+            "transformation_code": null,
+            "inn": "7731376812",
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 100000,
+            "product_name": "Вода",
+            "uot_org_name": null
+          },
+          {
+            "id": "698f2fbf8dc7d022c0be05c4",
+            "status": 0,
+            "type": 4,
+            "line_number": 995051,
+            "line_name": "test",
+            "work_shift_id": "698f29bf8dc7d022c0bc581e",
+            "work_shift_name": "Партия 3209",
+            "work_shift_start_date": "2026-02-13T13:40:15.728000+00:00",
+            "work_shift_end_date": "2026-02-13T14:05:28.079000+00:00",
+            "product_group": "water",
+            "production_type": 4,
+            "created_date": "2026-02-13T14:05:51.624000+00:00",
+            "last_edit_date": "2026-02-13T14:05:51.624000+00:00",
+            "retry_count": 10,
+            "report_id": null,
+            "source_report_id": "45fbdfb1-8542-4c99-9616-fcd2ad9397fc",
+            "gtin": "04647297654910",
+            "atk": null,
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": null,
+            "transformation_type": null,
+            "transformation_code": null,
+            "inn": "7731376812",
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 9984,
+            "product_name": "Вода",
+            "uot_org_name": null
+          },
+          {
+            "id": "698f2fb88dc7d022c0be05bf",
+            "status": 103,
+            "type": 1,
+            "line_number": 995051,
+            "line_name": "test",
+            "work_shift_id": "698f29bf8dc7d022c0bc581e",
+            "work_shift_name": "Партия 3209",
+            "work_shift_start_date": "2026-02-13T13:40:15.728000+00:00",
+            "work_shift_end_date": "2026-02-13T14:05:28.079000+00:00",
+            "product_group": "water",
+            "production_type": 4,
+            "created_date": "2026-02-13T14:05:44.291000+00:00",
+            "last_edit_date": "2026-02-13T14:05:44.291000+00:00",
+            "retry_count": 9,
+            "report_id": "30ccd4ba-232c-4df8-9d30-fd673677e6bc",
+            "source_report_id": "25c73c87-b7f7-45d3-94b9-2f334f6bc12d",
+            "gtin": "04647297654910",
+            "atk": null,
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": null,
+            "transformation_type": null,
+            "transformation_code": null,
+            "inn": null,
+            "last_sending_date": "2026-02-13T14:05:50.260000+00:00",
+            "log": [
+              {
+                "op_date": "2026-02-13T14:05:50.711000+00:00",
+                "info": "Отчету присвоен report_id=30ccd4ba-232c-4df8-9d30-fd673677e6bc"
+              },
+              {
+                "op_date": "2026-02-13T14:17:57.049000+00:00",
+                "info": "Кол-во КМ, обработанных с ошибкой: 21, Ошибка: Повторное нанесение кода"
+              }
+            ],
+            "exp_date": "2027-02-13T03:00:00+00:00",
+            "product_name": "Вода",
+            "production_date": "2026-02-13T00:00:00+00:00",
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 30000,
+            "uot_org_name": null
+          },
+          {
+            "id": "698f2fb88dc7d022c0be05c0",
+            "status": 103,
+            "type": 1,
+            "line_number": 995051,
+            "line_name": "test",
+            "work_shift_id": "698f29bf8dc7d022c0bc581e",
+            "work_shift_name": "Партия 3209",
+            "work_shift_start_date": "2026-02-13T13:40:15.728000+00:00",
+            "work_shift_end_date": "2026-02-13T14:05:28.079000+00:00",
+            "product_group": "water",
+            "production_type": 4,
+            "created_date": "2026-02-13T14:05:44.291000+00:00",
+            "last_edit_date": "2026-02-13T14:05:44.291000+00:00",
+            "retry_count": 9,
+            "report_id": "a5269482-7577-460a-a64e-cbc988f60f1f",
+            "source_report_id": "79e229a0-e6d1-45cd-a999-5a3d39671efa",
+            "gtin": "04647297654910",
+            "atk": null,
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": null,
+            "transformation_type": null,
+            "transformation_code": null,
+            "inn": null,
+            "last_sending_date": "2026-02-13T14:05:50.718000+00:00",
+            "log": [
+              {
+                "op_date": "2026-02-13T14:05:51.287000+00:00",
+                "info": "Отчету присвоен report_id=a5269482-7577-460a-a64e-cbc988f60f1f"
+              },
+              {
+                "op_date": "2026-02-13T14:17:57.107000+00:00",
+                "info": "Кол-во КМ, обработанных с ошибкой: 16, Ошибка: Повторное нанесение кода"
+              }
+            ],
+            "exp_date": "2027-02-13T03:00:00+00:00",
+            "product_name": "Вода",
+            "production_date": "2026-02-13T00:00:00+00:00",
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 30000,
+            "uot_org_name": null
+          },
+          {
+            "id": "698f2fb88dc7d022c0be05c1",
+            "status": 103,
+            "type": 1,
+            "line_number": 995051,
+            "line_name": "test",
+            "work_shift_id": "698f29bf8dc7d022c0bc581e",
+            "work_shift_name": "Партия 3209",
+            "work_shift_start_date": "2026-02-13T13:40:15.728000+00:00",
+            "work_shift_end_date": "2026-02-13T14:05:28.079000+00:00",
+            "product_group": "water",
+            "production_type": 4,
+            "created_date": "2026-02-13T14:05:44.291000+00:00",
+            "last_edit_date": "2026-02-13T14:05:44.291000+00:00",
+            "retry_count": 9,
+            "report_id": "5e183d81-d557-41ec-a807-84aeb3d00f5b",
+            "source_report_id": "938e49df-a43b-44a1-b1cd-98f08136cfe8",
+            "gtin": "04647297654910",
+            "atk": null,
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": null,
+            "transformation_type": null,
+            "transformation_code": null,
+            "inn": null,
+            "last_sending_date": "2026-02-13T14:05:51.294000+00:00",
+            "log": [
+              {
+                "op_date": "2026-02-13T14:05:51.778000+00:00",
+                "info": "Отчету присвоен report_id=5e183d81-d557-41ec-a807-84aeb3d00f5b"
+              },
+              {
+                "op_date": "2026-02-13T14:17:57.159000+00:00",
+                "info": "Кол-во КМ, обработанных с ошибкой: 23, Ошибка: Повторное нанесение кода"
+              }
+            ],
+            "exp_date": "2027-02-13T03:00:00+00:00",
+            "product_name": "Вода",
+            "production_date": "2026-02-13T00:00:00+00:00",
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 30000,
+            "uot_org_name": null
+          },
+          {
+            "id": "698f2fb88dc7d022c0be05c2",
+            "status": 103,
+            "type": 1,
+            "line_number": 995051,
+            "line_name": "test",
+            "work_shift_id": "698f29bf8dc7d022c0bc581e",
+            "work_shift_name": "Партия 3209",
+            "work_shift_start_date": "2026-02-13T13:40:15.728000+00:00",
+            "work_shift_end_date": "2026-02-13T14:05:28.079000+00:00",
+            "product_group": "water",
+            "production_type": 4,
+            "created_date": "2026-02-13T14:05:44.291000+00:00",
+            "last_edit_date": "2026-02-13T14:05:44.291000+00:00",
+            "retry_count": 9,
+            "report_id": "fd5e4ffb-c485-4ad4-b8f6-8e68b98b4d20",
+            "source_report_id": "815e9f20-4233-427f-89ec-acc3f79811f1",
+            "gtin": "04647297654910",
+            "atk": null,
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": null,
+            "transformation_type": null,
+            "transformation_code": null,
+            "inn": null,
+            "last_sending_date": "2026-02-13T14:05:51.788000+00:00",
+            "log": [
+              {
+                "op_date": "2026-02-13T14:05:52.120000+00:00",
+                "info": "Отчету присвоен report_id=fd5e4ffb-c485-4ad4-b8f6-8e68b98b4d20"
+              },
+              {
+                "op_date": "2026-02-13T14:17:57.215000+00:00",
+                "info": "Кол-во КМ, обработанных с ошибкой: 11, Ошибка: Повторное нанесение кода"
+              }
+            ],
+            "exp_date": "2027-02-13T03:00:00+00:00",
+            "product_name": "Вода",
+            "production_date": "2026-02-13T00:00:00+00:00",
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 19984,
+            "uot_org_name": null
+          },
+          {
+            "id": "698e214e8dc7d022c0bbe2ee",
+            "status": 102,
+            "type": 31,
+            "line_number": 29,
+            "line_name": "Агрегация вода",
+            "work_shift_id": "698e1c138dc7d022c0bbe2cf",
+            "work_shift_name": "Сессия 2950",
+            "work_shift_start_date": "2026-02-12T18:29:39.522000+00:00",
+            "work_shift_end_date": "2026-02-12T18:32:06.178000+00:00",
+            "product_group": "water",
+            "production_type": 1,
+            "created_date": "2026-02-12T18:51:58.558000+00:00",
+            "last_edit_date": "2026-02-12T18:51:58.558000+00:00",
+            "retry_count": 9,
+            "report_id": "8bdd458b-5332-43c4-98dc-b855ff9d9e29",
+            "source_report_id": "3f543c7c-77d4-4fe3-9124-e98b31a90d1b",
+            "gtin": "04669318392526",
+            "atk": null,
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": null,
+            "transformation_type": "REMOVING",
+            "transformation_code": "00146693183924210218",
+            "inn": "7731376812",
+            "last_sending_date": "2026-02-12T18:52:08.524000+00:00",
+            "log": [
+              {
+                "op_date": "2026-02-12T18:52:08.581000+00:00",
+                "info": "Отчету присвоен report_id=8bdd458b-5332-43c4-98dc-b855ff9d9e29"
+              },
+              {
+                "op_date": "2026-02-12T18:54:09.326000+00:00",
+                "info": "06: Код 00146693183924210218 не найден в базе данных."
+              }
+            ],
+            "count_packages": 1,
+            "product_name": "Честная вода",
+            "count_pallets": 0,
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 3,
+            "uot_org_name": null
+          }
+        ],
+        "meta": {
+          "total_count": 33481
+        }
+      }
+
+========================================================================
+TEST: tests/integration/test_reports.py::TestReportFilter::test_filter_reports_by_type
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/report/filter
+    REQUEST BODY:
+      {
+        "limit": 10,
+        "offset": 0,
+        "type": 1
+      }
+    RESPONSE STATUS: 200
+    RESPONSE BODY:
+      {
+        "data": [
+          {
+            "id": "698f2fb88dc7d022c0be05bf",
+            "status": 103,
+            "type": 1,
+            "line_number": 995051,
+            "line_name": "test",
+            "work_shift_id": "698f29bf8dc7d022c0bc581e",
+            "work_shift_name": "Партия 3209",
+            "work_shift_start_date": "2026-02-13T13:40:15.728000+00:00",
+            "work_shift_end_date": "2026-02-13T14:05:28.079000+00:00",
+            "product_group": "water",
+            "production_type": 4,
+            "created_date": "2026-02-13T14:05:44.291000+00:00",
+            "last_edit_date": "2026-02-13T14:05:44.291000+00:00",
+            "retry_count": 9,
+            "report_id": "30ccd4ba-232c-4df8-9d30-fd673677e6bc",
+            "source_report_id": "25c73c87-b7f7-45d3-94b9-2f334f6bc12d",
+            "gtin": "04647297654910",
+            "atk": null,
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": null,
+            "transformation_type": null,
+            "transformation_code": null,
+            "inn": null,
+            "last_sending_date": "2026-02-13T14:05:50.260000+00:00",
+            "log": [
+              {
+                "op_date": "2026-02-13T14:05:50.711000+00:00",
+                "info": "Отчету присвоен report_id=30ccd4ba-232c-4df8-9d30-fd673677e6bc"
+              },
+              {
+                "op_date": "2026-02-13T14:17:57.049000+00:00",
+                "info": "Кол-во КМ, обработанных с ошибкой: 21, Ошибка: Повторное нанесение кода"
+              }
+            ],
+            "exp_date": "2027-02-13T03:00:00+00:00",
+            "product_name": "Вода",
+            "production_date": "2026-02-13T00:00:00+00:00",
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 30000,
+            "uot_org_name": null
+          },
+          {
+            "id": "698f2fb88dc7d022c0be05c0",
+            "status": 103,
+            "type": 1,
+            "line_number": 995051,
+            "line_name": "test",
+            "work_shift_id": "698f29bf8dc7d022c0bc581e",
+            "work_shift_name": "Партия 3209",
+            "work_shift_start_date": "2026-02-13T13:40:15.728000+00:00",
+            "work_shift_end_date": "2026-02-13T14:05:28.079000+00:00",
+            "product_group": "water",
+            "production_type": 4,
+            "created_date": "2026-02-13T14:05:44.291000+00:00",
+            "last_edit_date": "2026-02-13T14:05:44.291000+00:00",
+            "retry_count": 9,
+            "report_id": "a5269482-7577-460a-a64e-cbc988f60f1f",
+            "source_report_id": "79e229a0-e6d1-45cd-a999-5a3d39671efa",
+            "gtin": "04647297654910",
+            "atk": null,
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": null,
+            "transformation_type": null,
+            "transformation_code": null,
+            "inn": null,
+            "last_sending_date": "2026-02-13T14:05:50.718000+00:00",
+            "log": [
+              {
+                "op_date": "2026-02-13T14:05:51.287000+00:00",
+                "info": "Отчету присвоен report_id=a5269482-7577-460a-a64e-cbc988f60f1f"
+              },
+              {
+                "op_date": "2026-02-13T14:17:57.107000+00:00",
+                "info": "Кол-во КМ, обработанных с ошибкой: 16, Ошибка: Повторное нанесение кода"
+              }
+            ],
+            "exp_date": "2027-02-13T03:00:00+00:00",
+            "product_name": "Вода",
+            "production_date": "2026-02-13T00:00:00+00:00",
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 30000,
+            "uot_org_name": null
+          },
+          {
+            "id": "698f2fb88dc7d022c0be05c1",
+            "status": 103,
+            "type": 1,
+            "line_number": 995051,
+            "line_name": "test",
+            "work_shift_id": "698f29bf8dc7d022c0bc581e",
+            "work_shift_name": "Партия 3209",
+            "work_shift_start_date": "2026-02-13T13:40:15.728000+00:00",
+            "work_shift_end_date": "2026-02-13T14:05:28.079000+00:00",
+            "product_group": "water",
+            "production_type": 4,
+            "created_date": "2026-02-13T14:05:44.291000+00:00",
+            "last_edit_date": "2026-02-13T14:05:44.291000+00:00",
+            "retry_count": 9,
+            "report_id": "5e183d81-d557-41ec-a807-84aeb3d00f5b",
+            "source_report_id": "938e49df-a43b-44a1-b1cd-98f08136cfe8",
+            "gtin": "04647297654910",
+            "atk": null,
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": null,
+            "transformation_type": null,
+            "transformation_code": null,
+            "inn": null,
+            "last_sending_date": "2026-02-13T14:05:51.294000+00:00",
+            "log": [
+              {
+                "op_date": "2026-02-13T14:05:51.778000+00:00",
+                "info": "Отчету присвоен report_id=5e183d81-d557-41ec-a807-84aeb3d00f5b"
+              },
+              {
+                "op_date": "2026-02-13T14:17:57.159000+00:00",
+                "info": "Кол-во КМ, обработанных с ошибкой: 23, Ошибка: Повторное нанесение кода"
+              }
+            ],
+            "exp_date": "2027-02-13T03:00:00+00:00",
+            "product_name": "Вода",
+            "production_date": "2026-02-13T00:00:00+00:00",
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 30000,
+            "uot_org_name": null
+          },
+          {
+            "id": "698f2fb88dc7d022c0be05c2",
+            "status": 103,
+            "type": 1,
+            "line_number": 995051,
+            "line_name": "test",
+            "work_shift_id": "698f29bf8dc7d022c0bc581e",
+            "work_shift_name": "Партия 3209",
+            "work_shift_start_date": "2026-02-13T13:40:15.728000+00:00",
+            "work_shift_end_date": "2026-02-13T14:05:28.079000+00:00",
+            "product_group": "water",
+            "production_type": 4,
+            "created_date": "2026-02-13T14:05:44.291000+00:00",
+            "last_edit_date": "2026-02-13T14:05:44.291000+00:00",
+            "retry_count": 9,
+            "report_id": "fd5e4ffb-c485-4ad4-b8f6-8e68b98b4d20",
+            "source_report_id": "815e9f20-4233-427f-89ec-acc3f79811f1",
+            "gtin": "04647297654910",
+            "atk": null,
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": null,
+            "transformation_type": null,
+            "transformation_code": null,
+            "inn": null,
+            "last_sending_date": "2026-02-13T14:05:51.788000+00:00",
+            "log": [
+              {
+                "op_date": "2026-02-13T14:05:52.120000+00:00",
+                "info": "Отчету присвоен report_id=fd5e4ffb-c485-4ad4-b8f6-8e68b98b4d20"
+              },
+              {
+                "op_date": "2026-02-13T14:17:57.215000+00:00",
+                "info": "Кол-во КМ, обработанных с ошибкой: 11, Ошибка: Повторное нанесение кода"
+              }
+            ],
+            "exp_date": "2027-02-13T03:00:00+00:00",
+            "product_name": "Вода",
+            "production_date": "2026-02-13T00:00:00+00:00",
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 19984,
+            "uot_org_name": null
+          },
+          {
+            "id": "698d7dbd49b590eca027d6a2",
+            "status": 102,
+            "type": 1,
+            "line_number": 2244,
+            "line_name": "del_line",
+            "work_shift_id": "698d7dab49b590eca027d6a0",
+            "work_shift_name": "Партия 3207",
+            "work_shift_start_date": "2026-02-12T07:13:47.330000+00:00",
+            "work_shift_end_date": "2026-02-12T07:13:56.607000+00:00",
+            "product_group": "water",
+            "production_type": 1,
+            "created_date": "2026-02-12T07:14:05.239000+00:00",
+            "last_edit_date": "2026-02-12T07:14:05.239000+00:00",
+            "retry_count": 9,
+            "report_id": "9e0dcbea-2ac6-4233-85fa-5d9393d389de",
+            "source_report_id": "88c632ae-7a5b-4d95-ad3d-d24000ac98f3",
+            "gtin": "04669318392526",
+            "atk": null,
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": null,
+            "transformation_type": null,
+            "transformation_code": null,
+            "inn": null,
+            "last_sending_date": "2026-02-12T07:15:01.866000+00:00",
+            "log": [
+              {
+                "op_date": "2026-02-12T07:15:01.910000+00:00",
+                "info": "Отчету присвоен report_id=9e0dcbea-2ac6-4233-85fa-5d9393d389de"
+              },
+              {
+                "op_date": "2026-02-12T07:24:04.742000+00:00",
+                "info": "Кол-во КМ, обработанных с ошибкой: 1, Ошибка: cannot find code [0104669318392526215JQ)<J0Y9jH11\u001d93dGVz] in db"
+              }
+            ],
+            "exp_date": "2027-02-12T03:00:00+00:00",
+            "product_name": "Честная вода",
+            "production_date": "2026-02-12T00:00:00+00:00",
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 1,
+            "uot_org_name": null
+          },
+          {
+            "id": "698d7cc949b590eca027d69d",
+            "status": 10,
+            "type": 1,
+            "line_number": 2236,
+            "line_name": "New name",
+            "work_shift_id": "698d7cbd49b590eca027d69b",
+            "work_shift_name": "Партия 3206",
+            "work_shift_start_date": "2026-02-12T07:09:49.491000+00:00",
+            "work_shift_end_date": "2026-02-12T07:09:54.545000+00:00",
+            "product_group": "water",
+            "production_type": 1,
+            "created_date": "2026-02-12T07:10:01.619000+00:00",
+            "last_edit_date": "2026-02-12T07:10:01.619000+00:00",
+            "retry_count": 9,
+            "report_id": "b788b87d-a406-400c-bdb9-110dfba29b24",
+            "source_report_id": "4e75e7e2-1efd-4f5c-9bc5-e39c0a6fb185",
+            "gtin": "04669318392526",
+            "atk": null,
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": null,
+            "transformation_type": null,
+            "transformation_code": null,
+            "inn": null,
+            "last_sending_date": "2026-02-12T07:11:00.534000+00:00",
+            "log": [
+              {
+                "op_date": "2026-02-12T07:11:00.592000+00:00",
+                "info": "Отчету присвоен report_id=b788b87d-a406-400c-bdb9-110dfba29b24"
+              },
+              {
+                "op_date": "2026-02-12T07:23:04.407000+00:00",
+                "info": "Обработан успешно"
+              }
+            ],
+            "exp_date": "2027-02-12T03:00:00+00:00",
+            "product_name": "Честная вода",
+            "production_date": "2026-02-12T00:00:00+00:00",
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 1,
+            "uot_org_name": null
+          },
+          {
+            "id": "698c7df16a0bf058b1f771b1",
+            "status": 10,
+            "type": 1,
+            "line_number": 994841,
+            "line_name": "Вода Скрипт",
+            "work_shift_id": "698c7ddd6a0bf058b1f771af",
+            "work_shift_name": "Партия 3204",
+            "work_shift_start_date": "2026-02-11T13:02:21.386000+00:00",
+            "work_shift_end_date": "2026-02-11T13:02:25.012000+00:00",
+            "product_group": "water",
+            "production_type": 1,
+            "created_date": "2026-02-11T13:02:41.644000+00:00",
+            "last_edit_date": "2026-02-11T13:02:41.644000+00:00",
+            "retry_count": 9,
+            "report_id": "7c5fe985-0be4-4bf7-956c-972e8351c1d9",
+            "source_report_id": "a691d343-65d0-450b-8e60-6fe7904fda81",
+            "gtin": "04647297654910",
+            "atk": null,
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": null,
+            "transformation_type": null,
+            "transformation_code": null,
+            "inn": null,
+            "last_sending_date": "2026-02-11T13:02:47.897000+00:00",
+            "log": [
+              {
+                "op_date": "2026-02-11T13:02:47.942000+00:00",
+                "info": "Отчету присвоен report_id=7c5fe985-0be4-4bf7-956c-972e8351c1d9"
+              },
+              {
+                "op_date": "2026-02-11T13:15:56.096000+00:00",
+                "info": "Обработан успешно"
+              }
+            ],
+            "exp_date": "2027-02-11T04:00:00+00:00",
+            "product_name": "Вода",
+            "production_date": "2026-02-11T00:00:00+00:00",
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 1,
+            "uot_org_name": null
+          },
+          {
+            "id": "698c7dd66a0bf058b1f771ac",
+            "status": 10,
+            "type": 1,
+            "line_number": 994855,
+            "line_name": "Vetpharma  Скрипт",
+            "work_shift_id": "698c7dc16a0bf058b1f771aa",
+            "work_shift_name": "Партия 3203",
+            "work_shift_start_date": "2026-02-11T13:01:53.656000+00:00",
+            "work_shift_end_date": "2026-02-11T13:01:57.169000+00:00",
+            "product_group": "vetpharma",
+            "production_type": 1,
+            "created_date": "2026-02-11T13:02:14.929000+00:00",
+            "last_edit_date": "2026-02-11T13:02:14.929000+00:00",
+            "retry_count": 9,
+            "report_id": "43cb920f-9b8a-4826-9e22-c806fb831105",
+            "source_report_id": "53f5b588-c418-4357-b318-bf74fe6c5e6d",
+            "gtin": "04640043460087",
+            "atk": null,
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": null,
+            "transformation_type": null,
+            "transformation_code": null,
+            "inn": null,
+            "last_sending_date": "2026-02-11T13:02:47.944000+00:00",
+            "log": [
+              {
+                "op_date": "2026-02-11T13:02:47.985000+00:00",
+                "info": "Отчету присвоен report_id=43cb920f-9b8a-4826-9e22-c806fb831105"
+              },
+              {
+                "op_date": "2026-02-11T13:15:56.126000+00:00",
+                "info": "Обработан успешно"
+              }
+            ],
+            "exp_date": "2026-04-15T04:00:00+00:00",
+            "product_name": "Вакцина от бешенства для собак",
+            "production_date": "2026-02-11T00:00:00+00:00",
+            "series_number": "12345",
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 1,
+            "uot_org_name": null
+          },
+          {
+            "id": "698c7d9e6a0bf058b1f771a8",
+            "status": 10,
+            "type": 1,
+            "line_number": 994857,
+            "line_name": "Vegetableoil Скрипт",
+            "work_shift_id": "698c7d8b6a0bf058b1f771a5",
+            "work_shift_name": "Партия 3202",
+            "work_shift_start_date": "2026-02-11T13:00:59.597000+00:00",
+            "work_shift_end_date": "2026-02-11T13:01:02.453000+00:00",
+            "product_group": "vegetableoil",
+            "production_type": 1,
+            "created_date": "2026-02-11T13:01:18.363000+00:00",
+            "last_edit_date": "2026-02-11T13:01:18.363000+00:00",
+            "retry_count": 9,
+            "report_id": "89de1473-74c8-4cad-99c6-38ddaa674a21",
+            "source_report_id": "fd183b0b-5b46-4d14-a374-d2e0fabf3d1c",
+            "gtin": "08747382389188",
+            "atk": null,
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": null,
+            "transformation_type": null,
+            "transformation_code": null,
+            "inn": null,
+            "last_sending_date": "2026-02-11T13:01:47.221000+00:00",
+            "log": [
+              {
+                "op_date": "2026-02-11T13:01:47.264000+00:00",
+                "info": "Отчету присвоен report_id=89de1473-74c8-4cad-99c6-38ddaa674a21"
+              },
+              {
+                "op_date": "2026-02-11T13:15:56.154000+00:00",
+                "info": "Обработан успешно"
+              }
+            ],
+            "exp_date": "2026-04-15T04:00:00+00:00",
+            "product_name": null,
+            "production_date": "2026-02-11T00:00:00+00:00",
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 1,
+            "uot_org_name": null
+          },
+          {
+            "id": "698c7d856a0bf058b1f771a2",
+            "status": 10,
+            "type": 1,
+            "line_number": 994849,
+            "line_name": "Игрушки Скрипт",
+            "work_shift_id": "698c7d726a0bf058b1f771a0",
+            "work_shift_name": "Партия 3201",
+            "work_shift_start_date": "2026-02-11T13:00:34.554000+00:00",
+            "work_shift_end_date": "2026-02-11T13:00:38.120000+00:00",
+            "product_group": "toys",
+            "production_type": 1,
+            "created_date": "2026-02-11T13:00:53.879000+00:00",
+            "last_edit_date": "2026-02-11T13:00:53.879000+00:00",
+            "retry_count": 9,
+            "report_id": "ee9fd6a8-7977-476c-bff6-f1fea1e1cf7f",
+            "source_report_id": "b117bf3c-ca52-4502-a910-05b3b2d89a0d",
+            "gtin": "04640043460667",
+            "atk": null,
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": null,
+            "transformation_type": null,
+            "transformation_code": null,
+            "inn": null,
+            "last_sending_date": "2026-02-11T13:01:47.268000+00:00",
+            "log": [
+              {
+                "op_date": "2026-02-11T13:01:47.312000+00:00",
+                "info": "Отчету присвоен report_id=ee9fd6a8-7977-476c-bff6-f1fea1e1cf7f"
+              },
+              {
+                "op_date": "2026-02-11T13:15:56.183000+00:00",
+                "info": "Обработан успешно"
+              }
+            ],
+            "exp_date": "2026-04-15T04:00:00+00:00",
+            "product_name": "45345",
+            "production_date": "2026-02-11T00:00:00+00:00",
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 1,
+            "uot_org_name": null
+          }
+        ],
+        "meta": {
+          "total_count": 31636
+        }
+      }
+
+========================================================================
+TEST: tests/integration/test_reports.py::TestReportFilter::test_filter_reports_by_status
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/report/filter
+    REQUEST BODY:
+      {
+        "limit": 10,
+        "offset": 0,
+        "status": 0
+      }
+    RESPONSE STATUS: 200
+    RESPONSE BODY:
+      {
+        "data": [
+          {
+            "id": "698f2feb8dc7d022c0be05c5",
+            "status": 0,
+            "type": 2,
+            "line_number": 995051,
+            "line_name": "test",
+            "work_shift_id": "698f29bf8dc7d022c0bc581e",
+            "work_shift_name": "Партия 3209",
+            "work_shift_start_date": "2026-02-13T13:40:15.728000+00:00",
+            "work_shift_end_date": "2026-02-13T14:05:28.079000+00:00",
+            "product_group": "water",
+            "production_type": 4,
+            "created_date": "2026-02-13T14:06:35.689000+00:00",
+            "last_edit_date": "2026-02-13T14:06:35.689000+00:00",
+            "retry_count": 10,
+            "report_id": null,
+            "source_report_id": "742a6029-ed88-4176-8064-5f30bdad0a29",
+            "gtin": "04647297654910",
+            "atk": "1234567891234567890123456",
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": null,
+            "transformation_type": null,
+            "transformation_code": null,
+            "inn": "7724211288",
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 109984,
+            "declaration_date": "2026-02-13T03:00:00+00:00",
+            "product_name": "Вода",
+            "production_date": "2026-02-13T03:00:00+00:00",
+            "uot_org_name": null,
+            "declaration_number": "12345678/130226/1234567"
+          },
+          {
+            "id": "698f2fbf8dc7d022c0be05c3",
+            "status": 0,
+            "type": 4,
+            "line_number": 995051,
+            "line_name": "test",
+            "work_shift_id": "698f29bf8dc7d022c0bc581e",
+            "work_shift_name": "Партия 3209",
+            "work_shift_start_date": "2026-02-13T13:40:15.728000+00:00",
+            "work_shift_end_date": "2026-02-13T14:05:28.079000+00:00",
+            "product_group": "water",
+            "production_type": 4,
+            "created_date": "2026-02-13T14:05:51.624000+00:00",
+            "last_edit_date": "2026-02-13T14:05:51.624000+00:00",
+            "retry_count": 10,
+            "report_id": null,
+            "source_report_id": "851146e1-1502-4977-ad1b-adb21961e8cd",
+            "gtin": "04647297654910",
+            "atk": null,
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": null,
+            "transformation_type": null,
+            "transformation_code": null,
+            "inn": "7731376812",
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 100000,
+            "product_name": "Вода",
+            "uot_org_name": null
+          },
+          {
+            "id": "698f2fbf8dc7d022c0be05c4",
+            "status": 0,
+            "type": 4,
+            "line_number": 995051,
+            "line_name": "test",
+            "work_shift_id": "698f29bf8dc7d022c0bc581e",
+            "work_shift_name": "Партия 3209",
+            "work_shift_start_date": "2026-02-13T13:40:15.728000+00:00",
+            "work_shift_end_date": "2026-02-13T14:05:28.079000+00:00",
+            "product_group": "water",
+            "production_type": 4,
+            "created_date": "2026-02-13T14:05:51.624000+00:00",
+            "last_edit_date": "2026-02-13T14:05:51.624000+00:00",
+            "retry_count": 10,
+            "report_id": null,
+            "source_report_id": "45fbdfb1-8542-4c99-9616-fcd2ad9397fc",
+            "gtin": "04647297654910",
+            "atk": null,
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": null,
+            "transformation_type": null,
+            "transformation_code": null,
+            "inn": "7731376812",
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 9984,
+            "product_name": "Вода",
+            "uot_org_name": null
+          },
+          {
+            "id": "698d7dc249b590eca027d6a3",
+            "status": 0,
+            "type": 2,
+            "line_number": 2244,
+            "line_name": "del_line",
+            "work_shift_id": "698d7dab49b590eca027d6a0",
+            "work_shift_name": "Партия 3207",
+            "work_shift_start_date": "2026-02-12T07:13:47.330000+00:00",
+            "work_shift_end_date": "2026-02-12T07:13:56.607000+00:00",
+            "product_group": "water",
+            "production_type": 1,
+            "created_date": "2026-02-12T07:14:10.346000+00:00",
+            "last_edit_date": "2026-02-12T07:14:10.346000+00:00",
+            "retry_count": 10,
+            "report_id": null,
+            "source_report_id": "8b866d13-ffa9-4c14-af74-a9b086134f66",
+            "gtin": "04669318392526",
+            "atk": null,
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": {
+              "licence_number": "МОС06318ВЭ",
+              "licence_date": "2024-01-01T03:00:00+00:00"
+            },
+            "transformation_type": null,
+            "transformation_code": null,
+            "inn": "7731376812",
+            "certificate_number": "ЕАЭС N RU Д-RU.РА01.В.50673/21",
+            "tnv": "2201101100",
+            "well_number": "17",
+            "product_name": "Честная вода",
+            "production_date": "2026-02-12T03:00:00+00:00",
+            "certificate_date": "2023-03-01T03:00:00+00:00",
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 1,
+            "certificate_type": 2,
+            "uot_org_name": null
+          },
+          {
+            "id": "698d7cee49b590eca027d69e",
+            "status": 0,
+            "type": 2,
+            "line_number": 9021,
+            "line_name": "Test_Line_SPP",
+            "work_shift_id": "68a449093fead428f29f913b",
+            "work_shift_name": "Партия 2929",
+            "work_shift_start_date": "2025-08-19T09:51:05.212000+00:00",
+            "work_shift_end_date": "2025-08-19T09:51:33.806000+00:00",
+            "product_group": "water",
+            "production_type": 2,
+            "created_date": "2026-02-12T07:10:38.559000+00:00",
+            "last_edit_date": "2026-02-12T07:10:38.559000+00:00",
+            "retry_count": 10,
+            "report_id": null,
+            "source_report_id": "e51af957-5cb0-42c2-9e12-3a17fc7c7ce7",
+            "gtin": "04647297654910",
+            "atk": null,
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": {
+              "licence_number": "123ВВ12345111а",
+              "licence_date": "2024-07-10T00:00:00+00:00"
+            },
+            "transformation_type": null,
+            "transformation_code": null,
+            "inn": "7724211288",
+            "tnv": "2201109000",
+            "well_number": "111",
+            "owner_inn": "7731376812",
+            "product_name": "Вода",
+            "production_date": "2025-08-19T03:00:00+00:00",
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 2,
+            "uot_org_name": null
+          },
+          {
+            "id": "698c7d6f6a0bf058b1f7719e",
+            "status": 0,
+            "type": 2,
+            "line_number": 994847,
+            "line_name": "Соки Скрипт",
+            "work_shift_id": "698c7d5a6a0bf058b1f7719b",
+            "work_shift_name": "Партия 3200",
+            "work_shift_start_date": "2026-02-11T13:00:10.197000+00:00",
+            "work_shift_end_date": "2026-02-11T13:00:13.370000+00:00",
+            "product_group": "softdrinks",
+            "production_type": 1,
+            "created_date": "2026-02-11T13:00:31.206000+00:00",
+            "last_edit_date": "2026-02-11T13:00:31.206000+00:00",
+            "retry_count": 10,
+            "report_id": null,
+            "source_report_id": "8c3d6d34-95c9-420f-ab02-c5a865b6abf2",
+            "gtin": "04619582369496",
+            "atk": null,
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": null,
+            "transformation_type": null,
+            "transformation_code": null,
+            "inn": "7724211288",
+            "certificate_number": "ЕАЭС N RU Д-RU.РА01.В.50673/21",
+            "tnv": "2202100000",
+            "product_name": "Сок тест",
+            "production_date": "2026-02-11T04:00:00+00:00",
+            "certificate_date": "2020-02-16T03:00:00+00:00",
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 1,
+            "certificate_type": 2,
+            "uot_org_name": null
+          },
+          {
+            "id": "698c7d186a0bf058b1f77191",
+            "status": 0,
+            "type": 2,
+            "line_number": 994875,
+            "line_name": "Nabeer Скрипт",
+            "work_shift_id": "698c7d036a0bf058b1f7718e",
+            "work_shift_name": "Партия 3197",
+            "work_shift_start_date": "2026-02-11T12:58:43.206000+00:00",
+            "work_shift_end_date": "2026-02-11T12:58:46.556000+00:00",
+            "product_group": "nabeer",
+            "production_type": 1,
+            "created_date": "2026-02-11T12:59:04.954000+00:00",
+            "last_edit_date": "2026-02-11T12:59:04.954000+00:00",
+            "retry_count": 10,
+            "report_id": null,
+            "source_report_id": "6f3bb8d1-07e8-4664-9fba-9c9ed307f2ed",
+            "gtin": "05438567245001",
+            "atk": null,
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": null,
+            "transformation_type": null,
+            "transformation_code": null,
+            "inn": "7731376812",
+            "certificate_number": "ЕАЭС N RU Д-RU.РА01.В.50673/21",
+            "tnv": "2202910000",
+            "product_name": "ДПР Пиво БА",
+            "production_date": "2026-02-11T04:00:00+00:00",
+            "certificate_date": "2020-02-16T04:00:00+00:00",
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 1,
+            "certificate_type": 2,
+            "uot_org_name": null
+          },
+          {
+            "id": "6989e8d0b8737115a545b1d5",
+            "status": 0,
+            "type": 2,
+            "line_number": 995079,
+            "line_name": "Мясные Изделия",
+            "work_shift_id": "6989d770abd6d20de0c4784e",
+            "work_shift_name": "Партия 3146",
+            "work_shift_start_date": "2026-02-09T12:47:44.557000+00:00",
+            "work_shift_end_date": "2026-02-09T14:01:37.685000+00:00",
+            "product_group": "meat",
+            "production_type": 1,
+            "created_date": "2026-02-09T14:01:52.856000+00:00",
+            "last_edit_date": "2026-02-09T14:01:52.856000+00:00",
+            "retry_count": 10,
+            "report_id": null,
+            "source_report_id": "eb38b1c0-203f-40d3-b616-08defda1b1a8",
+            "gtin": "03691422358694",
+            "atk": null,
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": null,
+            "transformation_type": null,
+            "transformation_code": null,
+            "inn": "7731376812",
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 1,
+            "tnv": "0210111100",
+            "product_name": "Буженина с переменным и фиксированным весом",
+            "production_date": "2026-02-09T04:00:00+00:00",
+            "uot_org_name": null
+          },
+          {
+            "id": "6989dccdabd6d20de0c47857",
+            "status": 0,
+            "type": 2,
+            "line_number": 36,
+            "line_name": "Молочная линия",
+            "work_shift_id": "69732926d9befba65c7002d9",
+            "work_shift_name": "Партия 3113",
+            "work_shift_start_date": "2026-01-23T07:54:14.502000+00:00",
+            "work_shift_end_date": "2026-01-23T07:54:37.205000+00:00",
+            "product_group": "milk",
+            "production_type": 1,
+            "created_date": "2026-02-09T13:10:37.900000+00:00",
+            "last_edit_date": "2026-02-09T13:10:37.900000+00:00",
+            "retry_count": 10,
+            "report_id": null,
+            "source_report_id": "1522b31a-1398-4a5c-8d2b-672508fd6eb5",
+            "gtin": "04153390010954",
+            "atk": null,
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": null,
+            "transformation_type": null,
+            "transformation_code": null,
+            "inn": "7731376812",
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 1,
+            "tnv": "0401101000",
+            "product_name": "КИ тест Хан",
+            "production_date": "2026-01-23T03:00:00+00:00",
+            "uot_org_name": null
+          },
+          {
+            "id": "6989daccabd6d20de0c47856",
+            "status": 0,
+            "type": 2,
+            "line_number": 995079,
+            "line_name": "Мясные Изделия",
+            "work_shift_id": "6989d664abd6d20de0c47847",
+            "work_shift_name": "Партия 3145",
+            "work_shift_start_date": "2026-02-09T12:43:16.818000+00:00",
+            "work_shift_end_date": "2026-02-09T12:44:42.933000+00:00",
+            "product_group": "meat",
+            "production_type": 1,
+            "created_date": "2026-02-09T13:02:04.097000+00:00",
+            "last_edit_date": "2026-02-09T13:02:04.097000+00:00",
+            "retry_count": 10,
+            "report_id": null,
+            "source_report_id": "73e0667c-9c65-481f-8977-1aa09e1c1ce4",
+            "gtin": "03691422358694",
+            "atk": null,
+            "tax_number": null,
+            "exporter_name": null,
+            "exporter_country": null,
+            "licences": null,
+            "transformation_type": null,
+            "transformation_code": null,
+            "inn": "7731376812",
+            "certificate_number": "12345",
+            "tnv": "0210111100",
+            "product_name": "Буженина с переменным и фиксированным весом",
+            "production_date": "2026-02-09T04:00:00+00:00",
+            "certificate_date": "2026-02-09T04:00:00+00:00",
+            "issuer_id": "069af463-db7d-45ea-831a-2cdfd31eaabc",
+            "count_codes": 1,
+            "certificate_type": 2,
+            "uot_org_name": null
+          }
+        ],
+        "meta": {
+          "total_count": 10
+        }
+      }
+
+========================================================================
+TEST: tests/integration/test_reports.py::TestReportFilter::test_report_statistics
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/report/statistics
+    REQUEST BODY:
+      {}
+    RESPONSE STATUS: 500
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "response",
+              "data",
+              0,
+              "statistics",
+              "created"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          },
+          {
+            "loc": [
+              "response",
+              "data",
+              1,
+              "statistics",
+              "created"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          },
+          {
+            "loc": [
+              "response",
+              "data",
+              2,
+              "statistics",
+              "created"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          },
+          {
+            "loc": [
+              "response",
+              "data",
+              3,
+              "statistics",
+              "created"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          },
+          {
+            "loc": [
+              "response",
+              "data",
+              4,
+              "statistics",
+              "created"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          },
+          {
+            "loc": [
+              "response",
+              "data",
+              5,
+              "statistics",
+              "created"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_reports.py::TestSendCirculation::test_send_circulation_by_shift
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/report/send_circulation
+    REQUEST BODY:
+      {
+        "work_shift_id": "698f29bf8dc7d022c0bc581e",
+        "inn": "7724211288"
+      }
+    RESPONSE STATUS: 400
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "order": 329,
+            "description": "\"Регистрационный номер ДТ\" обязателен для заполнения"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_reports.py::TestSendCirculation::test_send_circulation_missing_inn
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/report/send_circulation
+    REQUEST BODY:
+      {
+        "work_shift_id": "cb5e0c18-17f4-44d4-8815-804f5be546c1"
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "work_shift_id"
+            ],
+            "msg": "Невалидный формат ObjectId",
+            "type": "value_error"
+          },
+          {
+            "loc": [
+              "body",
+              "inn"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_reports.py::TestSendUtilisation::test_send_utilisation_by_shift
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/report/send_utilisation
+    REQUEST BODY:
+      {
+        "work_shift_id": "698f29bf8dc7d022c0bc581e",
+        "inn": "7724211288"
+      }
+    RESPONSE STATUS: 400
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "order": 301,
+            "description": "Действие недоступно, так как отчет уже отправлен"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_reports.py::TestSendUtilisation::test_send_utilisation_by_aggregation_session
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/report/send_utilisation
+    REQUEST BODY:
+      {
+        "id_agg_session": "e509a34b-a08d-434b-ac89-80914368f01e",
+        "inn": "7724211288"
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "id_agg_session"
+            ],
+            "msg": "Невалидный формат ObjectId",
+            "type": "value_error"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_reports.py::TestSendAggregation::test_send_aggregation_report
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/report/send_aggregation
+    REQUEST BODY:
+      {
+        "id_agg_session": "698c736dc0a08305e347b9cd"
+      }
+    RESPONSE STATUS: 400
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "order": 301,
+            "description": "Действие недоступно, так как отчет уже отправлен"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_reports.py::TestSendAggregation::test_send_atk_report
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/report/send_atk
+    REQUEST BODY:
+      {
+        "id_agg_session": "6977504cf62bdbb988b4c95b"
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "inn"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_reports.py::TestReportManagement::test_resend_report
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/report/resend
+    REQUEST BODY:
+      {
+        "id": "698f2fb88dc7d022c0be05bf"
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "report_id"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_reports.py::TestReportManagement::test_set_report_status
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/report/set_report_status
+    REQUEST BODY:
+      {
+        "id": "698f2feb8dc7d022c0be05c5",
+        "status": 102
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "report_id"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_reports.py::TestReportManagement::test_resend_nonexistent_report
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/report/resend
+    REQUEST BODY:
+      {
+        "id": "002ccc45-e5a1-497d-ab99-ec060b828cf3"
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "report_id"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_work_shift.py::TestWorkShiftLifecycle::test_start_shift
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/work_shift/start
+    REQUEST BODY:
+      {
+        "line_number": 1,
+        "start_date": "2026-02-18T10:34:44.204704Z",
+        "is_allow_other_gtins": false,
+        "product_group": "milk",
+        "with_variable_weight": false,
+        "production_date": "2026-02-18T10:34:44.204709Z",
+        "camera_is_active": false
+      }
+    RESPONSE STATUS: 400
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "order": 100,
+            "description": "Нельзя начать новую партию. Рабочая партия уже активна"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_work_shift.py::TestWorkShiftLifecycle::test_add_code_to_active_shift
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/work_shift/add_code
+    REQUEST BODY:
+      {
+        "line_number": 1,
+        "code": "010460620339973721dGVzdGNvZGU="
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "__root__"
+            ],
+            "msg": "Неверный формат КМ",
+            "type": "value_error"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_work_shift.py::TestWorkShiftLifecycle::test_add_multiple_codes
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/work_shift/add_code
+    REQUEST BODY:
+      {
+        "line_number": 1,
+        "code": "010460620339973721code093dGVzdA=="
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "__root__"
+            ],
+            "msg": "Неверный формат КМ",
+            "type": "value_error"
+          }
+        ]
+      }
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/work_shift/add_code
+    REQUEST BODY:
+      {
+        "line_number": 1,
+        "code": "010460620339973721code193dGVzdA=="
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "__root__"
+            ],
+            "msg": "Неверный формат КМ",
+            "type": "value_error"
+          }
+        ]
+      }
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/work_shift/add_code
+    REQUEST BODY:
+      {
+        "line_number": 1,
+        "code": "010460620339973721code293dGVzdA=="
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "__root__"
+            ],
+            "msg": "Неверный формат КМ",
+            "type": "value_error"
+          }
+        ]
+      }
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/work_shift/add_code
+    REQUEST BODY:
+      {
+        "line_number": 1,
+        "code": "010460620339973721code393dGVzdA=="
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "__root__"
+            ],
+            "msg": "Неверный формат КМ",
+            "type": "value_error"
+          }
+        ]
+      }
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/work_shift/add_code
+    REQUEST BODY:
+      {
+        "line_number": 1,
+        "code": "010460620339973721code493dGVzdA=="
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "__root__"
+            ],
+            "msg": "Неверный формат КМ",
+            "type": "value_error"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_work_shift.py::TestWorkShiftLifecycle::test_filter_shifts
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/work_shift/filter
+    REQUEST BODY:
+      {
+        "limit": 10,
+        "offset": 0,
+        "line_number": 1
+      }
+    RESPONSE STATUS: 200
+    RESPONSE BODY:
+      {
+        "data": [
+          {
+            "id": "699474f3e8218de0f52ebb34",
+            "product_group": "milk",
+            "production_type": 2,
+            "line_number": 1,
+            "name": "TestShift-893c876b",
+            "is_active": true,
+            "start_date": "2026-02-17T14:02:27.973000+00:00",
+            "end_date": null,
+            "draft_id": "699474f3e8218de0f52ebb33",
+            "draft_info": {
+              "total": 0,
+              "good": 0,
+              "defect": 0,
+              "not_found": 0,
+              "not_recognized": 0,
+              "camera_protocol_mismatch": 0,
+              "reported_utilisation": 0,
+              "reported_circulation": 0,
+              "other_gtin": 0,
+              "duplicates": 0
+            },
+            "is_send_emit": false,
+            "is_send_circulation": false,
+            "is_send_atk": false,
+            "is_send_report": false,
+            "camera_is_active": false,
+            "products": [],
+            "is_lock": false,
+            "code_lock": null,
+            "is_allow_other_gtins": false,
+            "send_codes_to_1c": false,
+            "uot_org_name": null,
+            "with_variable_weight": false,
+            "reports_status": {
+              "utilisation": [],
+              "circulation": [],
+              "atk": [],
+              "aggregation": []
+            }
+          }
+        ],
+        "meta": {
+          "total_count": 1
+        }
+      }
+
+========================================================================
+TEST: tests/integration/test_work_shift.py::TestWorkShiftLifecycle::test_finish_shift
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/work_shift/finish
+    REQUEST BODY:
+      {
+        "id": "f6bd1bfc-d396-4d56-8303-1fb8917fc8c0"
+      }
+    RESPONSE STATUS: 422
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "loc": [
+              "body",
+              "line_number"
+            ],
+            "msg": "field required",
+            "type": "value_error.missing"
+          }
+        ]
+      }
+
+========================================================================
+TEST: tests/integration/test_work_shift.py::TestWorkShiftLifecycle::test_start_shift_invalid_line
+========================================================================
+
+  ► POST  https://spp-dev.smartpack.world/api/web/v1/work_shift/start
+    REQUEST BODY:
+      {
+        "line_number": 99999,
+        "start_date": "2026-02-18T10:34:44.590863Z",
+        "is_allow_other_gtins": false,
+        "product_group": "milk",
+        "with_variable_weight": false,
+        "production_date": "2026-02-18T10:34:44.590866Z",
+        "camera_is_active": false
+      }
+    RESPONSE STATUS: 400
+    RESPONSE BODY:
+      {
+        "errors": [
+          {
+            "order": 400,
+            "description": "Линия отсутствует в системе"
+          }
+        ]
+      }
+
