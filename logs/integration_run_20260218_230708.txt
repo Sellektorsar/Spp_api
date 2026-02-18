@@ -1,0 +1,1707 @@
+﻿============================= test session starts =============================
+collected 154 items
+
+tests/integration/test_aggregation_session.py::TestAggregationSessionFilter::test_filter_all_sessions ERROR [  0%]
+tests/integration/test_aggregation_session.py::TestAggregationSessionFilter::test_filter_sessions_pagination ERROR [  1%]
+tests/integration/test_aggregation_session.py::TestAggregationSessionFilter::test_filter_sessions_with_limit ERROR [  1%]
+tests/integration/test_aggregation_session.py::TestAggregationSessionDetail::test_get_session_detail_real ERROR [  2%]
+tests/integration/test_aggregation_session.py::TestAggregationSessionDetail::test_get_session_detail_nonexistent ERROR [  3%]
+tests/integration/test_aggregation_session.py::TestAggregationSessionDetail::test_get_session_stats ERROR [  3%]
+tests/integration/test_aggregation_session.py::TestAggregationSessionDetail::test_get_global_stats ERROR [  4%]
+tests/integration/test_aggregation_session.py::TestAggregationSessionLifecycle::test_start_pallets_session ERROR [  5%]
+tests/integration/test_aggregation_session.py::TestAggregationSessionLifecycle::test_add_code_to_pallets_session ERROR [  5%]
+tests/integration/test_aggregation_session.py::TestAggregationSessionLifecycle::test_add_package_to_pallets_session ERROR [  6%]
+tests/integration/test_aggregation_session.py::TestAggregationSessionLifecycle::test_add_pallet_to_pallets_session ERROR [  7%]
+tests/integration/test_aggregation_session.py::TestAggregationSessionLifecycle::test_finish_pallets_session ERROR [  7%]
+tests/integration/test_aggregation_session.py::TestAggregationSessionLifecycle::test_create_dashboard_session ERROR [  8%]
+tests/integration/test_aggregation_session.py::TestAggregationSessionCorrections::test_withdrawal_code_nonexistent ERROR [  9%]
+tests/integration/test_aggregation_session.py::TestAggregationSessionCorrections::test_disbandment_package_nonexistent ERROR [  9%]
+tests/integration/test_auth.py::TestAuth::test_login_success ERROR       [ 10%]
+tests/integration/test_auth.py::TestAuth::test_login_invalid_credentials ERROR [ 11%]
+tests/integration/test_auth.py::TestAuth::test_login_missing_fields ERROR [ 11%]
+tests/integration/test_chain.py::test_gtin_to_shift_chain ERROR          [ 12%]
+tests/integration/test_chain.py::test_multi_product_group_chain ERROR    [ 12%]
+tests/integration/test_chain.py::test_active_shifts_across_lines ERROR   [ 13%]
+tests/integration/test_chain.py::test_shift_and_aggregation_session_chain ERROR [ 14%]
+tests/integration/test_chain.py::test_create_shift_and_finish_chain ERROR [ 14%]
+tests/integration/test_devices_and_printers.py::TestDeviceManagement::test_filter_devices_default ERROR [ 15%]
+tests/integration/test_devices_and_printers.py::TestDeviceManagement::test_filter_devices_pagination ERROR [ 16%]
+tests/integration/test_devices_and_printers.py::TestDeviceManagement::test_real_device_in_list ERROR [ 16%]
+tests/integration/test_devices_and_printers.py::TestDeviceManagement::test_add_new_device ERROR [ 17%]
+tests/integration/test_devices_and_printers.py::TestDeviceManagement::test_block_test_device ERROR [ 18%]
+tests/integration/test_devices_and_printers.py::TestDeviceManagement::test_delete_test_device ERROR [ 18%]
+tests/integration/test_devices_and_printers.py::TestDeviceManagement::test_block_nonexistent_device ERROR [ 19%]
+tests/integration/test_devices_and_printers.py::TestDeviceManagement::test_delete_nonexistent_device ERROR [ 20%]
+tests/integration/test_devices_and_printers.py::TestPrinterManagement::test_filter_printers_default ERROR [ 20%]
+tests/integration/test_devices_and_printers.py::TestPrinterManagement::test_real_printer_in_list ERROR [ 21%]
+tests/integration/test_devices_and_printers.py::TestPrinterManagement::test_toggle_printer_favorite ERROR [ 22%]
+tests/integration/test_devices_and_printers.py::TestPrinterManagement::test_send_to_print_by_gtin_milk ERROR [ 22%]
+tests/integration/test_devices_and_printers.py::TestPrinterManagement::test_send_to_print_by_gtin_invalid_printer ERROR [ 23%]
+tests/integration/test_devices_and_printers.py::TestPrinterManagement::test_add_printer ERROR [ 24%]
+tests/integration/test_devices_and_printers.py::TestPrinterManagement::test_delete_test_printer ERROR [ 24%]
+tests/integration/test_devices_and_printers.py::TestPrinterManagement::test_filter_printers_pagination ERROR [ 25%]
+tests/integration/test_gtin_and_line.py::TestLineManagement::test_filter_lines_default ERROR [ 25%]
+tests/integration/test_gtin_and_line.py::TestLineManagement::test_filter_lines_by_product_group_milk ERROR [ 26%]
+tests/integration/test_gtin_and_line.py::TestLineManagement::test_filter_lines_by_product_group_water ERROR [ 27%]
+tests/integration/test_gtin_and_line.py::TestLineManagement::test_filter_lines_all_product_groups ERROR [ 27%]
+tests/integration/test_gtin_and_line.py::TestLineManagement::test_create_line ERROR [ 28%]
+tests/integration/test_gtin_and_line.py::TestLineManagement::test_edit_line_created ERROR [ 29%]
+tests/integration/test_gtin_and_line.py::TestLineManagement::test_delete_line_created ERROR [ 29%]
+tests/integration/test_gtin_and_line.py::TestLineManagement::test_recover_line_created ERROR [ 30%]
+tests/integration/test_gtin_and_line.py::TestLineManagement::test_filter_lines_pagination ERROR [ 31%]
+tests/integration/test_gtin_and_line.py::TestGTINManagement::test_filter_gtin_default ERROR [ 31%]
+tests/integration/test_gtin_and_line.py::TestGTINManagement::test_filter_gtin_milk ERROR [ 32%]
+tests/integration/test_gtin_and_line.py::TestGTINManagement::test_filter_gtin_water ERROR [ 33%]
+tests/integration/test_gtin_and_line.py::TestGTINManagement::test_filter_gtin_shoes ERROR [ 33%]
+tests/integration/test_gtin_and_line.py::TestGTINManagement::test_filter_gtin_all_known_groups ERROR [ 34%]
+tests/integration/test_gtin_and_line.py::TestGTINManagement::test_add_existing_gtin ERROR [ 35%]
+tests/integration/test_gtin_and_line.py::TestGTINManagement::test_edit_gtin_milk ERROR [ 35%]
+tests/integration/test_gtin_and_line.py::TestGTINManagement::test_filter_gtin_by_gtin_value ERROR [ 36%]
+tests/integration/test_gtin_and_line.py::TestGTINManagement::test_filter_gtin_pagination ERROR [ 37%]
+tests/integration/test_line_management.py::test_filter_lines_returns_data ERROR [ 37%]
+tests/integration/test_line_management.py::test_filter_lines_by_model ERROR [ 38%]
+tests/integration/test_line_management.py::test_filter_lines_milk_has_line ERROR [ 38%]
+tests/integration/test_line_management.py::test_create_and_find_line ERROR [ 39%]
+tests/integration/test_line_management.py::test_edit_nonexistent_line ERROR [ 40%]
+tests/integration/test_line_management.py::test_delete_nonexistent_line ERROR [ 40%]
+tests/integration/test_line_management.py::test_recover_nonexistent_line ERROR [ 41%]
+tests/integration/test_line_management.py::test_filter_lines_per_product_group[milk] ERROR [ 42%]
+tests/integration/test_line_management.py::test_filter_lines_per_product_group[water] ERROR [ 42%]
+tests/integration/test_line_management.py::test_filter_lines_per_product_group[shoes] ERROR [ 43%]
+tests/integration/test_line_management.py::test_filter_lines_per_product_group[antiseptic] ERROR [ 44%]
+tests/integration/test_line_management.py::test_filter_lines_per_product_group[bio] ERROR [ 44%]
+tests/integration/test_line_management.py::test_filter_lines_per_product_group[lp] ERROR [ 45%]
+tests/integration/test_line_management.py::test_filter_lines_per_product_group[perfumery] ERROR [ 46%]
+tests/integration/test_line_management.py::test_filter_lines_per_product_group[beer] ERROR [ 46%]
+tests/integration/test_line_management.py::test_filter_lines_per_product_group[nabeer] ERROR [ 47%]
+tests/integration/test_line_management.py::test_filter_lines_per_product_group[softdrinks] ERROR [ 48%]
+tests/integration/test_line_management.py::test_filter_lines_per_product_group[meat] ERROR [ 48%]
+tests/integration/test_line_management.py::test_filter_lines_per_product_group[seafood] ERROR [ 49%]
+tests/integration/test_line_management.py::test_filter_lines_per_product_group[conserve] ERROR [ 50%]
+tests/integration/test_line_management.py::test_filter_lines_per_product_group[grocery] ERROR [ 50%]
+tests/integration/test_line_management.py::test_filter_lines_per_product_group[vetpharma] ERROR [ 51%]
+tests/integration/test_line_management.py::test_filter_lines_per_product_group[toys] ERROR [ 51%]
+tests/integration/test_line_management.py::test_filter_lines_per_product_group[homeware] ERROR [ 52%]
+tests/integration/test_line_management.py::test_filter_lines_per_product_group[chemistry] ERROR [ 53%]
+tests/integration/test_line_management.py::test_filter_lines_per_product_group[construction] ERROR [ 53%]
+tests/integration/test_line_management.py::test_filter_lines_per_product_group[fertilizers] ERROR [ 54%]
+tests/integration/test_line_management.py::test_filter_lines_per_product_group[fire] ERROR [ 55%]
+tests/integration/test_line_management.py::test_filter_lines_per_product_group[vegetableoil] ERROR [ 55%]
+tests/integration/test_line_management.py::test_filter_lines_per_product_group[petfood] ERROR [ 56%]
+tests/integration/test_line_management.py::test_filter_lines_per_product_group[books] ERROR [ 57%]
+tests/integration/test_line_management.py::test_filter_lines_per_product_group[radio] ERROR [ 57%]
+tests/integration/test_line_management.py::test_filter_lines_per_product_group[autofluids] ERROR [ 58%]
+tests/integration/test_line_management.py::test_filter_lines_per_product_group[carparts] ERROR [ 59%]
+tests/integration/test_line_management.py::test_filter_lines_per_product_group[bicycle] ERROR [ 59%]
+tests/integration/test_line_management.py::test_filter_lines_per_product_group[wheelchairs] ERROR [ 60%]
+tests/integration/test_orders.py::TestOrderRetrieval::test_get_order_form_data ERROR [ 61%]
+tests/integration/test_orders.py::TestOrderRetrieval::test_get_order_statistics ERROR [ 61%]
+tests/integration/test_orders.py::TestOrderRetrieval::test_get_contract_areas ERROR [ 62%]
+tests/integration/test_orders.py::TestOrderRetrieval::test_get_approvable_orders ERROR [ 62%]
+tests/integration/test_orders.py::TestOrderRetrieval::test_get_order_by_nonexistent_id ERROR [ 63%]
+tests/integration/test_orders.py::TestOrderCreation::test_create_order_invalid_gtin ERROR [ 64%]
+tests/integration/test_orders.py::TestOrderCreation::test_create_order_zero_quantity ERROR [ 64%]
+tests/integration/test_orders.py::TestOrderCreation::test_create_order_negative_quantity ERROR [ 65%]
+tests/integration/test_orders.py::TestOrderCreation::test_create_order_missing_gtin ERROR [ 66%]
+tests/integration/test_orders.py::TestOrderCreation::test_create_order_real_gtin ERROR [ 66%]
+tests/integration/test_orders.py::TestOrderWorkflow::test_approve_nonexistent_order ERROR [ 67%]
+tests/integration/test_orders.py::TestOrderWorkflow::test_reject_nonexistent_order_manual ERROR [ 68%]
+tests/integration/test_orders.py::TestOrderWorkflow::test_approve_invalid_id_format ERROR [ 68%]
+tests/integration/test_reports.py::TestReportFilter::test_filter_reports_default ERROR [ 69%]
+tests/integration/test_reports.py::TestReportFilter::test_filter_reports_by_type_circulation ERROR [ 70%]
+tests/integration/test_reports.py::TestReportFilter::test_filter_reports_by_type_utilisation ERROR [ 70%]
+tests/integration/test_reports.py::TestReportFilter::test_filter_reports_by_type_aggregation ERROR [ 71%]
+tests/integration/test_reports.py::TestReportFilter::test_filter_reports_by_status_new ERROR [ 72%]
+tests/integration/test_reports.py::TestReportFilter::test_filter_reports_by_status_sent ERROR [ 72%]
+tests/integration/test_reports.py::TestReportFilter::test_filter_reports_by_status_error ERROR [ 73%]
+tests/integration/test_reports.py::TestReportFilter::test_report_statistics ERROR [ 74%]
+tests/integration/test_reports.py::TestReportFilter::test_filter_reports_real_error_report ERROR [ 74%]
+tests/integration/test_reports.py::TestReportFilter::test_filter_reports_pagination ERROR [ 75%]
+tests/integration/test_reports.py::TestSendCirculation::test_send_circulation_finished_shift ERROR [ 75%]
+tests/integration/test_reports.py::TestSendCirculation::test_send_circulation_finished_shift_2 ERROR [ 76%]
+tests/integration/test_reports.py::TestSendCirculation::test_send_circulation_missing_inn ERROR [ 77%]
+tests/integration/test_reports.py::TestSendCirculation::test_send_circulation_nonexistent_shift ERROR [ 77%]
+tests/integration/test_reports.py::TestSendUtilisation::test_send_utilisation_finished_shift ERROR [ 78%]
+tests/integration/test_reports.py::TestSendUtilisation::test_send_utilisation_by_aggregation_session ERROR [ 79%]
+tests/integration/test_reports.py::TestSendUtilisation::test_send_utilisation_missing_inn ERROR [ 79%]
+tests/integration/test_reports.py::TestSendUtilisation::test_send_utilisation_nonexistent_shift ERROR [ 80%]
+tests/integration/test_reports.py::TestSendAggregation::test_send_aggregation_report ERROR [ 81%]
+tests/integration/test_reports.py::TestSendAggregation::test_send_aggregation_nonexistent_session ERROR [ 81%]
+tests/integration/test_reports.py::TestSendAggregation::test_send_atk_report ERROR [ 82%]
+tests/integration/test_reports.py::TestSendAggregation::test_send_atk_nonexistent_session ERROR [ 83%]
+tests/integration/test_reports.py::TestReportManagement::test_resend_error_report ERROR [ 83%]
+tests/integration/test_reports.py::TestReportManagement::test_resend_nonexistent_report ERROR [ 84%]
+tests/integration/test_reports.py::TestReportManagement::test_set_report_status_to_sent ERROR [ 85%]
+tests/integration/test_reports.py::TestReportManagement::test_set_report_status_nonexistent ERROR [ 85%]
+tests/integration/test_reports.py::TestReportManagement::test_real_report_ids_are_valid ERROR [ 86%]
+tests/integration/test_shipment.py::TestShipment::test_filter_shipments_default ERROR [ 87%]
+tests/integration/test_shipment.py::TestShipment::test_filter_active_shipments ERROR [ 87%]
+tests/integration/test_shipment.py::TestShipment::test_filter_finished_shipments ERROR [ 88%]
+tests/integration/test_shipment.py::TestShipment::test_start_shipment_validation ERROR [ 88%]
+tests/integration/test_warehouse.py::TestWarehouse::test_filter_rolls_default ERROR [ 89%]
+tests/integration/test_warehouse.py::TestWarehouse::test_filter_rolls_by_product_group ERROR [ 90%]
+tests/integration/test_warehouse.py::TestWarehouse::test_get_roll_metadata ERROR [ 90%]
+tests/integration/test_work_shift.py::TestWorkShiftFilter::test_filter_all_shifts ERROR [ 91%]
+tests/integration/test_work_shift.py::TestWorkShiftFilter::test_filter_shifts_by_line_milk ERROR [ 92%]
+tests/integration/test_work_shift.py::TestWorkShiftFilter::test_filter_shifts_by_line_water ERROR [ 92%]
+tests/integration/test_work_shift.py::TestWorkShiftFilter::test_filter_shifts_pagination ERROR [ 93%]
+tests/integration/test_work_shift.py::TestWorkShiftFilter::test_filter_active_shift_milk ERROR [ 94%]
+tests/integration/test_work_shift.py::TestWorkShiftLifecycle::test_start_shift_milk ERROR [ 94%]
+tests/integration/test_work_shift.py::TestWorkShiftLifecycle::test_add_code_to_created_shift ERROR [ 95%]
+tests/integration/test_work_shift.py::TestWorkShiftLifecycle::test_finish_created_shift ERROR [ 96%]
+tests/integration/test_work_shift.py::TestWorkShiftLifecycle::test_start_shift_invalid_line ERROR [ 96%]
+tests/integration/test_work_shift.py::TestWorkShiftLifecycle::test_finish_nonexistent_shift ERROR [ 97%]
+tests/integration/test_work_shift.py::TestWorkShiftActiveShifts::test_active_shift_milk_exists ERROR [ 98%]
+tests/integration/test_work_shift.py::TestWorkShiftActiveShifts::test_active_shift_water_exists ERROR [ 98%]
+tests/integration/test_work_shift.py::TestWorkShiftActiveShifts::test_active_shift_softdrinks_exists ERROR [ 99%]
+tests/integration/test_work_shift.py::TestWorkShiftActiveShifts::test_finished_shift_exists ERROR [100%]
+
+=================================== ERRORS ====================================
+___ ERROR at setup of TestAggregationSessionFilter.test_filter_all_sessions ___
+..\..\AppData\Roaming\Python\Python313\site-packages\pytest_asyncio\plugin.py:728: in pytest_fixture_setup
+    return (yield)
+            ^^^^^
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+---------------------------- Captured stdout setup ----------------------------
+
+[AUTH] └тЄюЁшчрЎш  эр https://spp-dev.smartpack.world ъръ 'sasha'...
+_ ERROR at setup of TestAggregationSessionFilter.test_filter_sessions_pagination _
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_ ERROR at setup of TestAggregationSessionFilter.test_filter_sessions_with_limit _
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_ ERROR at setup of TestAggregationSessionDetail.test_get_session_detail_real _
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_ ERROR at setup of TestAggregationSessionDetail.test_get_session_detail_nonexistent _
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+____ ERROR at setup of TestAggregationSessionDetail.test_get_session_stats ____
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+____ ERROR at setup of TestAggregationSessionDetail.test_get_global_stats _____
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_ ERROR at setup of TestAggregationSessionLifecycle.test_start_pallets_session _
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_ ERROR at setup of TestAggregationSessionLifecycle.test_add_code_to_pallets_session _
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_ ERROR at setup of TestAggregationSessionLifecycle.test_add_package_to_pallets_session _
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_ ERROR at setup of TestAggregationSessionLifecycle.test_add_pallet_to_pallets_session _
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_ ERROR at setup of TestAggregationSessionLifecycle.test_finish_pallets_session _
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_ ERROR at setup of TestAggregationSessionLifecycle.test_create_dashboard_session _
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_ ERROR at setup of TestAggregationSessionCorrections.test_withdrawal_code_nonexistent _
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_ ERROR at setup of TestAggregationSessionCorrections.test_disbandment_package_nonexistent _
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+________________ ERROR at setup of TestAuth.test_login_success ________________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+__________ ERROR at setup of TestAuth.test_login_invalid_credentials __________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+____________ ERROR at setup of TestAuth.test_login_missing_fields _____________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_________________ ERROR at setup of test_gtin_to_shift_chain __________________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+______________ ERROR at setup of test_multi_product_group_chain _______________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+______________ ERROR at setup of test_active_shifts_across_lines ______________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_________ ERROR at setup of test_shift_and_aggregation_session_chain __________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+____________ ERROR at setup of test_create_shift_and_finish_chain _____________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_____ ERROR at setup of TestDeviceManagement.test_filter_devices_default ______
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+____ ERROR at setup of TestDeviceManagement.test_filter_devices_pagination ____
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_______ ERROR at setup of TestDeviceManagement.test_real_device_in_list _______
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_________ ERROR at setup of TestDeviceManagement.test_add_new_device __________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+________ ERROR at setup of TestDeviceManagement.test_block_test_device ________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_______ ERROR at setup of TestDeviceManagement.test_delete_test_device ________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+____ ERROR at setup of TestDeviceManagement.test_block_nonexistent_device _____
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+____ ERROR at setup of TestDeviceManagement.test_delete_nonexistent_device ____
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+____ ERROR at setup of TestPrinterManagement.test_filter_printers_default _____
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+______ ERROR at setup of TestPrinterManagement.test_real_printer_in_list ______
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+____ ERROR at setup of TestPrinterManagement.test_toggle_printer_favorite _____
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+___ ERROR at setup of TestPrinterManagement.test_send_to_print_by_gtin_milk ___
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_ ERROR at setup of TestPrinterManagement.test_send_to_print_by_gtin_invalid_printer _
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+__________ ERROR at setup of TestPrinterManagement.test_add_printer ___________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+______ ERROR at setup of TestPrinterManagement.test_delete_test_printer _______
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+___ ERROR at setup of TestPrinterManagement.test_filter_printers_pagination ___
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_______ ERROR at setup of TestLineManagement.test_filter_lines_default ________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_ ERROR at setup of TestLineManagement.test_filter_lines_by_product_group_milk _
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_ ERROR at setup of TestLineManagement.test_filter_lines_by_product_group_water _
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+__ ERROR at setup of TestLineManagement.test_filter_lines_all_product_groups __
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+____________ ERROR at setup of TestLineManagement.test_create_line ____________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_________ ERROR at setup of TestLineManagement.test_edit_line_created _________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+________ ERROR at setup of TestLineManagement.test_delete_line_created ________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_______ ERROR at setup of TestLineManagement.test_recover_line_created ________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+______ ERROR at setup of TestLineManagement.test_filter_lines_pagination ______
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+________ ERROR at setup of TestGTINManagement.test_filter_gtin_default ________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_________ ERROR at setup of TestGTINManagement.test_filter_gtin_milk __________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_________ ERROR at setup of TestGTINManagement.test_filter_gtin_water _________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_________ ERROR at setup of TestGTINManagement.test_filter_gtin_shoes _________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+___ ERROR at setup of TestGTINManagement.test_filter_gtin_all_known_groups ____
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_________ ERROR at setup of TestGTINManagement.test_add_existing_gtin _________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+__________ ERROR at setup of TestGTINManagement.test_edit_gtin_milk ___________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_____ ERROR at setup of TestGTINManagement.test_filter_gtin_by_gtin_value _____
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+______ ERROR at setup of TestGTINManagement.test_filter_gtin_pagination _______
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+______________ ERROR at setup of test_filter_lines_returns_data _______________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+________________ ERROR at setup of test_filter_lines_by_model _________________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+______________ ERROR at setup of test_filter_lines_milk_has_line ______________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_________________ ERROR at setup of test_create_and_find_line _________________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+________________ ERROR at setup of test_edit_nonexistent_line _________________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_______________ ERROR at setup of test_delete_nonexistent_line ________________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_______________ ERROR at setup of test_recover_nonexistent_line _______________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_________ ERROR at setup of test_filter_lines_per_product_group[milk] _________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+________ ERROR at setup of test_filter_lines_per_product_group[water] _________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+________ ERROR at setup of test_filter_lines_per_product_group[shoes] _________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+______ ERROR at setup of test_filter_lines_per_product_group[antiseptic] ______
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_________ ERROR at setup of test_filter_lines_per_product_group[bio] __________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+__________ ERROR at setup of test_filter_lines_per_product_group[lp] __________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+______ ERROR at setup of test_filter_lines_per_product_group[perfumery] _______
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_________ ERROR at setup of test_filter_lines_per_product_group[beer] _________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+________ ERROR at setup of test_filter_lines_per_product_group[nabeer] ________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+______ ERROR at setup of test_filter_lines_per_product_group[softdrinks] ______
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_________ ERROR at setup of test_filter_lines_per_product_group[meat] _________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_______ ERROR at setup of test_filter_lines_per_product_group[seafood] ________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_______ ERROR at setup of test_filter_lines_per_product_group[conserve] _______
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_______ ERROR at setup of test_filter_lines_per_product_group[grocery] ________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+______ ERROR at setup of test_filter_lines_per_product_group[vetpharma] _______
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_________ ERROR at setup of test_filter_lines_per_product_group[toys] _________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_______ ERROR at setup of test_filter_lines_per_product_group[homeware] _______
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+______ ERROR at setup of test_filter_lines_per_product_group[chemistry] _______
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_____ ERROR at setup of test_filter_lines_per_product_group[construction] _____
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_____ ERROR at setup of test_filter_lines_per_product_group[fertilizers] ______
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_________ ERROR at setup of test_filter_lines_per_product_group[fire] _________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_____ ERROR at setup of test_filter_lines_per_product_group[vegetableoil] _____
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_______ ERROR at setup of test_filter_lines_per_product_group[petfood] ________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+________ ERROR at setup of test_filter_lines_per_product_group[books] _________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+________ ERROR at setup of test_filter_lines_per_product_group[radio] _________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+______ ERROR at setup of test_filter_lines_per_product_group[autofluids] ______
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_______ ERROR at setup of test_filter_lines_per_product_group[carparts] _______
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_______ ERROR at setup of test_filter_lines_per_product_group[bicycle] ________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_____ ERROR at setup of test_filter_lines_per_product_group[wheelchairs] ______
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+________ ERROR at setup of TestOrderRetrieval.test_get_order_form_data ________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_______ ERROR at setup of TestOrderRetrieval.test_get_order_statistics ________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+________ ERROR at setup of TestOrderRetrieval.test_get_contract_areas _________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_______ ERROR at setup of TestOrderRetrieval.test_get_approvable_orders _______
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+____ ERROR at setup of TestOrderRetrieval.test_get_order_by_nonexistent_id ____
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_____ ERROR at setup of TestOrderCreation.test_create_order_invalid_gtin ______
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_____ ERROR at setup of TestOrderCreation.test_create_order_zero_quantity _____
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+___ ERROR at setup of TestOrderCreation.test_create_order_negative_quantity ___
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_____ ERROR at setup of TestOrderCreation.test_create_order_missing_gtin ______
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_______ ERROR at setup of TestOrderCreation.test_create_order_real_gtin _______
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_____ ERROR at setup of TestOrderWorkflow.test_approve_nonexistent_order ______
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+__ ERROR at setup of TestOrderWorkflow.test_reject_nonexistent_order_manual ___
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_____ ERROR at setup of TestOrderWorkflow.test_approve_invalid_id_format ______
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_______ ERROR at setup of TestReportFilter.test_filter_reports_default ________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_ ERROR at setup of TestReportFilter.test_filter_reports_by_type_circulation __
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_ ERROR at setup of TestReportFilter.test_filter_reports_by_type_utilisation __
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_ ERROR at setup of TestReportFilter.test_filter_reports_by_type_aggregation __
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+____ ERROR at setup of TestReportFilter.test_filter_reports_by_status_new _____
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+____ ERROR at setup of TestReportFilter.test_filter_reports_by_status_sent ____
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+___ ERROR at setup of TestReportFilter.test_filter_reports_by_status_error ____
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+__________ ERROR at setup of TestReportFilter.test_report_statistics __________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+__ ERROR at setup of TestReportFilter.test_filter_reports_real_error_report ___
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+______ ERROR at setup of TestReportFilter.test_filter_reports_pagination ______
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_ ERROR at setup of TestSendCirculation.test_send_circulation_finished_shift __
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_ ERROR at setup of TestSendCirculation.test_send_circulation_finished_shift_2 _
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+___ ERROR at setup of TestSendCirculation.test_send_circulation_missing_inn ___
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_ ERROR at setup of TestSendCirculation.test_send_circulation_nonexistent_shift _
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_ ERROR at setup of TestSendUtilisation.test_send_utilisation_finished_shift __
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_ ERROR at setup of TestSendUtilisation.test_send_utilisation_by_aggregation_session _
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+___ ERROR at setup of TestSendUtilisation.test_send_utilisation_missing_inn ___
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_ ERROR at setup of TestSendUtilisation.test_send_utilisation_nonexistent_shift _
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_____ ERROR at setup of TestSendAggregation.test_send_aggregation_report ______
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_ ERROR at setup of TestSendAggregation.test_send_aggregation_nonexistent_session _
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_________ ERROR at setup of TestSendAggregation.test_send_atk_report __________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+___ ERROR at setup of TestSendAggregation.test_send_atk_nonexistent_session ___
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_______ ERROR at setup of TestReportManagement.test_resend_error_report _______
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+____ ERROR at setup of TestReportManagement.test_resend_nonexistent_report ____
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+____ ERROR at setup of TestReportManagement.test_set_report_status_to_sent ____
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+__ ERROR at setup of TestReportManagement.test_set_report_status_nonexistent __
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+____ ERROR at setup of TestReportManagement.test_real_report_ids_are_valid ____
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+________ ERROR at setup of TestShipment.test_filter_shipments_default _________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_________ ERROR at setup of TestShipment.test_filter_active_shipments _________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+________ ERROR at setup of TestShipment.test_filter_finished_shipments ________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+________ ERROR at setup of TestShipment.test_start_shipment_validation ________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+__________ ERROR at setup of TestWarehouse.test_filter_rolls_default __________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_____ ERROR at setup of TestWarehouse.test_filter_rolls_by_product_group ______
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+___________ ERROR at setup of TestWarehouse.test_get_roll_metadata ____________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+________ ERROR at setup of TestWorkShiftFilter.test_filter_all_shifts _________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+____ ERROR at setup of TestWorkShiftFilter.test_filter_shifts_by_line_milk ____
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+___ ERROR at setup of TestWorkShiftFilter.test_filter_shifts_by_line_water ____
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_____ ERROR at setup of TestWorkShiftFilter.test_filter_shifts_pagination _____
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_____ ERROR at setup of TestWorkShiftFilter.test_filter_active_shift_milk _____
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_______ ERROR at setup of TestWorkShiftLifecycle.test_start_shift_milk ________
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+___ ERROR at setup of TestWorkShiftLifecycle.test_add_code_to_created_shift ___
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_____ ERROR at setup of TestWorkShiftLifecycle.test_finish_created_shift ______
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+___ ERROR at setup of TestWorkShiftLifecycle.test_start_shift_invalid_line ____
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+___ ERROR at setup of TestWorkShiftLifecycle.test_finish_nonexistent_shift ____
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+__ ERROR at setup of TestWorkShiftActiveShifts.test_active_shift_milk_exists __
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_ ERROR at setup of TestWorkShiftActiveShifts.test_active_shift_water_exists __
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+_ ERROR at setup of TestWorkShiftActiveShifts.test_active_shift_softdrinks_exists _
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+___ ERROR at setup of TestWorkShiftActiveShifts.test_finished_shift_exists ____
+tests\conftest.py:273: in client
+    token = _get_real_token(base_url, username, password, verify_ssl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\conftest.py:227: in _get_real_token
+    resp.raise_for_status()
+..\..\AppData\Roaming\Python\Python313\site-packages\requests\models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://spp-dev.smartpack.world/api/web/v1/auth
+=========================== short test summary info ===========================
+ERROR tests/integration/test_aggregation_session.py::TestAggregationSessionFilter::test_filter_all_sessions
+ERROR tests/integration/test_aggregation_session.py::TestAggregationSessionFilter::test_filter_sessions_pagination
+ERROR tests/integration/test_aggregation_session.py::TestAggregationSessionFilter::test_filter_sessions_with_limit
+ERROR tests/integration/test_aggregation_session.py::TestAggregationSessionDetail::test_get_session_detail_real
+ERROR tests/integration/test_aggregation_session.py::TestAggregationSessionDetail::test_get_session_detail_nonexistent
+ERROR tests/integration/test_aggregation_session.py::TestAggregationSessionDetail::test_get_session_stats
+ERROR tests/integration/test_aggregation_session.py::TestAggregationSessionDetail::test_get_global_stats
+ERROR tests/integration/test_aggregation_session.py::TestAggregationSessionLifecycle::test_start_pallets_session
+ERROR tests/integration/test_aggregation_session.py::TestAggregationSessionLifecycle::test_add_code_to_pallets_session
+ERROR tests/integration/test_aggregation_session.py::TestAggregationSessionLifecycle::test_add_package_to_pallets_session
+ERROR tests/integration/test_aggregation_session.py::TestAggregationSessionLifecycle::test_add_pallet_to_pallets_session
+ERROR tests/integration/test_aggregation_session.py::TestAggregationSessionLifecycle::test_finish_pallets_session
+ERROR tests/integration/test_aggregation_session.py::TestAggregationSessionLifecycle::test_create_dashboard_session
+ERROR tests/integration/test_aggregation_session.py::TestAggregationSessionCorrections::test_withdrawal_code_nonexistent
+ERROR tests/integration/test_aggregation_session.py::TestAggregationSessionCorrections::test_disbandment_package_nonexistent
+ERROR tests/integration/test_auth.py::TestAuth::test_login_success - requests...
+ERROR tests/integration/test_auth.py::TestAuth::test_login_invalid_credentials
+ERROR tests/integration/test_auth.py::TestAuth::test_login_missing_fields - r...
+ERROR tests/integration/test_chain.py::test_gtin_to_shift_chain - requests.ex...
+ERROR tests/integration/test_chain.py::test_multi_product_group_chain - reque...
+ERROR tests/integration/test_chain.py::test_active_shifts_across_lines - requ...
+ERROR tests/integration/test_chain.py::test_shift_and_aggregation_session_chain
+ERROR tests/integration/test_chain.py::test_create_shift_and_finish_chain - r...
+ERROR tests/integration/test_devices_and_printers.py::TestDeviceManagement::test_filter_devices_default
+ERROR tests/integration/test_devices_and_printers.py::TestDeviceManagement::test_filter_devices_pagination
+ERROR tests/integration/test_devices_and_printers.py::TestDeviceManagement::test_real_device_in_list
+ERROR tests/integration/test_devices_and_printers.py::TestDeviceManagement::test_add_new_device
+ERROR tests/integration/test_devices_and_printers.py::TestDeviceManagement::test_block_test_device
+ERROR tests/integration/test_devices_and_printers.py::TestDeviceManagement::test_delete_test_device
+ERROR tests/integration/test_devices_and_printers.py::TestDeviceManagement::test_block_nonexistent_device
+ERROR tests/integration/test_devices_and_printers.py::TestDeviceManagement::test_delete_nonexistent_device
+ERROR tests/integration/test_devices_and_printers.py::TestPrinterManagement::test_filter_printers_default
+ERROR tests/integration/test_devices_and_printers.py::TestPrinterManagement::test_real_printer_in_list
+ERROR tests/integration/test_devices_and_printers.py::TestPrinterManagement::test_toggle_printer_favorite
+ERROR tests/integration/test_devices_and_printers.py::TestPrinterManagement::test_send_to_print_by_gtin_milk
+ERROR tests/integration/test_devices_and_printers.py::TestPrinterManagement::test_send_to_print_by_gtin_invalid_printer
+ERROR tests/integration/test_devices_and_printers.py::TestPrinterManagement::test_add_printer
+ERROR tests/integration/test_devices_and_printers.py::TestPrinterManagement::test_delete_test_printer
+ERROR tests/integration/test_devices_and_printers.py::TestPrinterManagement::test_filter_printers_pagination
+ERROR tests/integration/test_gtin_and_line.py::TestLineManagement::test_filter_lines_default
+ERROR tests/integration/test_gtin_and_line.py::TestLineManagement::test_filter_lines_by_product_group_milk
+ERROR tests/integration/test_gtin_and_line.py::TestLineManagement::test_filter_lines_by_product_group_water
+ERROR tests/integration/test_gtin_and_line.py::TestLineManagement::test_filter_lines_all_product_groups
+ERROR tests/integration/test_gtin_and_line.py::TestLineManagement::test_create_line
+ERROR tests/integration/test_gtin_and_line.py::TestLineManagement::test_edit_line_created
+ERROR tests/integration/test_gtin_and_line.py::TestLineManagement::test_delete_line_created
+ERROR tests/integration/test_gtin_and_line.py::TestLineManagement::test_recover_line_created
+ERROR tests/integration/test_gtin_and_line.py::TestLineManagement::test_filter_lines_pagination
+ERROR tests/integration/test_gtin_and_line.py::TestGTINManagement::test_filter_gtin_default
+ERROR tests/integration/test_gtin_and_line.py::TestGTINManagement::test_filter_gtin_milk
+ERROR tests/integration/test_gtin_and_line.py::TestGTINManagement::test_filter_gtin_water
+ERROR tests/integration/test_gtin_and_line.py::TestGTINManagement::test_filter_gtin_shoes
+ERROR tests/integration/test_gtin_and_line.py::TestGTINManagement::test_filter_gtin_all_known_groups
+ERROR tests/integration/test_gtin_and_line.py::TestGTINManagement::test_add_existing_gtin
+ERROR tests/integration/test_gtin_and_line.py::TestGTINManagement::test_edit_gtin_milk
+ERROR tests/integration/test_gtin_and_line.py::TestGTINManagement::test_filter_gtin_by_gtin_value
+ERROR tests/integration/test_gtin_and_line.py::TestGTINManagement::test_filter_gtin_pagination
+ERROR tests/integration/test_line_management.py::test_filter_lines_returns_data
+ERROR tests/integration/test_line_management.py::test_filter_lines_by_model
+ERROR tests/integration/test_line_management.py::test_filter_lines_milk_has_line
+ERROR tests/integration/test_line_management.py::test_create_and_find_line - ...
+ERROR tests/integration/test_line_management.py::test_edit_nonexistent_line
+ERROR tests/integration/test_line_management.py::test_delete_nonexistent_line
+ERROR tests/integration/test_line_management.py::test_recover_nonexistent_line
+ERROR tests/integration/test_line_management.py::test_filter_lines_per_product_group[milk]
+ERROR tests/integration/test_line_management.py::test_filter_lines_per_product_group[water]
+ERROR tests/integration/test_line_management.py::test_filter_lines_per_product_group[shoes]
+ERROR tests/integration/test_line_management.py::test_filter_lines_per_product_group[antiseptic]
+ERROR tests/integration/test_line_management.py::test_filter_lines_per_product_group[bio]
+ERROR tests/integration/test_line_management.py::test_filter_lines_per_product_group[lp]
+ERROR tests/integration/test_line_management.py::test_filter_lines_per_product_group[perfumery]
+ERROR tests/integration/test_line_management.py::test_filter_lines_per_product_group[beer]
+ERROR tests/integration/test_line_management.py::test_filter_lines_per_product_group[nabeer]
+ERROR tests/integration/test_line_management.py::test_filter_lines_per_product_group[softdrinks]
+ERROR tests/integration/test_line_management.py::test_filter_lines_per_product_group[meat]
+ERROR tests/integration/test_line_management.py::test_filter_lines_per_product_group[seafood]
+ERROR tests/integration/test_line_management.py::test_filter_lines_per_product_group[conserve]
+ERROR tests/integration/test_line_management.py::test_filter_lines_per_product_group[grocery]
+ERROR tests/integration/test_line_management.py::test_filter_lines_per_product_group[vetpharma]
+ERROR tests/integration/test_line_management.py::test_filter_lines_per_product_group[toys]
+ERROR tests/integration/test_line_management.py::test_filter_lines_per_product_group[homeware]
+ERROR tests/integration/test_line_management.py::test_filter_lines_per_product_group[chemistry]
+ERROR tests/integration/test_line_management.py::test_filter_lines_per_product_group[construction]
+ERROR tests/integration/test_line_management.py::test_filter_lines_per_product_group[fertilizers]
+ERROR tests/integration/test_line_management.py::test_filter_lines_per_product_group[fire]
+ERROR tests/integration/test_line_management.py::test_filter_lines_per_product_group[vegetableoil]
+ERROR tests/integration/test_line_management.py::test_filter_lines_per_product_group[petfood]
+ERROR tests/integration/test_line_management.py::test_filter_lines_per_product_group[books]
+ERROR tests/integration/test_line_management.py::test_filter_lines_per_product_group[radio]
+ERROR tests/integration/test_line_management.py::test_filter_lines_per_product_group[autofluids]
+ERROR tests/integration/test_line_management.py::test_filter_lines_per_product_group[carparts]
+ERROR tests/integration/test_line_management.py::test_filter_lines_per_product_group[bicycle]
+ERROR tests/integration/test_line_management.py::test_filter_lines_per_product_group[wheelchairs]
+ERROR tests/integration/test_orders.py::TestOrderRetrieval::test_get_order_form_data
+ERROR tests/integration/test_orders.py::TestOrderRetrieval::test_get_order_statistics
+ERROR tests/integration/test_orders.py::TestOrderRetrieval::test_get_contract_areas
+ERROR tests/integration/test_orders.py::TestOrderRetrieval::test_get_approvable_orders
+ERROR tests/integration/test_orders.py::TestOrderRetrieval::test_get_order_by_nonexistent_id
+ERROR tests/integration/test_orders.py::TestOrderCreation::test_create_order_invalid_gtin
+ERROR tests/integration/test_orders.py::TestOrderCreation::test_create_order_zero_quantity
+ERROR tests/integration/test_orders.py::TestOrderCreation::test_create_order_negative_quantity
+ERROR tests/integration/test_orders.py::TestOrderCreation::test_create_order_missing_gtin
+ERROR tests/integration/test_orders.py::TestOrderCreation::test_create_order_real_gtin
+ERROR tests/integration/test_orders.py::TestOrderWorkflow::test_approve_nonexistent_order
+ERROR tests/integration/test_orders.py::TestOrderWorkflow::test_reject_nonexistent_order_manual
+ERROR tests/integration/test_orders.py::TestOrderWorkflow::test_approve_invalid_id_format
+ERROR tests/integration/test_reports.py::TestReportFilter::test_filter_reports_default
+ERROR tests/integration/test_reports.py::TestReportFilter::test_filter_reports_by_type_circulation
+ERROR tests/integration/test_reports.py::TestReportFilter::test_filter_reports_by_type_utilisation
+ERROR tests/integration/test_reports.py::TestReportFilter::test_filter_reports_by_type_aggregation
+ERROR tests/integration/test_reports.py::TestReportFilter::test_filter_reports_by_status_new
+ERROR tests/integration/test_reports.py::TestReportFilter::test_filter_reports_by_status_sent
+ERROR tests/integration/test_reports.py::TestReportFilter::test_filter_reports_by_status_error
+ERROR tests/integration/test_reports.py::TestReportFilter::test_report_statistics
+ERROR tests/integration/test_reports.py::TestReportFilter::test_filter_reports_real_error_report
+ERROR tests/integration/test_reports.py::TestReportFilter::test_filter_reports_pagination
+ERROR tests/integration/test_reports.py::TestSendCirculation::test_send_circulation_finished_shift
+ERROR tests/integration/test_reports.py::TestSendCirculation::test_send_circulation_finished_shift_2
+ERROR tests/integration/test_reports.py::TestSendCirculation::test_send_circulation_missing_inn
+ERROR tests/integration/test_reports.py::TestSendCirculation::test_send_circulation_nonexistent_shift
+ERROR tests/integration/test_reports.py::TestSendUtilisation::test_send_utilisation_finished_shift
+ERROR tests/integration/test_reports.py::TestSendUtilisation::test_send_utilisation_by_aggregation_session
+ERROR tests/integration/test_reports.py::TestSendUtilisation::test_send_utilisation_missing_inn
+ERROR tests/integration/test_reports.py::TestSendUtilisation::test_send_utilisation_nonexistent_shift
+ERROR tests/integration/test_reports.py::TestSendAggregation::test_send_aggregation_report
+ERROR tests/integration/test_reports.py::TestSendAggregation::test_send_aggregation_nonexistent_session
+ERROR tests/integration/test_reports.py::TestSendAggregation::test_send_atk_report
+ERROR tests/integration/test_reports.py::TestSendAggregation::test_send_atk_nonexistent_session
+ERROR tests/integration/test_reports.py::TestReportManagement::test_resend_error_report
+ERROR tests/integration/test_reports.py::TestReportManagement::test_resend_nonexistent_report
+ERROR tests/integration/test_reports.py::TestReportManagement::test_set_report_status_to_sent
+ERROR tests/integration/test_reports.py::TestReportManagement::test_set_report_status_nonexistent
+ERROR tests/integration/test_reports.py::TestReportManagement::test_real_report_ids_are_valid
+ERROR tests/integration/test_shipment.py::TestShipment::test_filter_shipments_default
+ERROR tests/integration/test_shipment.py::TestShipment::test_filter_active_shipments
+ERROR tests/integration/test_shipment.py::TestShipment::test_filter_finished_shipments
+ERROR tests/integration/test_shipment.py::TestShipment::test_start_shipment_validation
+ERROR tests/integration/test_warehouse.py::TestWarehouse::test_filter_rolls_default
+ERROR tests/integration/test_warehouse.py::TestWarehouse::test_filter_rolls_by_product_group
+ERROR tests/integration/test_warehouse.py::TestWarehouse::test_get_roll_metadata
+ERROR tests/integration/test_work_shift.py::TestWorkShiftFilter::test_filter_all_shifts
+ERROR tests/integration/test_work_shift.py::TestWorkShiftFilter::test_filter_shifts_by_line_milk
+ERROR tests/integration/test_work_shift.py::TestWorkShiftFilter::test_filter_shifts_by_line_water
+ERROR tests/integration/test_work_shift.py::TestWorkShiftFilter::test_filter_shifts_pagination
+ERROR tests/integration/test_work_shift.py::TestWorkShiftFilter::test_filter_active_shift_milk
+ERROR tests/integration/test_work_shift.py::TestWorkShiftLifecycle::test_start_shift_milk
+ERROR tests/integration/test_work_shift.py::TestWorkShiftLifecycle::test_add_code_to_created_shift
+ERROR tests/integration/test_work_shift.py::TestWorkShiftLifecycle::test_finish_created_shift
+ERROR tests/integration/test_work_shift.py::TestWorkShiftLifecycle::test_start_shift_invalid_line
+ERROR tests/integration/test_work_shift.py::TestWorkShiftLifecycle::test_finish_nonexistent_shift
+ERROR tests/integration/test_work_shift.py::TestWorkShiftActiveShifts::test_active_shift_milk_exists
+ERROR tests/integration/test_work_shift.py::TestWorkShiftActiveShifts::test_active_shift_water_exists
+ERROR tests/integration/test_work_shift.py::TestWorkShiftActiveShifts::test_active_shift_softdrinks_exists
+ERROR tests/integration/test_work_shift.py::TestWorkShiftActiveShifts::test_finished_shift_exists
+============================= 154 errors in 3.40s =============================
