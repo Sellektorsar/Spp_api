@@ -1368,16 +1368,16 @@ class ReportStatus(IntEnum):
 
 
 class ReportStatusStatistic(BaseModel):
-    created: int = Field(..., title='Created')
-    awaiting_signature: int = Field(..., title='Awaiting Signature')
-    processing: int = Field(..., title='Processing')
-    sent: int = Field(..., title='Sent')
-    processed_successfully: int = Field(..., title='Processed Successfully')
-    processed_manual: int = Field(..., title='Processed Manual')
-    delivery_error: int = Field(..., title='Delivery Error')
-    processing_error: int = Field(..., title='Processing Error')
-    processing_partial: int = Field(..., title='Processing Partial')
-    declined: int = Field(..., title='Declined')
+    created: int | None = Field(0, title='Created')
+    awaiting_signature: int | None = Field(0, title='Awaiting Signature')
+    processing: int | None = Field(0, title='Processing')
+    sent: int | None = Field(0, title='Sent')
+    processed_successfully: int | None = Field(0, title='Processed Successfully')
+    processed_manual: int | None = Field(0, title='Processed Manual')
+    delivery_error: int | None = Field(0, title='Delivery Error')
+    processing_error: int | None = Field(0, title='Processing Error')
+    processing_partial: int | None = Field(0, title='Processing Partial')
+    declined: int | None = Field(0, title='Declined')
 
 
 class ReportTypeNeedToSend(BaseModel):

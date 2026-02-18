@@ -68,14 +68,28 @@ class TestAggregationSessionDetail:
     """Тесты получения иерархии вложенности реальной агрегационной сессии."""
 
     def test_get_session_detail_real(self, client, real_agg_session_id):
-        """Получение иерархии вложенности реальной сессии (поле: id_agg_session)."""
+        """Получение иерархии вложенности реальной сессии.
+        Для надежности сначала берем свежий ID из списка сессий."""
+        
+        # 1. Get a fresh valid session ID from filter
+        filter_resp = filter_sessions(client, json={"limit": 1, "offset": 0})
+        if filter_resp.status_code == 200:
+            data = filter_resp.json()
+            if data.get("result") and len(data["result"]) > 0:
+                fresh_id = data["result"][0].get("id_agg_session")
+                if fresh_id:
+                    real_agg_session_id = fresh_id
+
         if not real_agg_session_id:
-            pytest.skip("SPP_TEST_AGG_SESSION_ID не задан")
+            pytest.skip("Не удалось получить валидный ID сессии для теста")
+
         resp = get_detail(client, json={"id_agg_session": real_agg_session_id})
-        assert resp.status_code in [200, 400, 422]
-        if resp.status_code == 200:
-            data = resp.json()
-            assert "id" in data or "id_agg_session" in data
+        
+        # Read-only operation on existing session should be 200
+        assert resp.status_code == 200, f"Failed to get details for {real_agg_session_id}: {resp.text}"
+        
+        data = resp.json()
+        assert "id" in data or "id_agg_session" in data
 
     def test_get_session_detail_nonexistent(self, client):
         """Запрос несуществующей сессии → ошибка."""
@@ -97,7 +111,7 @@ class TestAggregationSessionDetail:
                 "end_date": end,
             },
         )
-        assert resp.status_code in [200, 400, 422]
+        assert resp.status_code == 200, f"Failed to get stats: {resp.text}"
 
     def test_get_global_stats(self, client):
         """Получение глобальной статистики агрегации (без ID сессии)."""
@@ -105,7 +119,7 @@ class TestAggregationSessionDetail:
         start = (now - datetime.timedelta(days=7)).isoformat() + "Z"
         end = now.isoformat() + "Z"
         resp = get_stats(client, json={"start_date": start, "end_date": end})
-        assert resp.status_code in [200, 400, 422]
+        assert resp.status_code == 200, f"Failed to get global stats: {resp.text}"
 
 
 @pytest.mark.integration

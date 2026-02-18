@@ -115,8 +115,13 @@ def test_delete_nonexistent_line(client):
     """Удаление несуществующей линии (line_number=999999999).
     Сервер возвращает 500 Internal Server Error — известная особенность."""
     resp = delete_line(client, json={"line_number": 999999999})
-    # Сервер возвращает 500 для несуществующей линии — это поведение сервера
-    assert resp.status_code in [400, 404, 422, 500]
+    
+    # KNOWN ISSUE: Server returns 500 instead of 404/400 for non-existent line
+    if resp.status_code == 500:
+        # Verify it's the expected 500 (plain text body usually)
+        assert "Internal Server Error" in resp.text or resp.text == ""
+    else:
+        assert resp.status_code in [400, 404, 422]
 
 
 @pytest.mark.integration
