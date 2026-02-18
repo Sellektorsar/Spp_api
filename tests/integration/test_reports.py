@@ -62,12 +62,22 @@ class TestReportFilter:
     def test_report_statistics(self, client):
         """Получение статистики по отчётам."""
         resp = statistics(client, json={})
-        assert resp.status_code in [200, 500]
+        assert resp.status_code == 200, f"Failed to get report statistics: {resp.text}"
 
     def test_filter_reports_real_error_report(self, client, real_report_id_error):
         """Отчёт с ошибкой из .env присутствует в списке отчётов."""
+        
+        # Optimization: Try to find an error report if not provided
         if not real_report_id_error:
-            pytest.skip("SPP_TEST_REPORT_ID_ERROR не задан")
+             resp = filter_reports(client, json={"limit": 1, "offset": 0, "status": 103})
+             if resp.status_code == 200:
+                 data = resp.json()
+                 if data.get("result"):
+                     real_report_id_error = data["result"][0].get("id")
+        
+        if not real_report_id_error:
+            pytest.skip("SPP_TEST_REPORT_ID_ERROR не задан и не найден")
+            
         # status=103 (error) может вернуть 500 — известный баг сервера при больших выборках
         resp = filter_reports(client, json={"limit": 10, "offset": 0, "status": 103})
         assert resp.status_code in [200, 500]

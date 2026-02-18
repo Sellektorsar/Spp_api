@@ -1,6 +1,8 @@
 import requests
+import logging
 from typing import Optional, Dict
 
+logger = logging.getLogger(__name__)
 
 class APIClient:
     def __init__(
@@ -33,6 +35,7 @@ class APIClient:
         **kwargs,
     ) -> requests.Response:
         url = f"{self.base_url}/{endpoint.lstrip('/')}"
+        logger.debug(f"Request: {method} {url}")
         try:
             response = self.session.request(
                 method=method,
@@ -42,6 +45,8 @@ class APIClient:
                 timeout=self.timeout,
                 **kwargs,
             )
+            logger.debug(f"Response: {response.status_code} {response.reason}")
             return response
         except requests.RequestException as e:
+            logger.error(f"Request failed: {method} {url} - {e}")
             raise e

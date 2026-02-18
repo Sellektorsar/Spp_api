@@ -160,7 +160,8 @@ class TestAggregationSessionLifecycle:
         assert resp.status_code in [200, 400, 422]
 
     def test_add_package_to_pallets_session(self, client):
-        """Добавление SSCC-упаковки в активную pallets-сессию."""
+        """Добавление SSCC-упаковки в активную pallets-сессию.
+        NOTE: Используется фиктивный package_code, ожидается 422 (ошибка валидации) или 400."""
         resp = add_package(
             client,
             json={
