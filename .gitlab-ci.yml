@@ -1,0 +1,47 @@
+stages:
+  - test
+  - deploy
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.pip-cache"
+
+cache:
+  paths:
+    - .pip-cache/
+    - venv/
+
+test:
+  stage: test
+  image: python:3.9
+  script:
+    - python -m venv venv
+    # Windows/Linux compatibility check for activation would be good, but assuming Linux runner
+    - source venv/bin/activate || . venv/Scripts/activate
+    - pip install -r requirements.txt
+    - pip install pytest-cov allure-pytest responses
+    # Run all tests with coverage enforcement (80%)
+    - pytest --cov=src --cov-report=xml --cov-report=term --cov-fail-under=80 --alluredir=allure-results
+  coverage: '/TOTAL.*\s+(\d+%)$/'
+  artifacts:
+    when: always
+    reports:
+      junit: report.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage.xml
+    paths:
+      - allure-results/
+      - htmlcov/
+  after_script:
+    - |
+      if [ "$CI_JOB_STATUS" == "failed" ]; then
+        echo "Tests failed! Sending notification..."
+        # Example: curl -X POST -H 'Content-type: application/json' --data '{"text":"Build failed!"}' $SLACK_WEBHOOK_URL
+      fi
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploying to production..."
+  only:
+    - main

@@ -1,0 +1,18 @@
+{
+    "order": {
+        "type": "object",
+        "properties": {
+            "id": {"type": "string"},
+            "status": {"type": "string"},
+            "created_at": {"type": "string"}
+        },
+        "required": ["id", "status"]
+    },
+    "error_response": {
+        "type": "object",
+        "properties": {
+            "error_code": {"type": "string"},
+            "message": {"type": "string"}
+        }
+    }
+}

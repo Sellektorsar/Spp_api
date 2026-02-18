@@ -1,0 +1,15 @@
+{
+    "order_create": {
+        "gtin": "04607980207014",
+        "quantity": 100,
+        "receiver_area_id": "99f7cdf8-c13c-46b9-a4eb-b909b3655688"
+    },
+    "contract_area_create": {
+        "name": "Test Area",
+        "type": "WAREHOUSE"
+    },
+    "document_sign": {
+        "doc_id": "12345",
+        "signature": "base64_signature_here"
+    }
+}
