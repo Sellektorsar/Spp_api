@@ -1,11 +1,35 @@
 # Source Code
 
-This directory contains the source code for the API Client / Wrapper library that mirrors the API endpoints.
+Исходный код API клиента для SmartPack Production.
 
-## Structure
-The structure mirrors the `tests/unit` directory.
-- `src/api/`: Contains the API methods.
-- `src/utils/`: Contains utility classes (HTTP client, etc.).
+## Структура
 
-## Usage
-These modules are used by the unit tests (mocked) and can be used by integration tests (live) to interact with the API.
+```
+src/
+├── api/              # API методы по модулям
+│   ├── aggregation_session/
+│   ├── application/
+│   ├── gtin/
+│   ├── line/
+│   ├── order/
+│   ├── printer/
+│   ├── report/
+│   ├── shipment/
+│   ├── user/
+│   ├── warehouse/
+│   └── work_shift/
+├── utils/            # Утилиты
+│   ├── http.py       # HTTP клиент
+│   └── validators.py # Валидаторы
+└── models.py         # Pydantic модели
+```
+
+## Использование
+
+```python
+from src.utils.http import APIClient
+from src.api.line.create import create as create_line
+
+client = APIClient(base_url="...", token="...")
+response = create_line(client, json={"name": "Line 1"})
+```

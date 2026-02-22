@@ -1,0 +1,500 @@
+scripts/ci_integration.py:12:1: F401 'typing.Any' imported but unused
+scripts/ci_integration.py:17:1: E302 expected 2 blank lines, found 1
+scripts/ci_integration.py:26:1: E302 expected 2 blank lines, found 1
+scripts/ci_integration.py:35:1: E302 expected 2 blank lines, found 1
+scripts/ci_integration.py:45:1: W293 blank line contains whitespace
+scripts/ci_integration.py:58:1: E302 expected 2 blank lines, found 1
+scripts/ci_integration.py:63:1: W293 blank line contains whitespace
+scripts/ci_integration.py:67:1: W293 blank line contains whitespace
+scripts/ci_integration.py:77:1: W293 blank line contains whitespace
+scripts/ci_integration.py:81:1: W293 blank line contains whitespace
+scripts/ci_integration.py:85:13: F841 local variable 'result' is assigned to but never used
+scripts/ci_integration.py:92:1: W293 blank line contains whitespace
+scripts/ci_integration.py:94:1: W293 blank line contains whitespace
+scripts/ci_integration.py:97:1: W293 blank line contains whitespace
+scripts/ci_integration.py:104:1: W293 blank line contains whitespace
+scripts/ci_integration.py:107:1: W293 blank line contains whitespace
+scripts/ci_integration.py:109:1: W293 blank line contains whitespace
+scripts/ci_integration.py:126:1: W293 blank line contains whitespace
+scripts/ci_integration.py:131:1: W293 blank line contains whitespace
+scripts/ci_integration.py:135:1: W293 blank line contains whitespace
+scripts/ci_integration.py:145:1: W293 blank line contains whitespace
+scripts/ci_integration.py:147:1: W293 blank line contains whitespace
+scripts/ci_integration.py:151:1: W293 blank line contains whitespace
+scripts/ci_integration.py:160:1: W293 blank line contains whitespace
+scripts/ci_integration.py:169:1: W293 blank line contains whitespace
+scripts/ci_integration.py:175:1: W293 blank line contains whitespace
+scripts/ci_integration.py:200:1: W293 blank line contains whitespace
+scripts/ci_integration.py:209:1: W293 blank line contains whitespace
+scripts/ci_integration.py:212:1: W293 blank line contains whitespace
+scripts/ci_integration.py:216:1: W293 blank line contains whitespace
+scripts/ci_integration.py:223:1: W293 blank line contains whitespace
+scripts/ci_integration.py:257:1: W293 blank line contains whitespace
+scripts/ci_integration.py:262:1: W293 blank line contains whitespace
+scripts/ci_integration.py:265:1: W293 blank line contains whitespace
+scripts/ci_integration.py:267:23: E226 missing whitespace around arithmetic operator
+scripts/ci_integration.py:269:21: E226 missing whitespace around arithmetic operator
+scripts/ci_integration.py:278:1: W293 blank line contains whitespace
+scripts/ci_integration.py:311:1: W293 blank line contains whitespace
+scripts/ci_integration.py:321:1: W293 blank line contains whitespace
+scripts/ci_integration.py:343:1: W293 blank line contains whitespace
+scripts/ci_integration.py:347:1: W293 blank line contains whitespace
+scripts/ci_integration.py:351:1: W293 blank line contains whitespace
+scripts/ci_integration.py:353:1: W293 blank line contains whitespace
+scripts/ci_integration.py:361:1: W293 blank line contains whitespace
+scripts/ci_integration.py:364:1: W293 blank line contains whitespace
+scripts/ci_integration.py:368:1: W293 blank line contains whitespace
+scripts/ci_integration.py:371:1: W293 blank line contains whitespace
+scripts/ci_integration.py:375:1: W293 blank line contains whitespace
+scripts/ci_integration.py:379:1: W293 blank line contains whitespace
+scripts/ci_integration.py:382:1: W293 blank line contains whitespace
+scripts/ci_integration.py:385:1: W293 blank line contains whitespace
+scripts/ci_integration.py:388:1: W293 blank line contains whitespace
+scripts/ci_integration.py:391:1: W293 blank line contains whitespace
+scripts/ci_integration.py:392:15: F541 f-string is missing placeholders
+scripts/ci_integration.py:397:1: W293 blank line contains whitespace
+scripts/ci_integration.py:399:1: W293 blank line contains whitespace
+scripts/ci_integration.py:409:1: W293 blank line contains whitespace
+scripts/ci_integration.py:414:1: W293 blank line contains whitespace
+scripts/ci_integration.py:417:1: W293 blank line contains whitespace
+scripts/ci_integration.py:421:1: W293 blank line contains whitespace
+scripts/ci_integration.py:431:1: W293 blank line contains whitespace
+scripts/ci_integration.py:436:1: W293 blank line contains whitespace
+scripts/ci_integration.py:439:1: W293 blank line contains whitespace
+scripts/ci_integration.py:453:1: W293 blank line contains whitespace
+scripts/ci_integration.py:455:1: W293 blank line contains whitespace
+scripts/ci_integration.py:457:1: W293 blank line contains whitespace
+scripts/ci_integration.py:462:1: W293 blank line contains whitespace
+scripts/ci_integration.py:467:1: W293 blank line contains whitespace
+scripts/ci_integration.py:474:1: W293 blank line contains whitespace
+scripts/ci_integration.py:481:11: W292 no newline at end of file
+scripts/test_generator.py:202:30: E999 SyntaxError: invalid syntax. Perhaps you forgot a comma?
+tests/e2e/test_bulk_operations.py:17:1: F401 'typing.Dict' imported but unused
+tests/e2e/test_bulk_operations.py:17:1: F401 'typing.Any' imported but unused
+tests/e2e/test_bulk_operations.py:40:1: W293 blank line contains whitespace
+tests/e2e/test_bulk_operations.py:66:1: W293 blank line contains whitespace
+tests/e2e/test_bulk_operations.py:73:1: W293 blank line contains whitespace
+tests/e2e/test_bulk_operations.py:99:1: W293 blank line contains whitespace
+tests/e2e/test_bulk_operations.py:124:1: W293 blank line contains whitespace
+tests/e2e/test_bulk_operations.py:153:9: F841 local variable 'shift_id' is assigned to but never used
+tests/e2e/test_bulk_operations.py:154:1: W293 blank line contains whitespace
+tests/e2e/test_bulk_operations.py:158:1: W293 blank line contains whitespace
+tests/e2e/test_bulk_operations.py:174:1: W293 blank line contains whitespace
+tests/e2e/test_bulk_operations.py:180:1: W293 blank line contains whitespace
+tests/e2e/test_bulk_operations.py:192:17: E126 continuation line over-indented for hanging indent
+tests/e2e/test_bulk_operations.py:194:13: E121 continuation line under-indented for hanging indent
+tests/e2e/test_bulk_operations.py:203:1: W293 blank line contains whitespace
+tests/e2e/test_bulk_operations.py:228:1: W293 blank line contains whitespace
+tests/e2e/test_bulk_operations.py:236:1: W293 blank line contains whitespace
+tests/e2e/test_bulk_operations.py:261:1: W293 blank line contains whitespace
+tests/e2e/test_bulk_operations.py:268:1: W293 blank line contains whitespace
+tests/e2e/test_bulk_operations.py:299:9: F841 local variable 'shift_id' is assigned to but never used
+tests/e2e/test_bulk_operations.py:300:1: W293 blank line contains whitespace
+tests/e2e/test_bulk_operations.py:303:1: W293 blank line contains whitespace
+tests/e2e/test_bulk_operations.py:320:1: W293 blank line contains whitespace
+tests/e2e/test_bulk_operations.py:388:9: F841 local variable 'shift_id' is assigned to but never used
+tests/e2e/test_bulk_operations.py:389:1: W293 blank line contains whitespace
+tests/e2e/test_bulk_operations.py:393:1: W293 blank line contains whitespace
+tests/e2e/test_bulk_operations.py:402:1: W293 blank line contains whitespace
+tests/e2e/test_bulk_operations.py:405:1: W293 blank line contains whitespace
+tests/e2e/test_bulk_operations.py:408:1: W293 blank line contains whitespace
+tests/e2e/test_bulk_operations.py:414:9: F841 local variable 'shift_id' is assigned to but never used
+tests/e2e/test_bulk_operations.py:415:1: W293 blank line contains whitespace
+tests/e2e/test_bulk_operations.py:418:1: W293 blank line contains whitespace
+tests/e2e/test_bulk_operations.py:423:1: W293 blank line contains whitespace
+tests/e2e/test_bulk_operations.py:439:1: W293 blank line contains whitespace
+tests/e2e/test_bulk_operations.py:444:9: F841 local variable 'line_number' is assigned to but never used
+tests/e2e/test_bulk_operations.py:446:1: W293 blank line contains whitespace
+tests/e2e/test_bulk_operations.py:464:1: W293 blank line contains whitespace
+tests/e2e/test_bulk_operations.py:465:15: F541 f-string is missing placeholders
+tests/e2e/test_bulk_operations.py:465:69: W292 no newline at end of file
+tests/e2e/test_defect_handling.py:17:1: F401 'typing.Dict' imported but unused
+tests/e2e/test_defect_handling.py:17:1: F401 'typing.Any' imported but unused
+tests/e2e/test_defect_handling.py:25:1: F401 'src.api.work_shift.codes_by_roll.codes_by_roll as cancel_codes_by_roll' imported but unused
+tests/e2e/test_defect_handling.py:43:1: W293 blank line contains whitespace
+tests/e2e/test_defect_handling.py:68:1: W293 blank line contains whitespace
+tests/e2e/test_defect_handling.py:97:9: F841 local variable 'shift_id' is assigned to but never used
+tests/e2e/test_defect_handling.py:98:1: W293 blank line contains whitespace
+tests/e2e/test_defect_handling.py:102:1: W293 blank line contains whitespace
+tests/e2e/test_defect_handling.py:118:1: W293 blank line contains whitespace
+tests/e2e/test_defect_handling.py:124:9: F841 local variable 'shift_id' is assigned to but never used
+tests/e2e/test_defect_handling.py:126:1: W293 blank line contains whitespace
+tests/e2e/test_defect_handling.py:139:16: F821 undefined name 'add_defect'
+tests/e2e/test_defect_handling.py:147:1: W293 blank line contains whitespace
+tests/e2e/test_defect_handling.py:154:1: W293 blank line contains whitespace
+tests/e2e/test_defect_handling.py:163:16: F821 undefined name 'add_defect'
+tests/e2e/test_defect_handling.py:174:1: W293 blank line contains whitespace
+tests/e2e/test_defect_handling.py:183:16: F821 undefined name 'add_defect'
+tests/e2e/test_defect_handling.py:194:9: F841 local variable 'shift_id' is assigned to but never used
+tests/e2e/test_defect_handling.py:195:1: W293 blank line contains whitespace
+tests/e2e/test_defect_handling.py:197:1: W293 blank line contains whitespace
+tests/e2e/test_defect_handling.py:218:1: W293 blank line contains whitespace
+tests/e2e/test_defect_handling.py:225:9: F841 local variable 'shift_id' is assigned to but never used
+tests/e2e/test_defect_handling.py:229:1: W293 blank line contains whitespace
+tests/e2e/test_defect_handling.py:253:1: W293 blank line contains whitespace
+tests/e2e/test_defect_handling.py:278:1: W293 blank line contains whitespace
+tests/e2e/test_defect_handling.py:298:1: W293 blank line contains whitespace
+tests/e2e/test_defect_handling.py:325:1: W293 blank line contains whitespace
+tests/e2e/test_defect_handling.py:338:16: F821 undefined name 'remove_defect'
+tests/e2e/test_defect_handling.py:351:1: W293 blank line contains whitespace
+tests/e2e/test_defect_handling.py:378:1: W293 blank line contains whitespace
+tests/e2e/test_defect_handling.py:404:1: W293 blank line contains whitespace
+tests/e2e/test_defect_handling.py:422:15: F541 f-string is missing placeholders
+tests/e2e/test_defect_handling.py:434:16: F821 undefined name 'add_defect'
+tests/e2e/test_defect_handling.py:440:15: F541 f-string is missing placeholders
+tests/e2e/test_defect_handling.py:445:1: W293 blank line contains whitespace
+tests/e2e/test_defect_handling.py:454:16: F821 undefined name 'remove_defect'
+tests/e2e/test_defect_handling.py:459:15: F541 f-string is missing placeholders
+tests/e2e/test_defect_handling.py:463:9: F841 local variable 'line_number' is assigned to but never used
+tests/e2e/test_defect_handling.py:465:1: W293 blank line contains whitespace
+tests/e2e/test_defect_handling.py:490:9: F841 local variable 'line_number' is assigned to but never used
+tests/e2e/test_defect_handling.py:492:1: W293 blank line contains whitespace
+tests/e2e/test_defect_handling.py:507:1: W293 blank line contains whitespace
+tests/e2e/test_defect_handling.py:508:15: F541 f-string is missing placeholders
+tests/e2e/test_defect_handling.py:508:61: W292 no newline at end of file
+tests/e2e/test_gis_integration.py:17:1: F401 'typing.Dict' imported but unused
+tests/e2e/test_gis_integration.py:17:1: F401 'typing.Any' imported but unused
+tests/e2e/test_gis_integration.py:41:1: W293 blank line contains whitespace
+tests/e2e/test_gis_integration.py:66:1: W293 blank line contains whitespace
+tests/e2e/test_gis_integration.py:95:1: W293 blank line contains whitespace
+tests/e2e/test_gis_integration.py:116:1: W293 blank line contains whitespace
+tests/e2e/test_gis_integration.py:123:1: W293 blank line contains whitespace
+tests/e2e/test_gis_integration.py:139:1: W293 blank line contains whitespace
+tests/e2e/test_gis_integration.py:156:1: W293 blank line contains whitespace
+tests/e2e/test_gis_integration.py:176:1: W293 blank line contains whitespace
+tests/e2e/test_gis_integration.py:184:1: W293 blank line contains whitespace
+tests/e2e/test_gis_integration.py:204:1: W293 blank line contains whitespace
+tests/e2e/test_gis_integration.py:212:1: W293 blank line contains whitespace
+tests/e2e/test_gis_integration.py:232:1: W293 blank line contains whitespace
+tests/e2e/test_gis_integration.py:241:1: W293 blank line contains whitespace
+tests/e2e/test_gis_integration.py:266:1: W293 blank line contains whitespace
+tests/e2e/test_gis_integration.py:294:1: W293 blank line contains whitespace
+tests/e2e/test_gis_integration.py:318:1: W293 blank line contains whitespace
+tests/e2e/test_gis_integration.py:325:1: W293 blank line contains whitespace
+tests/e2e/test_gis_integration.py:342:39: W291 trailing whitespace
+tests/e2e/test_gis_integration.py:354:1: W293 blank line contains whitespace
+tests/e2e/test_gis_integration.py:370:1: W293 blank line contains whitespace
+tests/e2e/test_gis_integration.py:392:1: W293 blank line contains whitespace
+tests/e2e/test_gis_integration.py:408:1: W293 blank line contains whitespace
+tests/e2e/test_gis_integration.py:425:15: F541 f-string is missing placeholders
+tests/e2e/test_gis_integration.py:425:56: W292 no newline at end of file
+tests/e2e/test_integration_with_1c.py:17:1: F401 'typing.Dict' imported but unused
+tests/e2e/test_integration_with_1c.py:17:1: F401 'typing.Any' imported but unused
+tests/e2e/test_integration_with_1c.py:23:1: F401 'src.api.aggregation_session.finish.finish as start_agg_session' imported but unused
+tests/e2e/test_integration_with_1c.py:38:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:63:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:92:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:110:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:132:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:154:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:162:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:176:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:184:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:206:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:207:16: F821 undefined name 'update_work_shift_integration'
+tests/e2e/test_integration_with_1c.py:228:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:229:16: F821 undefined name 'update_work_shift_integration'
+tests/e2e/test_integration_with_1c.py:236:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:251:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:252:16: F821 undefined name 'update_work_shift_integration'
+tests/e2e/test_integration_with_1c.py:259:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:273:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:281:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:302:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:303:16: F821 undefined name 'update_work_shift_integration'
+tests/e2e/test_integration_with_1c.py:312:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:326:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:334:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:351:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:352:16: F821 undefined name 'update_work_shift_integration'
+tests/e2e/test_integration_with_1c.py:359:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:373:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:381:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:396:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:399:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:419:15: F541 f-string is missing placeholders
+tests/e2e/test_integration_with_1c.py:425:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:444:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:447:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:466:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:467:16: F821 undefined name 'update_work_shift_integration'
+tests/e2e/test_integration_with_1c.py:469:1: W293 blank line contains whitespace
+tests/e2e/test_integration_with_1c.py:470:15: F541 f-string is missing placeholders
+tests/e2e/test_integration_with_1c.py:470:76: W292 no newline at end of file
+tests/e2e/test_line_management.py:18:1: F401 'typing.Dict' imported but unused
+tests/e2e/test_line_management.py:18:1: F401 'typing.Any' imported but unused
+tests/e2e/test_line_management.py:41:1: W293 blank line contains whitespace
+tests/e2e/test_line_management.py:70:1: W293 blank line contains whitespace
+tests/e2e/test_line_management.py:77:1: W293 blank line contains whitespace
+tests/e2e/test_line_management.py:86:1: W293 blank line contains whitespace
+tests/e2e/test_line_management.py:102:1: W293 blank line contains whitespace
+tests/e2e/test_line_management.py:124:1: W293 blank line contains whitespace
+tests/e2e/test_line_management.py:133:1: W293 blank line contains whitespace
+tests/e2e/test_line_management.py:158:1: W293 blank line contains whitespace
+tests/e2e/test_line_management.py:160:34: E741 ambiguous variable name 'l'
+tests/e2e/test_line_management.py:168:1: W293 blank line contains whitespace
+tests/e2e/test_line_management.py:195:1: W293 blank line contains whitespace
+tests/e2e/test_line_management.py:202:1: W293 blank line contains whitespace
+tests/e2e/test_line_management.py:220:1: W293 blank line contains whitespace
+tests/e2e/test_line_management.py:229:1: W293 blank line contains whitespace
+tests/e2e/test_line_management.py:248:1: W293 blank line contains whitespace
+tests/e2e/test_line_management.py:255:1: W293 blank line contains whitespace
+tests/e2e/test_line_management.py:271:1: W293 blank line contains whitespace
+tests/e2e/test_line_management.py:307:1: W293 blank line contains whitespace
+tests/e2e/test_line_management.py:331:1: W293 blank line contains whitespace
+tests/e2e/test_line_management.py:348:1: W293 blank line contains whitespace
+tests/e2e/test_line_management.py:371:1: W293 blank line contains whitespace
+tests/e2e/test_line_management.py:377:1: W293 blank line contains whitespace
+tests/e2e/test_line_management.py:430:15: F541 f-string is missing placeholders
+tests/e2e/test_line_management.py:446:1: W293 blank line contains whitespace
+tests/e2e/test_line_management.py:449:15: F541 f-string is missing placeholders
+tests/e2e/test_line_management.py:454:1: W293 blank line contains whitespace
+tests/e2e/test_line_management.py:466:15: F541 f-string is missing placeholders
+tests/e2e/test_line_management.py:472:1: W293 blank line contains whitespace
+tests/e2e/test_line_management.py:487:1: W293 blank line contains whitespace
+tests/e2e/test_line_management.py:502:1: W293 blank line contains whitespace
+tests/e2e/test_line_management.py:503:15: F541 f-string is missing placeholders
+tests/e2e/test_line_management.py:503:64: W292 no newline at end of file
+tests/e2e/test_printer_integration.py:20:1: F401 'typing.Dict' imported but unused
+tests/e2e/test_printer_integration.py:20:1: F401 'typing.Any' imported but unused
+tests/e2e/test_printer_integration.py:44:1: W293 blank line contains whitespace
+tests/e2e/test_printer_integration.py:68:1: W293 blank line contains whitespace
+tests/e2e/test_printer_integration.py:74:1: W293 blank line contains whitespace
+tests/e2e/test_printer_integration.py:81:1: W293 blank line contains whitespace
+tests/e2e/test_printer_integration.py:105:1: W293 blank line contains whitespace
+tests/e2e/test_printer_integration.py:111:1: W293 blank line contains whitespace
+tests/e2e/test_printer_integration.py:132:1: W293 blank line contains whitespace
+tests/e2e/test_printer_integration.py:154:1: W293 blank line contains whitespace
+tests/e2e/test_printer_integration.py:163:1: W293 blank line contains whitespace
+tests/e2e/test_printer_integration.py:232:1: W293 blank line contains whitespace
+tests/e2e/test_printer_integration.py:262:1: W293 blank line contains whitespace
+tests/e2e/test_printer_integration.py:292:1: W293 blank line contains whitespace
+tests/e2e/test_printer_integration.py:322:1: W293 blank line contains whitespace
+tests/e2e/test_printer_integration.py:353:1: W293 blank line contains whitespace
+tests/e2e/test_printer_integration.py:399:15: F541 f-string is missing placeholders
+tests/e2e/test_printer_integration.py:419:15: F541 f-string is missing placeholders
+tests/e2e/test_printer_integration.py:442:16: F821 undefined name 'filter_layouts'
+tests/e2e/test_printer_integration.py:452:1: W293 blank line contains whitespace
+tests/e2e/test_printer_integration.py:480:1: W293 blank line contains whitespace
+tests/e2e/test_printer_integration.py:503:1: W293 blank line contains whitespace
+tests/e2e/test_printer_integration.py:519:1: W293 blank line contains whitespace
+tests/e2e/test_printer_integration.py:535:1: W293 blank line contains whitespace
+tests/e2e/test_printer_integration.py:536:15: F541 f-string is missing placeholders
+tests/e2e/test_printer_integration.py:536:70: W292 no newline at end of file
+tests/e2e/test_process_interruption.py:19:1: F401 'typing.Dict' imported but unused
+tests/e2e/test_process_interruption.py:19:1: F401 'typing.Any' imported but unused
+tests/e2e/test_process_interruption.py:47:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:72:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:101:9: F841 local variable 'shift_id' is assigned to but never used
+tests/e2e/test_process_interruption.py:102:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:106:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:122:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:128:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:146:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:153:9: F841 local variable 'shift_id' is assigned to but never used
+tests/e2e/test_process_interruption.py:155:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:165:17: E126 continuation line over-indented for hanging indent
+tests/e2e/test_process_interruption.py:174:9: F841 local variable 'line_number' is assigned to but never used
+tests/e2e/test_process_interruption.py:176:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:194:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:201:9: F841 local variable 'shift_id' is assigned to but never used
+tests/e2e/test_process_interruption.py:203:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:207:21: E131 continuation line unaligned for hanging indent
+tests/e2e/test_process_interruption.py:210:17: E123 closing bracket does not match indentation of opening bracket's line
+tests/e2e/test_process_interruption.py:213:17: E126 continuation line over-indented for hanging indent
+tests/e2e/test_process_interruption.py:222:9: F841 local variable 'line_number' is assigned to but never used
+tests/e2e/test_process_interruption.py:224:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:243:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:251:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:268:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:286:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:293:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:310:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:317:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:334:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:341:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:354:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:369:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:387:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:394:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:411:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:418:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:435:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:442:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:448:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:460:52: E226 missing whitespace around arithmetic operator
+tests/e2e/test_process_interruption.py:470:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:486:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:492:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:496:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:513:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:531:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:546:15: F541 f-string is missing placeholders
+tests/e2e/test_process_interruption.py:550:9: F841 local variable 'shift_id' is assigned to but never used
+tests/e2e/test_process_interruption.py:551:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:552:12: F821 undefined name 'shift_ids'
+tests/e2e/test_process_interruption.py:552:30: F821 undefined name 'shift_ids'
+tests/e2e/test_process_interruption.py:553:30: F821 undefined name 'shift_ids'
+tests/e2e/test_process_interruption.py:554:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:565:19: F541 f-string is missing placeholders
+tests/e2e/test_process_interruption.py:570:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:588:1: W293 blank line contains whitespace
+tests/e2e/test_process_interruption.py:589:15: F541 f-string is missing placeholders
+tests/e2e/test_process_interruption.py:589:72: W292 no newline at end of file
+tests/e2e/test_production_cycle.py:5:1: F401 'os' imported but unused
+tests/e2e/test_production_cycle.py:12:1: E302 expected 2 blank lines, found 1
+tests/e2e/test_production_cycle.py:21:1: W293 blank line contains whitespace
+tests/e2e/test_production_cycle.py:25:1: W293 blank line contains whitespace
+tests/e2e/test_production_cycle.py:28:32: W291 trailing whitespace
+tests/e2e/test_production_cycle.py:29:61: W291 trailing whitespace
+tests/e2e/test_production_cycle.py:30:61: W291 trailing whitespace
+tests/e2e/test_production_cycle.py:33:1: W293 blank line contains whitespace
+tests/e2e/test_production_cycle.py:35:38: W291 trailing whitespace
+tests/e2e/test_production_cycle.py:41:1: W293 blank line contains whitespace
+tests/e2e/test_production_cycle.py:43:1: W293 blank line contains whitespace
+tests/e2e/test_production_cycle.py:51:1: W293 blank line contains whitespace
+tests/e2e/test_production_cycle.py:55:32: W291 trailing whitespace
+tests/e2e/test_production_cycle.py:56:66: W291 trailing whitespace
+tests/e2e/test_production_cycle.py:57:39: W291 trailing whitespace
+tests/e2e/test_production_cycle.py:60:1: W293 blank line contains whitespace
+tests/e2e/test_production_cycle.py:62:37: W291 trailing whitespace
+tests/e2e/test_production_cycle.py:63:33: W291 trailing whitespace
+tests/e2e/test_production_cycle.py:64:31: W291 trailing whitespace
+tests/e2e/test_production_cycle.py:67:45: W291 trailing whitespace
+tests/e2e/test_production_cycle.py:73:1: W293 blank line contains whitespace
+tests/e2e/test_production_cycle.py:82:1: W293 blank line contains whitespace
+tests/e2e/test_production_cycle.py:85:32: W291 trailing whitespace
+tests/e2e/test_production_cycle.py:86:69: W291 trailing whitespace
+tests/e2e/test_production_cycle.py:87:39: W291 trailing whitespace
+tests/e2e/test_production_cycle.py:90:1: W293 blank line contains whitespace
+tests/e2e/test_production_cycle.py:103:1: W293 blank line contains whitespace
+tests/e2e/test_production_cycle.py:106:32: W291 trailing whitespace
+tests/e2e/test_production_cycle.py:107:67: W291 trailing whitespace
+tests/e2e/test_production_cycle.py:108:45: W291 trailing whitespace
+tests/e2e/test_production_cycle.py:111:1: W293 blank line contains whitespace
+tests/e2e/test_shipment_process.py:17:1: F401 'typing.Dict' imported but unused
+tests/e2e/test_shipment_process.py:17:1: F401 'typing.Any' imported but unused
+tests/e2e/test_shipment_process.py:28:1: F401 'src.api.shipment.withdrawal_code.withdrawal_code' imported but unused
+tests/e2e/test_shipment_process.py:44:1: W293 blank line contains whitespace
+tests/e2e/test_shipment_process.py:70:1: W293 blank line contains whitespace
+tests/e2e/test_shipment_process.py:92:1: W293 blank line contains whitespace
+tests/e2e/test_shipment_process.py:98:1: W293 blank line contains whitespace
+tests/e2e/test_shipment_process.py:120:1: W293 blank line contains whitespace
+tests/e2e/test_shipment_process.py:129:1: W293 blank line contains whitespace
+tests/e2e/test_shipment_process.py:155:21: F541 f-string is missing placeholders
+tests/e2e/test_shipment_process.py:156:1: W293 blank line contains whitespace
+tests/e2e/test_shipment_process.py:175:1: W293 blank line contains whitespace
+tests/e2e/test_shipment_process.py:181:1: W293 blank line contains whitespace
+tests/e2e/test_shipment_process.py:189:21: F541 f-string is missing placeholders
+tests/e2e/test_shipment_process.py:190:1: W293 blank line contains whitespace
+tests/e2e/test_shipment_process.py:209:1: W293 blank line contains whitespace
+tests/e2e/test_shipment_process.py:215:1: W293 blank line contains whitespace
+tests/e2e/test_shipment_process.py:223:1: W293 blank line contains whitespace
+tests/e2e/test_shipment_process.py:237:1: W293 blank line contains whitespace
+tests/e2e/test_shipment_process.py:245:1: W293 blank line contains whitespace
+tests/e2e/test_shipment_process.py:259:1: W293 blank line contains whitespace
+tests/e2e/test_shipment_process.py:268:1: W293 blank line contains whitespace
+tests/e2e/test_shipment_process.py:293:1: W293 blank line contains whitespace
+tests/e2e/test_shipment_process.py:304:1: W293 blank line contains whitespace
+tests/e2e/test_shipment_process.py:330:15: F541 f-string is missing placeholders
+tests/e2e/test_shipment_process.py:335:9: F811 redefinition of unused 'withdrawal_code' from line 28
+tests/e2e/test_shipment_process.py:336:1: W293 blank line contains whitespace
+tests/e2e/test_shipment_process.py:362:1: W293 blank line contains whitespace
+tests/e2e/test_shipment_process.py:380:1: W293 blank line contains whitespace
+tests/e2e/test_shipment_process.py:391:1: W293 blank line contains whitespace
+tests/e2e/test_shipment_process.py:404:1: W293 blank line contains whitespace
+tests/e2e/test_shipment_process.py:412:1: W293 blank line contains whitespace
+tests/e2e/test_shipment_process.py:430:15: F541 f-string is missing placeholders
+tests/e2e/test_shipment_process.py:479:15: F541 f-string is missing placeholders
+tests/e2e/test_shipment_process.py:495:15: F541 f-string is missing placeholders
+tests/e2e/test_shipment_process.py:500:1: W293 blank line contains whitespace
+tests/e2e/test_shipment_process.py:512:15: F541 f-string is missing placeholders
+tests/e2e/test_shipment_process.py:518:1: W293 blank line contains whitespace
+tests/e2e/test_shipment_process.py:541:1: W293 blank line contains whitespace
+tests/e2e/test_shipment_process.py:557:15: F541 f-string is missing placeholders
+tests/e2e/test_shipment_process.py:557:71: W292 no newline at end of file
+tests/e2e/test_user_management.py:17:1: F401 'typing.Dict' imported but unused
+tests/e2e/test_user_management.py:17:1: F401 'typing.Any' imported but unused
+tests/e2e/test_user_management.py:30:1: F401 'src.api.role.get.get as get_role' imported but unused
+tests/e2e/test_user_management.py:44:1: W293 blank line contains whitespace
+tests/e2e/test_user_management.py:65:1: W293 blank line contains whitespace
+tests/e2e/test_user_management.py:76:1: W293 blank line contains whitespace
+tests/e2e/test_user_management.py:79:1: W293 blank line contains whitespace
+tests/e2e/test_user_management.py:103:1: W293 blank line contains whitespace
+tests/e2e/test_user_management.py:109:1: W293 blank line contains whitespace
+tests/e2e/test_user_management.py:118:1: W293 blank line contains whitespace
+tests/e2e/test_user_management.py:135:1: W293 blank line contains whitespace
+tests/e2e/test_user_management.py:143:1: W293 blank line contains whitespace
+tests/e2e/test_user_management.py:161:1: W293 blank line contains whitespace
+tests/e2e/test_user_management.py:170:1: W293 blank line contains whitespace
+tests/e2e/test_user_management.py:195:1: W293 blank line contains whitespace
+tests/e2e/test_user_management.py:200:1: W293 blank line contains whitespace
+tests/e2e/test_user_management.py:210:1: W293 blank line contains whitespace
+tests/e2e/test_user_management.py:238:1: W293 blank line contains whitespace
+tests/e2e/test_user_management.py:264:1: W293 blank line contains whitespace
+tests/e2e/test_user_management.py:271:1: W293 blank line contains whitespace
+tests/e2e/test_user_management.py:294:1: W293 blank line contains whitespace
+tests/e2e/test_user_management.py:314:1: W293 blank line contains whitespace
+tests/e2e/test_user_management.py:320:15: F541 f-string is missing placeholders
+tests/e2e/test_user_management.py:325:1: W293 blank line contains whitespace
+tests/e2e/test_user_management.py:341:1: W293 blank line contains whitespace
+tests/e2e/test_user_management.py:346:15: F541 f-string is missing placeholders
+tests/e2e/test_user_management.py:351:1: W293 blank line contains whitespace
+tests/e2e/test_user_management.py:368:15: F541 f-string is missing placeholders
+tests/e2e/test_user_management.py:373:1: W293 blank line contains whitespace
+tests/e2e/test_user_management.py:384:15: F541 f-string is missing placeholders
+tests/e2e/test_user_management.py:389:1: W293 blank line contains whitespace
+tests/e2e/test_user_management.py:406:15: F541 f-string is missing placeholders
+tests/e2e/test_user_management.py:412:1: W293 blank line contains whitespace
+tests/e2e/test_user_management.py:431:15: F541 f-string is missing placeholders
+tests/e2e/test_user_management.py:475:1: W293 blank line contains whitespace
+tests/e2e/test_user_management.py:501:1: W293 blank line contains whitespace
+tests/e2e/test_user_management.py:507:15: F541 f-string is missing placeholders
+tests/e2e/test_user_management.py:523:15: F541 f-string is missing placeholders
+tests/e2e/test_user_management.py:528:1: W293 blank line contains whitespace
+tests/e2e/test_user_management.py:541:15: F541 f-string is missing placeholders
+tests/e2e/test_user_management.py:546:1: W293 blank line contains whitespace
+tests/e2e/test_user_management.py:562:15: F541 f-string is missing placeholders
+tests/e2e/test_user_management.py:562:77: W292 no newline at end of file
+tests/e2e/test_warehouse_operations.py:17:1: F401 'typing.Dict' imported but unused
+tests/e2e/test_warehouse_operations.py:17:1: F401 'typing.Any' imported but unused
+tests/e2e/test_warehouse_operations.py:20:1: F401 'src.api.warehouse.load_roll_by_api.load_roll_by_api' imported but unused
+tests/e2e/test_warehouse_operations.py:33:1: F401 'src.api.warehouse.download.download' imported but unused
+tests/e2e/test_warehouse_operations.py:34:1: F401 'src.api.warehouse.change.change as change_roll' imported but unused
+tests/e2e/test_warehouse_operations.py:49:1: W293 blank line contains whitespace
+tests/e2e/test_warehouse_operations.py:70:1: W293 blank line contains whitespace
+tests/e2e/test_warehouse_operations.py:79:1: W293 blank line contains whitespace
+tests/e2e/test_warehouse_operations.py:100:1: W293 blank line contains whitespace
+tests/e2e/test_warehouse_operations.py:123:1: W293 blank line contains whitespace
+tests/e2e/test_warehouse_operations.py:141:1: W293 blank line contains whitespace
+tests/e2e/test_warehouse_operations.py:171:1: W293 blank line contains whitespace
+tests/e2e/test_warehouse_operations.py:176:1: W293 blank line contains whitespace
+tests/e2e/test_warehouse_operations.py:186:1: W293 blank line contains whitespace
+tests/e2e/test_warehouse_operations.py:214:1: W293 blank line contains whitespace
+tests/e2e/test_warehouse_operations.py:238:1: W293 blank line contains whitespace
+tests/e2e/test_warehouse_operations.py:261:15: F541 f-string is missing placeholders
+tests/e2e/test_warehouse_operations.py:266:1: W293 blank line contains whitespace
+tests/e2e/test_warehouse_operations.py:294:15: F541 f-string is missing placeholders
+tests/e2e/test_warehouse_operations.py:300:1: W293 blank line contains whitespace
+tests/e2e/test_warehouse_operations.py:329:15: F541 f-string is missing placeholders
+tests/e2e/test_warehouse_operations.py:336:1: W293 blank line contains whitespace
+tests/e2e/test_warehouse_operations.py:356:1: W293 blank line contains whitespace
+tests/e2e/test_warehouse_operations.py:362:1: W293 blank line contains whitespace
+tests/e2e/test_warehouse_operations.py:371:1: W293 blank line contains whitespace
+tests/e2e/test_warehouse_operations.py:384:1: W293 blank line contains whitespace
+tests/e2e/test_warehouse_operations.py:393:1: W293 blank line contains whitespace
+tests/e2e/test_warehouse_operations.py:410:1: W293 blank line contains whitespace
+tests/e2e/test_warehouse_operations.py:416:1: W293 blank line contains whitespace
+tests/e2e/test_warehouse_operations.py:424:1: W293 blank line contains whitespace
+tests/e2e/test_warehouse_operations.py:437:1: W293 blank line contains whitespace
+tests/e2e/test_warehouse_operations.py:445:1: W293 blank line contains whitespace
+tests/e2e/test_warehouse_operations.py:471:1: W293 blank line contains whitespace
+tests/e2e/test_warehouse_operations.py:494:1: W293 blank line contains whitespace
+tests/e2e/test_warehouse_operations.py:512:15: F541 f-string is missing placeholders
+tests/e2e/test_warehouse_operations.py:539:1: W293 blank line contains whitespace
+tests/e2e/test_warehouse_operations.py:565:1: W293 blank line contains whitespace
+tests/e2e/test_warehouse_operations.py:571:15: F541 f-string is missing placeholders
+tests/e2e/test_warehouse_operations.py:587:15: F541 f-string is missing placeholders
+tests/e2e/test_warehouse_operations.py:592:1: W293 blank line contains whitespace
+tests/e2e/test_warehouse_operations.py:608:15: F541 f-string is missing placeholders
+tests/e2e/test_warehouse_operations.py:608:68: W292 no newline at end of file
