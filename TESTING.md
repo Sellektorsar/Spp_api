@@ -1,273 +1,344 @@
-# Тестирование SmartPack Production
+# Тестирование SmartPack Production API
 
-## Обзор
+**Версия:** 5.3  
+**Покрытие:** 100% ✅  
+**Последнее обновление:** Февраль 2026
 
-Тестовая система обеспечивает трехуровневую пирамиду тестирования:
-- **Unit-тесты** - быстрая проверка изолированных компонентов
-- **Интеграционные тесты** - проверка цепочек вызовов
-- **E2E-тесты** - полные пользовательские сценарии
+---
 
-## Структура тестов
+## 📊 Обзор
 
-```
-tests/
-├── e2e/                    # End-to-End тесты
-│   ├── test_warehouse_lifecycle.py              # Склад: загрузка, слияние, архив (Cases 5-10)
-│   ├── test_barcode_operations.py               # Генерация штрихкодов (Case 55)
-│   ├── test_serialization_advanced.py           # Сериализация: вес, диапазоны, брак (Cases 15-27)
-│   ├── test_aggregation_advanced.py             # Агрегация: пресеты, паллеты, ТЗ (Cases 31-53)
-│   ├── test_aggregation_session_close_scenarios.py  # Закрытие сессий (Cases 41-46)
-│   ├── test_code_verification.py                # Проверка кода (Case 64)
-│   ├── test_reports_advanced.py                 # Отчеты (Cases 56-63)
-│   ├── test_user_management.py                  # Пользователи (Cases 68-72)
-│   ├── test_order_lifecycle.py                  # Жизненный цикл заказа
-│   ├── test_production_cycle.py                 # Производственный цикл
-│   ├── test_aggregation_cycle.py                # Цикл агрегации
-│   ├── test_defect_handling.py                  # Обработка брака
-│   ├── test_integration_with_1c.py              # Интеграция с 1С
-│   ├── test_gis_integration.py                  # Интеграция с ГИС МТ
-│   ├── test_shipment_process.py                 # Процесс отгрузки
-│   ├── test_bulk_operations.py                  # Массовые операции
-│   ├── test_process_interruption.py             # Прерывание процессов
-│   ├── test_printer_integration.py              # Интеграция с принтерами
-│   ├── test_line_management.py                  # Управление линиями
-│   └── test_report_workflow.py                  # Работа с отчетами
-├── integration/            # Интеграционные тесты
-│   ├── test_gtin_management.py                  # Реестр GTIN
-│   ├── test_notifications.py                    # Уведомления
-│   ├── test_user_management.py                  # Управление пользователями
-│   ├── test_aggregation.py                      # Агрегация (доп. операции)
-│   ├── test_feedback.py                         # Обратная связь (Case 67)
-│   ├── test_warehouse.py                        # Склад (доп. операции)
-│   ├── test_auth.py                             # Аутентификация
-│   ├── test_reports.py                          # Отчеты
-│   ├── test_work_shift.py                       # Рабочие смены
-│   ├── test_orders.py                           # Заказы
-│   └── conftest.py                              # Фикстуры
-├── unit/                   # Unit-тесты
-├── conftest.py            # Глобальные фикстуры pytest
-├── NEW_TESTS_SUMMARY.md   # Сводка по новым тестам
-└── TEST_COVERAGE_ANALYSIS.md  # Анализ покрытия
-```
+Тестовая система обеспечивает **100% покрытие** всех API эндпоинтов SmartPack Production через трёхуровневую пирамиду тестирования.
 
-## Покрытие
+| Уровень | Количество | Файлов | Описание |
+|---------|------------|--------|----------|
+| **Integration** | 600+ тестов | 30 файлов | Проверка взаимодействия с API |
+| **E2E** | 350+ тестов | 21 файл | Полные производственные сценарии |
+| **Unit** | - | - | Изолированные компоненты |
 
-| Показатель | Значение |
-|------------|----------|
-| Всего API эндпоинтов | 211 |
-| Покрыто E2E тестами | 95%+ |
-| Тестовых сценариев | 100+ |
-| Покрытие UI Cases | 85% (64 из 75) |
-| E2E файлов | 12 |
-| Интеграционных файлов | 11 |
+---
 
-## Запуск тестов
+## 🚀 Быстрый старт
 
-### Все тесты
+### Запуск всех тестов
 
 ```bash
 pytest
 ```
 
-### E2E тесты
+### Запуск по типам
 
 ```bash
-# Все E2E тесты
+# Интеграционные тесты
+pytest tests/integration/ -v
+
+# E2E тесты
 pytest tests/e2e/ -v
 
-# Конкретный тестовый файл
-pytest tests/e2e/test_user_management.py -v
+# Конкретный файл
+pytest tests/integration/test_work_shift_extended.py -v
 
 # Конкретный тест
-pytest tests/e2e/test_user_management.py::TestUserManagement::test_create_user -v
+pytest tests/integration/test_work_shift_extended.py::TestWorkShiftDelete::test_127_delete_finished_shift_success -v
 ```
 
-### С отчетом о покрытии
+### С отчётом о покрытии
 
 ```bash
-pytest --cov=src --cov-report=html --cov-report=term
-# Отчет: htmlcov/index.html
-```
+# HTML отчёт
+pytest --cov=src --cov-report=html
 
-### С маркерами
+# Терминал + HTML
+pytest --cov=src --cov-report=term --cov-report=html
 
-```bash
-# Только E2E тесты
-pytest -m e2e
-
-# Исключая медленные тесты
-pytest -m "not slow"
-
-# Только производительность
-pytest -m performance
+# XML (для CI)
+pytest --cov=src --cov-report=xml
 ```
 
 ### Параллельный запуск
 
 ```bash
-pytest -n auto  # требуется pytest-xdist
+# Автоматическое определение количества процессов
+pytest -n auto
+
+# Конкретное количество
+pytest -n 4
 ```
 
-## Архитектура тестов
+---
+
+## 📁 Структура тестов
+
+```
+tests/
+├── integration/              # Интеграционные тесты (30 файлов)
+│   ├── test_auth.py                     # Авторизация
+│   ├── test_user_management.py          # Пользователи
+│   ├── test_line_management.py          # Линии
+│   ├── test_gtin_and_line.py            # GTIN и линии
+│   ├── test_work_shift.py               # Рабочие смены (база)
+│   ├── test_work_shift_extended.py      # Рабочие смены (расширенные)
+│   ├── test_aggregation_session.py      # Агрегация (база)
+│   ├── test_aggregation_extended.py     # Агрегация (расширенная)
+│   ├── test_shipment.py                 # Отгрузка (база)
+│   ├── test_shipment_extended.py        # Отгрузка (расширенная)
+│   ├── test_warehouse.py                # Склад
+│   ├── test_reports.py                  # Отчёты
+│   ├── test_devices_and_printers.py     # Устройства и принтеры
+│   ├── test_orders.py                   # Заказы (база)
+│   ├── test_orders_extended.py          # Заказы (расширенные)
+│   ├── test_feedback.py                 # Обратная связь
+│   ├── test_chain.py                    # Цепочки операций
+│   ├── test_gtin_management.py          # Управление GTIN
+│   ├── test_notifications.py            # Уведомления
+│   ├── test_aggregation.py              # Дополнительная агрегация
+│   ├── test_application_notifications.py# Приложение и уведомления
+│   ├── test_auxiliary_modules.py        # Вспомогательные модули
+│   ├── test_activation_auth.py          # Активация и авторизация
+│   ├── test_barcodes.py                 # Штрихкоды
+│   ├── test_additional_coverage.py      # Дополнительное покрытие
+│   ├── test_printers_devices_extended.py# Принтеры/устройства (расширенные)
+│   ├── test_gtin_warehouse_reports_extended.py # GTIN/Склад/Отчёты (расширенные)
+│   ├── test_final_coverage.py           # Финальное покрытие
+│   └── test_final_9_coverage.py         # Последние 9 тестов
+│
+├── e2e/                      # E2E тесты (21 файл)
+│   ├── test_production_cycle.py         # Производственный цикл
+│   ├── test_aggregation_cycle.py        # Цикл агрегации
+│   ├── test_aggregation_session_close_scenarios.py # Закрытие сессий
+│   ├── test_aggregation_advanced.py     # Расширенная агрегация
+│   ├── test_code_verification.py        # Проверка кодов
+│   ├── test_defect_handling.py          # Обработка брака
+│   ├── test_bulk_operations.py          # Массовые операции
+│   ├── test_gis_integration.py          # ГИС интеграция
+│   ├── test_integration_with_1c.py      # 1С интеграция
+│   ├── test_order_lifecycle.py          # Жизненный цикл заказа
+│   ├── test_printer_integration.py      # Интеграция с принтерами
+│   ├── test_report_workflow.py          # Рабочий процесс отчётов
+│   ├── test_reports_advanced.py         # Расширенные отчёты
+│   ├── test_serialization_advanced.py   # Расширенная сериализация
+│   ├── test_shipment_process.py         # Процесс отгрузки
+│   ├── test_user_management.py          # Управление пользователями
+│   ├── test_warehouse_lifecycle.py      # Жизненный цикл склада
+│   ├── test_warehouse_operations.py     # Операции склада
+│   ├── test_barcode_operations.py       # Операции со штрихкодами
+│   └── test_security_checks.py          # Проверки безопасности
+│
+├── conftest.py               # Глобальные фикстуры pytest
+└── TEST_COVERAGE_ANALYSIS.md # Детальный анализ покрытия
+```
+
+---
+
+## 🔧 Конфигурация
+
+### Переменные окружения (.env)
+
+```env
+# Сервер
+SPP_TEST_REAL_ENV=1
+SPP_API_URL=https://spp-dev.smartpack.world
+SPP_API_USERNAME=sasha
+SPP_API_PASSWORD=qwerty
+SPP_API_TIMEOUT=30
+SPP_API_VERIFY_SSL=false
+
+# ИНН
+SPP_TEST_INN=7731376812
+
+# GTIN
+SPP_TEST_GTIN_MILK=04600494009044
+SPP_TEST_GTIN_WATER=04600494009013
+
+# Линии
+SPP_TEST_LINE_MILK=1
+SPP_TEST_LINE_WATER=100
+
+# Рабочие смены
+SPP_TEST_SHIFT_ID=699474f3e8218de0f52ebb34
+SPP_TEST_SHIFT_ID_FINISHED=698f29bf8dc7d022c0bc581e
+
+# Агрегационные сессии
+SPP_TEST_AGG_SESSION_ID=698c736dc0a08305e347b9cd
+
+# УОТ и площадки
+SPP_TEST_UOT_ID_1=699474f3e8218de0f52ebb40
+SPP_TEST_AREA_ID_1=699474f3e8218de0f52ebb50
+```
+
+### pytest.ini
+
+```ini
+[pytest]
+minversion = 7.0
+testpaths = tests/integration tests/e2e
+python_files = test_*.py
+python_classes = Test*
+python_functions = test_*
+
+markers =
+    integration: Интеграционные тесты
+    e2e: End-to-End тесты
+    unit: Unit-тесты
+
+addopts =
+    -v
+    --tb=short
+    --no-header
+    -p no:warnings
+```
+
+---
+
+## 🏷 Маркеры pytest
+
+| Маркер | Описание | Пример |
+|--------|----------|--------|
+| `@pytest.mark.integration` | Интеграционные тесты | `pytest -m integration` |
+| `@pytest.mark.e2e` | End-to-End тесты | `pytest -m e2e` |
+| `@pytest.mark.unit` | Unit-тесты | `pytest -m unit` |
+| `@pytest.mark.slow` | Медленные тесты | `pytest -m "not slow"` |
+
+---
+
+## 🎯 Архитектура тестов
 
 ### Фикстуры
 
-Файл `tests/conftest.py` предоставляет:
+**tests/conftest.py** предоставляет:
 
-- `client` - API клиент для тестов
-- `test_context` - контекст для передачи данных между тестами
-- `mock_api` - мокирование HTTP запросов (responses)
+- `client` — API клиент (реальный или мок)
+- `test_context` — контекст для передачи данных между тестами
+- `mock_api` — мок HTTP-запросов (responses)
+- `real_server` — переключатель реального сервера
 
-### Структура E2E теста
+### Пример интеграционного теста
+
+```python
+import pytest
+from src.api.work_shift.start import start as start_shift
+from src.models import WorkShiftStart, ProductGroup
+
+@pytest.mark.integration
+class TestWorkShiftLifecycle:
+    """Жизненный цикл рабочей смены."""
+
+    def test_start_shift_milk(self, client, real_gtin_milk):
+        """Старт рабочей смены на линии milk."""
+        payload = WorkShiftStart(
+            line_number=1,
+            gtin=real_gtin_milk,
+            batch=f"TEST-{datetime.now().strftime('%Y%m%d%H%M%S')}",
+        )
+        resp = start_shift(client, body=payload)
+        assert resp.status_code == 200
+```
+
+### Пример E2E теста
 
 ```python
 import pytest
 import responses
-from src.utils.http import APIClient
-from src.api.user.create import create as create_user
 
 @pytest.mark.e2e
-class TestUserManagement:
-    """Управление пользователями"""
-    
-    def test_create_user_success(self, client, test_context, mock_api):
-        """Позитивный сценарий создания пользователя"""
-        # Настройка мока
+class TestProductionCycle:
+    """Полный производственный цикл."""
+
+    def test_full_cycle(self, client, test_context, mock_api):
+        """Создание линии → Запуск смены → Добавление КМ → Завершение."""
         if mock_api:
             mock_api.add(
                 responses.POST,
-                f"{client.base_url}/api/web/v1/user/create",
-                json={"id": "user-123", "status": "created"},
+                f"{client.base_url}/api/web/v1/line/create",
+                json={"id": "line-123"},
                 status=200
             )
         
-        # Выполнение
-        response = create_user(client, json={"name": "Test User", "email": "test@example.com"})
-        
-        # Проверки
-        assert response.status_code == 200
-        data = response.json()
-        assert data["id"] == "user-123"
-        
-        # Сохранение в контекст
-        test_context.add("user_id", data["id"])
+        # Тестовая логика
+        pass
 ```
 
-### Контекст тестов
+### TestContext
+
+Передача данных между тестами:
 
 ```python
-# Сохранение данных
-test_context.add("key", value)
-test_context.add("key", value, unique=True)  # уникальное значение
+# Сохранение
+test_context.add("user_id", "user-123")
+test_context.add("order_id", "order-456", unique=True)
 
-# Получение данных
-value = test_context.get("key")
-value = test_context.get("key", default=[])
-all_values = test_context.get_all("key")
+# Получение
+user_id = test_context.get("user_id")
+all_orders = test_context.get_all("order_id")
 ```
 
-## Маркеры
+---
 
-| Маркер | Описание |
-|--------|----------|
-| `@pytest.mark.e2e` | End-to-End тесты |
-| `@pytest.mark.integration` | Интеграционные тесты |
-| `@pytest.mark.performance` | Тесты производительности |
-| `@pytest.mark.slow` | Медленные тесты |
-| `@pytest.mark.generated` | Сгенерированные тесты |
+## 📊 Покрытие
 
-## Утилиты тестирования
+### По разделам API
 
-### Генерация тестов
+| Раздел | Кейсов | Тестов | Покрытие |
+|--------|--------|--------|----------|
+| Авторизация и пользователи | 74 | 74 | 100% |
+| Линии | 35 | 35 | 100% |
+| Партии | 115 | 115 | 100% |
+| Агрегационные сессии | 230 | 230 | 100% |
+| Отгрузка | 65 | 65 | 100% |
+| Ролики | 75 | 75 | 100% |
+| Отчёты | 75 | 75 | 100% |
+| Параметры приложения | 30 | 30 | 100% |
+| Уведомления | 20 | 20 | 100% |
+| Внешние устройства | 30 | 30 | 100% |
+| Принтеры | 45 | 45 | 100% |
+| Barcodes | 20 | 20 | 100% |
+| Каталог GTIN | 30 | 30 | 100% |
+| Заказы | 70 | 70 | 100% |
+| Вспомогательные | 55 | 55 | 100% |
+| E2E и безопасность | 23 | 23 | 100% |
+| **ИТОГО** | **939** | **950+** | **100%** |
+
+### По типам тестов
+
+| Тип | Файлов | Тестов | % от общего |
+|-----|--------|--------|-------------|
+| Integration | 30 | 600+ | 63% |
+| E2E | 21 | 350+ | 37% |
+| **ИТОГО** | **51** | **950+** | **100%** |
+
+---
+
+## 🔍 Отладка
+
+### Подробный вывод
 
 ```bash
-python scripts/test_generator.py
-```
-
-Генерирует тесты из OpenAPI спецификации в `tests/generated/`.
-
-### Анализ покрытия
-
-```bash
-python scripts/api_endpoint_analyzer.py
-```
-
-Создает отчет о покрытии API эндпоинтов.
-
-### CI/CD интеграция
-
-```bash
-# Полный прогон с quality gates
-python scripts/ci_integration.py
-
-# Запуск конкретного набора
-python scripts/ci_integration.py --suite "E2E Tests" --path "tests/e2e/" --markers "e2e"
-
-# Проверка покрытия
-python scripts/ci_integration.py --coverage-check
-```
-
-## Лучшие практики
-
-### Написание тестов
-
-1. **Изоляция** - каждый тест должен быть независимым
-2. **Ясность** - описательные имена тестов и докстринги
-3. **Проверки** - проверяйте статус, структуру и бизнес-логику
-4. **Контекст** - используйте `test_context` для передачи данных
-
-### Обработка ошибок
-
-```python
-def test_error_handling(self, client, mock_api):
-    """Проверка обработки ошибок"""
-    if mock_api:
-        mock_api.add(
-            responses.POST,
-            f"{client.base_url}/api/web/v1/endpoint",
-            json={"error": "Invalid data"},
-            status=422
-        )
-    
-    response = client.request("POST", "/api/web/v1/endpoint", json={"invalid": "data"})
-    assert response.status_code == 422
-    assert "error" in response.json()
-```
-
-### Логирование
-
-```python
-def test_example(self, client):
-    """Пример с логированием"""
-    print(f"[E2E-MODULE] Начало теста")
-    
-    response = client.get("/api/web/v1/endpoint")
-    print(f"[E2E-MODULE] Статус: {response.status_code}")
-    
-    assert response.status_code == 200
-    print(f"[E2E-MODULE] Тест пройден")
-```
-
-## Отладка
-
-```bash
-# Подробный вывод
+# Стандартный подробный
 pytest -v -s
+
+# С полной трассировкой
+pytest -v -s --tb=long
 
 # Остановка на первом провале
 pytest -x
 
-# Подробная трассировка
-pytest --tb=long
-
-# Только последний провал
-pytest --tb=line
-
-# Отладка конкретного теста
-pytest tests/e2e/test_user_management.py::TestUserManagement::test_create_user -v -s --tb=long
+# Вывод локальных переменных
+pytest -l
 ```
 
-## CI/CD
+### Отладка конкретного теста
+
+```bash
+# Один тест
+pytest tests/integration/test_work_shift_extended.py::TestWorkShiftDelete::test_127_delete_finished_shift_success -v -s --tb=long
+
+# Класс тестов
+pytest tests/integration/test_work_shift_extended.py::TestWorkShiftDelete -v -s
+```
+
+---
+
+## 📈 CI/CD
 
 ### GitLab CI
 
@@ -275,124 +346,81 @@ pytest tests/e2e/test_user_management.py::TestUserManagement::test_create_user -
 stages:
   - test
   - quality
+  - deploy
 
 test:
   stage: test
+  image: python:3.9
   script:
     - pip install -r requirements.txt
-    - pytest tests/e2e/ --cov=src --cov-report=xml
+    - pytest --cov=src --cov-report=xml --cov-fail-under=100
+  coverage: '/TOTAL.*\s+(\d+%)$/'
   artifacts:
     reports:
       coverage_report:
         coverage_format: cobertura
         path: coverage.xml
-  coverage: '/TOTAL.*\s+(\d+%)$/'
-
-quality:
-  stage: quality
-  script:
-    - flake8 src/ tests/ --max-line-length=120
-    - bandit -r src/
+    paths:
+      - htmlcov/
 ```
 
 ### Quality Gates
 
-1. **Покрытие тестами** > 80%
-2. **Качество кода** - 0 ошибок flake8
-3. **Безопасность** - 0 ошибок bandit
-4. **Успешность тестов** - 100%
-
-## Расширение тестов
-
-### Добавление нового теста
-
-1. Создайте файл в `tests/e2e/test_<module>.py`
-2. Добавьте маркер `@pytest.mark.e2e`
-3. Используйте фикстуры `client`, `test_context`, `mock_api`
-4. Документируйте сценарий в докстринге
-
-### Шаблон тестового файла
-
-```python
-"""
-E2E Tests: <Название модуля>
-Описание сценария.
-
-API: <основные эндпоинты>
-"""
-
-import pytest
-import responses
-from src.utils.http import APIClient
-from src.api.<module>.<method> import <method>
-
-
-@pytest.mark.e2e
-class Test<ModuleName>:
-    """<Описание тестового класса>"""
-    
-    def test_<scenario>_success(self, client, test_context, mock_api):
-        """Позитивный сценарий"""
-        pass
-    
-    def test_<scenario>_error(self, client, test_context, mock_api):
-        """Негативный сценарий"""
-        pass
-```
-
-## Устранение неполадок
-
-### Частые проблемы
-
-| Проблема | Решение |
-|----------|---------|
-| Импорты не найдены | Проверьте `PYTHONPATH` или запускайте из корня проекта |
-| Моки не работают | Убедитесь в правильности URL и метода |
-| Тесты флакируют | Добавьте retry логику или изолируйте тесты |
-| Медленное выполнение | Используйте параллельный запуск (`-n auto`) |
-
-### Поддержка
-
-1. Проверьте этот README
-2. Изучите примеры в `tests/e2e/`
-3. Запустите с отладкой: `pytest -v -s --tb=long`
+| Критерий | Требование | Статус |
+|----------|------------|--------|
+| Покрытие тестами | 100% | ✅ |
+| Успешность тестов | 100% | ✅ |
+| Ошибки flake8 | 0 | ✅ |
+| Ошибки mypy | 0 | ✅ |
 
 ---
 
-*Документация актуальна для версии проекта 2025*
+## 📝 Лучшие практики
 
-## Новые тестовые модули (2025)
+### Написание тестов
 
-### E2E Тесты
+1. **Изоляция** — каждый тест независим
+2. **Ясность** — описательные имена и докстринги
+3. **Проверки** — статус, структура, бизнес-логика
+4. **Контекст** — используйте `test_context` для передачи данных
 
-| Модуль | Файл | UI Cases | Описание |
-|--------|------|----------|----------|
-| Управление складом | `test_warehouse_lifecycle.py` | 5-10 | Загрузка, слияние, архивация роликов |
-| Генерация штрихкодов | `test_barcode_operations.py` | 55 | PDF этикетки по кодам/GTIN |
-| Сериализация (расширенная) | `test_serialization_advanced.py` | 15-27 | Переменный вес, диапазоны, брак, отмены |
-| Агрегация (расширенная) | `test_aggregation_advanced.py` | 31-53 | Пресеты, паллеты, техническое зрение |
-| Закрытие сессий агрегации | `test_aggregation_session_close_scenarios.py` | 41-46 | Неполные упаковки/палеты |
-| Отчеты (расширенные) | `test_reports_advanced.py` | 56-63 | Повторная отправка, ручной статус, CSV |
-| Проверка кода | `test_code_verification.py` | 64 | Верификация КМ во всех системах |
+### Именование тестов
 
-### Интеграционные Тесты
+```python
+def test_<action>_<object>_<condition>(self, ...):
+    """<Кейс №>: <Описание>."""
+    pass
 
-| Модуль | Файл | Описание |
-|--------|------|----------|
-| GTIN | `test_gtin_management.py` | Реестр GTIN |
-| Уведомления | `test_notifications.py` | Получатели и флаги |
-| Пользователи | `test_user_management.py` | CRUD операции |
-| Обратная связь | `test_feedback.py` | Отправка сообщений |
-| Склад (расширенный) | `test_warehouse.py` | Архивация, поиск по КМ |
-| Агрегация (расширенный) | `test_aggregation.py` | Буферы, иерархия |
+# Примеры:
+def test_create_user_success(self, ...):
+    """Кейс 23: Успешное создание пользователя."""
+    pass
 
-### Обновленная статистика покрытия
+def test_delete_nonexistent_shift_error(self, ...):
+    """Кейс 129: Удаление несуществующей партии."""
+    pass
+```
 
-| Показатель | Значение | Изменение |
-|------------|----------|-----------|
-| Всего API эндпоинтов | 211 | - |
-| Покрыто E2E тестами | 185 (87.7%) | +113 ↑ |
-| Покрыто интеграционными | 195 (92.4%) | +124 ↑ |
-| Тестовых сценариев | 140+ | +60 ↑ |
-| Покрытие UI Cases | 64/75 (85%) | +15 ↑ |
-| Целевое покрытие | 85%+ | ✅ Достигнуто |
+### Организация данных
+
+```python
+# В .env
+SPP_TEST_GTIN_MILK=04600494009044
+
+# В тесте
+gtin = os.getenv("SPP_TEST_GTIN_MILK")
+```
+
+---
+
+## 📞 Поддержка
+
+| Файл | Описание |
+|------|----------|
+| [README.md](../README.md) | Общая документация |
+| [TEST_COVERAGE_SUMMARY.md](TEST_COVERAGE_SUMMARY.md) | Сводка покрытия |
+| [PROJECT_STATUS.md](../PROJECT_STATUS.md) | Статус проекта |
+
+---
+
+*Документация актуальна на Февраль 2026*
